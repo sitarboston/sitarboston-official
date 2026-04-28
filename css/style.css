@@ -2654,76 +2654,6 @@ html {
    LIGHT MODE THEME
    ============================================================ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Staggered nav link fade-in when mobile menu opens */
 .nav-mobile.open a:nth-child(1) { transition-delay: 0.04s; }
 .nav-mobile.open a:nth-child(2) { transition-delay: 0.08s; }
@@ -2789,83 +2719,30 @@ html {
 
 /* Bug 3: Light theme — comprehensive readability fix */
 
-
-
-
-
-
 /* Section backgrounds — clear alternating contrast */
-
-
-
-
-
 
 /* Cards — solid white with shadow so they pop off the parchment */
 
-
-
-
-
-
-
-
-
-
-
-
 /* Pull quote */
-
-
 
 /* Mission body */
 
-
-
-
 /* About section */
-
-
-
-
 
 /* Luthierie */
 
 
 /* Homage */
 
-
-
 /* Lessons */
-
-
-
 
 /* Sitars */
 
-
-
-
-
-
-
-
-
-
 /* Connect */
-
-
-
 
 /* Section subtitle, labels, ornaments */
 
-
-
 /* Footer */
-
-
-
-
 
 /* Video borders in light mode */
 
@@ -3015,293 +2892,349 @@ p, h1, h2, h3, h4, li, .badge, .section-subtitle, .hero-tagline,
    ============================================================ */
 
 /* Core palette — all CSS variables for light mode */
-[data-theme="light"] {
-  --ink:          #FFFBEF;
-  --ink-soft:     #FFF5D4;
-  --teal:         #1B6B3A;
-  --teal-bright:  #228B45;
-  --teal-light:   #2A9E52;
-  --saffron:      #B87000;
-  --saffron-lt:   #CC8200;
-  --gold:         #9A5E00;
-  --cream:        #1C0800;
-  --cream-dk:     #3A1E00;
-  --persian-green:#1A5C2E;
-  --green-light:  #2D8A45;
-}
+
 
 /* Base body */
-[data-theme="light"] body {
-  background-color: var(--ink);
-  color: var(--cream-dk);
+
+
+/* ── NAVBAR ── */
+
+/* ── HERO ── */
+
+/* ── SECTION BACKGROUNDS ── */
+
+/* Section bg overlays — keep near-dark so text over them stays readable */
+
+/* ── TYPOGRAPHY — headings & body ── */
+
+/* ── MISSION ── */
+
+/* ── ABOUT / TRAINING ── */
+
+/* ── LUTHIERIE ── */
+
+/* Service cards */
+
+/* Repair captions */
+
+
+/* ── LESSONS ── */
+
+/* ── CUSTOM SITARS ── */
+
+/* ── VIDEOS ── */
+
+/* ── GALLERY ── */
+
+
+/* ── NEWS ── */
+
+/* ── CONNECT ── */
+
+/* ── FOOTER ── */
+
+/* ── MUSIC PLAYER ── */
+
+/* ── LIGHTBOX ── */
+
+/* ── COLLAPSE BUTTON ── */
+
+
+
+/* ============================================================
+   MING BLUE PORCELAIN — LIGHT THEME
+   Cool white / cobalt / warm amber
+   ============================================================ */
+
+[data-theme="light"] {
+  --ink:          #F2F6FB;
+  --ink-soft:     #E4EDF7;
+  --teal:         #1A5A8A;
+  --teal-bright:  #2272AA;
+  --teal-light:   #2E88C8;
+  --saffron:      #B86A00;
+  --saffron-lt:   #D07800;
+  --gold:         #9A5800;
+  --cream:        #08182E;
+  --cream-dk:     #1C3050;
+  --persian-green:#1A5A3A;
+  --green-light:  #227A4E;
 }
+
+/* Base */
+[data-theme="light"] body { background-color: #F2F6FB; color: #1C3050; }
 
 /* ── NAVBAR ── */
 [data-theme="light"] #navbar { background: transparent; }
 [data-theme="light"] #navbar.scrolled {
-  background: rgba(255,248,220,0.97);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+  background: rgba(235,245,255,0.97);
+  box-shadow: 0 2px 20px rgba(8,24,46,0.10);
+  backdrop-filter: blur(12px);
 }
-[data-theme="light"] .nav-links a { color: #1C0800; }
-[data-theme="light"] .nav-links a:hover,
-[data-theme="light"] .nav-links a.active { color: var(--saffron); }
-[data-theme="light"] .nav-logo-fa { color: var(--teal); }
 [data-theme="light"] .nav-logo-en {
-  background: linear-gradient(90deg, var(--teal-bright), var(--saffron-lt), var(--teal-bright));
+  background: linear-gradient(90deg, #2272AA, #D07800, #2272AA);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-[data-theme="light"] .theme-toggle {
-  border-color: rgba(0,0,0,0.18);
-  color: #1C0800;
-}
-[data-theme="light"] .nav-mobile {
-  background: rgba(255,248,210,0.99);
-}
-[data-theme="light"] .nav-mobile a { color: #1C0800; }
-[data-theme="light"] .nav-mobile a:hover { color: var(--saffron); }
+[data-theme="light"] .nav-logo-fa { color: #2272AA; }
+[data-theme="light"] .nav-links a { color: #08182E; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: #B86A00; }
+[data-theme="light"] .nav-links a::after { background: #B86A00; }
+[data-theme="light"] .theme-toggle { border-color: rgba(8,24,46,0.2); color: #08182E; }
+[data-theme="light"] .theme-toggle:hover { border-color: #B86A00; color: #B86A00; background: rgba(184,106,0,0.06); }
+[data-theme="light"] .nav-mobile { background: rgba(235,245,255,0.99); }
+[data-theme="light"] .nav-mobile a { color: #08182E; }
+[data-theme="light"] .nav-mobile a:hover { color: #B86A00; }
 
 /* ── HERO ── */
 [data-theme="light"] .hero-bg {
-  filter: sepia(0.25) brightness(0.42) contrast(1.1) saturate(0.8) !important;
+  filter: sepia(0.15) brightness(0.38) contrast(1.15) saturate(0.85) !important;
 }
-[data-theme="light"] .hero-persian-sub { color: #c8f0d8; }
-[data-theme="light"] .hero-craft-line  { color: #b8f0d0; }
-[data-theme="light"] .hero-tagline     { color: #f0e8d0; }
-[data-theme="light"] .hero-services    { color: #c8f0d8; }
-[data-theme="light"] .hero-divider-ornament { color: var(--saffron-lt); }
-[data-theme="light"] .hero-title span  { color: #FFD466; }
+[data-theme="light"] .hero-persian-sub  { color: #A8D8F8; }
+[data-theme="light"] .hero-craft-line   { color: #A8D0F0; }
+[data-theme="light"] .hero-title span   { color: #FFD080; text-shadow: 0 0 30px rgba(255,180,0,0.5); }
+[data-theme="light"] .hero-tagline      { color: #E8F0F8; }
+[data-theme="light"] .hero-services     { color: #A8D0F0; }
+[data-theme="light"] .hero-divider-ornament { color: #FFD080; }
+[data-theme="light"] .scroll-indicator  { color: #A8D0F0; }
+[data-theme="light"] .scroll-indicator svg { stroke: #A8D0F0; }
 
 /* ── SECTION BACKGROUNDS ── */
 [data-theme="light"] #mission,
-[data-theme="light"] .tile-bg            { background-color: #FFF5D4; }
-[data-theme="light"] #about              { background-color: #FFFBEF; }
+[data-theme="light"] .tile-bg            { background-color: #E8F0FA; }
+[data-theme="light"] #about              { background-color: #F2F6FB; }
 [data-theme="light"] #luthierie,
-[data-theme="light"] .tile-bg-saffron    { background-color: #FFF5D4; }
-[data-theme="light"] #lessons            { background-color: #FFFBEF; }
-[data-theme="light"] #sitars             { background-color: #FFF5D4; }
-[data-theme="light"] #videos             { background-color: #FFFBEF; }
-[data-theme="light"] #gallery            { background-color: #FFF5D4; }
-[data-theme="light"] #news               { background-color: #FFFBEF; }
-[data-theme="light"] #connect            { background-color: #FFE88A; }
-[data-theme="light"] #footer             { background-color: #FFD84A; border-top-color: rgba(184,112,0,0.25); }
+[data-theme="light"] .tile-bg-saffron    { background-color: #E8F0FA; }
+[data-theme="light"] #lessons            { background-color: #F2F6FB; }
+[data-theme="light"] #sitars             { background-color: #E8F0FA; }
+[data-theme="light"] #videos             { background-color: #F2F6FB; }
+[data-theme="light"] #gallery            { background-color: #E8F0FA; }
+[data-theme="light"] #news               { background-color: #F2F6FB; }
+[data-theme="light"] #connect            { background-color: #D0E4F5; }
+[data-theme="light"] #footer             { background-color: #B8D2EC; border-top-color: rgba(26,90,138,0.2); }
 
-/* Section bg overlays — keep near-dark so text over them stays readable */
-[data-theme="light"] .about-bg-overlay  { filter: brightness(0.07) sepia(0.15) !important; }
-[data-theme="light"] .luthierie-bg      { filter: brightness(0.08) sepia(0.1)  !important; }
-[data-theme="light"] .lessons-bg        { filter: brightness(0.07) sepia(0.15) !important; }
-[data-theme="light"] .sitars-bg         { filter: brightness(0.06) sepia(0.1)  !important; }
+/* Section bg overlays — keep near-dark */
+[data-theme="light"] .about-bg-overlay  { filter: brightness(0.07) sepia(0.1) !important; }
+[data-theme="light"] .luthierie-bg      { filter: brightness(0.07) sepia(0.1) !important; }
+[data-theme="light"] .lessons-bg        { filter: brightness(0.07) sepia(0.1) !important; }
+[data-theme="light"] .sitars-bg         { filter: brightness(0.06) sepia(0.1) !important; }
 
-/* ── TYPOGRAPHY — headings & body ── */
+/* ── GLOBAL TEXT ── */
 [data-theme="light"] h1,
 [data-theme="light"] h2,
 [data-theme="light"] h3,
-[data-theme="light"] h4 { color: #1C0800; }
+[data-theme="light"] h4 { color: #08182E; }
+[data-theme="light"] p  { color: #1C3050; }
+[data-theme="light"] a  { color: #2272AA; }
+[data-theme="light"] a:hover { color: #B86A00; }
 
-[data-theme="light"] .section-label { color: var(--teal-bright); }
-[data-theme="light"] .section-subtitle { color: var(--teal); }
-[data-theme="light"] .ornament-icon { color: var(--saffron); }
+[data-theme="light"] .section-label    { color: #2272AA; text-shadow: none; }
+[data-theme="light"] .section-subtitle { color: #1A5A8A; font-style: italic; }
+[data-theme="light"] .ornament-icon    { color: #B86A00; text-shadow: none; }
 [data-theme="light"] .ornament::before,
-[data-theme="light"] .ornament::after {
-  background: linear-gradient(to right, transparent, var(--saffron), transparent);
-}
+[data-theme="light"] .ornament::after  { background: linear-gradient(to right, transparent, #B86A00, transparent); }
 
 /* ── MISSION ── */
-[data-theme="light"] .mission-headline em { color: var(--saffron); }
-[data-theme="light"] .mission-body p { color: #3A1E00; }
-[data-theme="light"] .mission-body strong { color: var(--teal); }
-[data-theme="light"] .mission-cta { color: var(--saffron) !important; }
+[data-theme="light"] .mission-headline em { color: #B86A00; }
+[data-theme="light"] .mission-body p      { color: #1C3050; }
+[data-theme="light"] .mission-body strong { color: #2272AA; }
+[data-theme="light"] .mission-cta         { color: #B86A00 !important; }
 [data-theme="light"] .pull-quote {
-  background: rgba(27,107,58,0.06);
-  border-left-color: var(--saffron);
+  background: rgba(26,90,138,0.05);
+  border-left-color: #2272AA;
 }
-[data-theme="light"] .pull-quote p { color: #3A1E00; opacity: 1; font-style: italic; }
+[data-theme="light"] .pull-quote p { color: #1C3050; opacity: 1; }
 
 /* ── ABOUT / TRAINING ── */
-[data-theme="light"] .taleem-name  { color: var(--saffron); }
-[data-theme="light"] .about-sub    { color: var(--teal); }
-[data-theme="light"] .about-text p { color: #3A1E00; }
-[data-theme="light"] .about-text strong { color: var(--teal); }
+[data-theme="light"] .taleem-name    { color: #B86A00; }
+[data-theme="light"] .about-sub      { color: #2272AA; }
+[data-theme="light"] .about-text p   { color: #1C3050; }
+[data-theme="light"] .about-text strong { color: #1A5A8A; }
 [data-theme="light"] .badge {
-  background: rgba(27,107,58,0.10);
-  border-color: rgba(27,107,58,0.25);
-  color: var(--teal);
+  background: rgba(26,90,138,0.08);
+  border-color: rgba(26,90,138,0.25);
+  color: #1A5A8A;
 }
-[data-theme="light"] .inline-link { color: var(--teal-bright); }
-[data-theme="light"] .guru-caption   { color: #3A1E00; }
-[data-theme="light"] .homage-heading { color: var(--saffron); }
-[data-theme="light"] .homage-intro   { color: #3A1E00; }
-[data-theme="light"] .homage-caption { color: #3A1E00; }
-[data-theme="light"] .homage-text    { color: #3A1E00; }
+[data-theme="light"] .badge:hover { background: #1A5A8A; color: #fff; }
+[data-theme="light"] .inline-link  { color: #2272AA; }
+[data-theme="light"] .guru-caption { color: #1C3050; }
+
+/* Homage */
+[data-theme="light"] .homage-heading { color: #B86A00; }
+[data-theme="light"] .homage-intro   { color: #1C3050; }
+[data-theme="light"] .homage-caption { color: #1C3050; }
+[data-theme="light"] .homage-caption span { opacity: 0.7; }
+[data-theme="light"] .homage-text    { color: #1C3050; }
 
 /* ── LUTHIERIE ── */
-[data-theme="light"] .luthierie-intro    { color: #3A1E00; }
-[data-theme="light"] .luthierie-training { color: #3A1E00; border-left-color: var(--saffron); }
+[data-theme="light"] .luthierie-intro    { color: #1C3050; }
+[data-theme="light"] .luthierie-training { color: #1C3050; border-left-color: #2272AA; }
 
 /* Service cards */
 [data-theme="light"] .service-card,
 [data-theme="light"] .model-card {
-  background: rgba(255,255,255,0.88);
-  border-color: rgba(184,112,0,0.18);
-  border-top: 2px solid rgba(184,112,0,0.35);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  background: rgba(255,255,255,0.90);
+  border-color: rgba(26,90,138,0.15);
+  border-top: 2px solid rgba(26,90,138,0.30);
+  box-shadow: 0 2px 18px rgba(8,24,46,0.07);
 }
 [data-theme="light"] .service-card:hover,
 [data-theme="light"] .model-card:hover {
-  border-color: rgba(184,112,0,0.45);
-  border-top-color: var(--saffron);
+  border-color: rgba(184,106,0,0.40);
+  border-top-color: #B86A00;
   background: #fff;
+  box-shadow: 0 6px 28px rgba(8,24,46,0.10);
 }
-[data-theme="light"] .service-card h3 { color: var(--saffron); }
-[data-theme="light"] .service-card p  { color: #3A1E00; }
-[data-theme="light"] .model-card h3   { color: var(--saffron); }
-[data-theme="light"] .model-card p    { color: #3A1E00; }
-[data-theme="light"] .service-icon,
-[data-theme="light"] .model-card-icon { opacity: 0.9; }
+[data-theme="light"] .service-card h3 { color: #1A5A8A; }
+[data-theme="light"] .service-card p  { color: #1C3050; }
+[data-theme="light"] .model-card h3   { color: #1A5A8A; }
+[data-theme="light"] .model-card p    { color: #1C3050; }
 
-/* Repair captions */
+/* Repair / video captions */
 [data-theme="light"] .repair-video-caption,
-[data-theme="light"] .sa-video-caption   { color: #3A1E00; }
+[data-theme="light"] .sa-video-caption,
+[data-theme="light"] .video-caption,
+[data-theme="light"] .lesson-video-caption { color: #1C3050; }
 
 /* ── LESSONS ── */
-[data-theme="light"] .lessons-text > p  { color: #3A1E00; }
-[data-theme="light"] .lessons-note      { color: var(--teal); opacity: 1; }
-[data-theme="light"] .lesson-video-caption { color: #3A1E00; }
+[data-theme="light"] .lessons-text > p { color: #1C3050; }
+[data-theme="light"] .lessons-note     { color: #2272AA; opacity: 1; }
 [data-theme="light"] .pillar {
-  background: rgba(255,255,255,0.80);
-  border-left-color: var(--teal);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.82);
+  border-left-color: #2272AA;
+  box-shadow: 0 2px 10px rgba(8,24,46,0.05);
 }
-[data-theme="light"] .pillar:hover { border-left-color: var(--saffron); }
-[data-theme="light"] .pillar h4    { color: var(--saffron); }
-[data-theme="light"] .pillar p     { color: #3A1E00; }
+[data-theme="light"] .pillar:hover { border-left-color: #B86A00; }
+[data-theme="light"] .pillar h4    { color: #1A5A8A; }
+[data-theme="light"] .pillar p     { color: #1C3050; }
 
 /* ── CUSTOM SITARS ── */
-[data-theme="light"] .sitars-intro p      { color: #3A1E00; }
-[data-theme="light"] .sitars-intro strong { color: var(--teal); }
+[data-theme="light"] .sitars-intro p       { color: #1C3050; }
+[data-theme="light"] .sitars-intro strong  { color: #2272AA; }
+[data-theme="light"] .sitars-intro em      { color: #1A5A8A; }
 [data-theme="light"] .build-process {
-  background: rgba(255,255,255,0.70);
-  border-color: rgba(27,107,58,0.25);
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(26,90,138,0.22);
 }
-[data-theme="light"] .build-process h3 { color: #1C0800; }
-[data-theme="light"] .build-process p  { color: #3A1E00; }
+[data-theme="light"] .build-process h3 { color: #08182E; }
+[data-theme="light"] .build-process p  { color: #1C3050; }
 [data-theme="light"] .tonewood-callout {
-  background: rgba(27,107,58,0.06);
-  border-color: rgba(27,107,58,0.22);
-  color: #3A1E00;
+  background: rgba(26,90,138,0.05);
+  border-color: rgba(26,90,138,0.20);
+  color: #1C3050;
 }
-[data-theme="light"] .tonewood-callout strong { color: var(--teal); }
+[data-theme="light"] .tonewood-callout strong { color: #2272AA; }
 [data-theme="light"] .vintage-callout {
-  background: rgba(184,112,0,0.06);
-  border-color: rgba(184,112,0,0.22);
-  color: #3A1E00;
+  background: rgba(184,106,0,0.05);
+  border-color: rgba(184,106,0,0.22);
+  color: #1C3050;
 }
 [data-theme="light"] .shahidali-photo-wrap {
-  background: rgba(255,255,255,0.55);
-  border-color: rgba(27,107,58,0.2);
+  background: rgba(255,255,255,0.60);
+  border-color: rgba(26,90,138,0.18);
 }
-[data-theme="light"] .credential-item  { color: #3A1E00; }
-[data-theme="light"] .cred-icon        { color: var(--saffron); }
-[data-theme="light"] .shahidali-link   { color: var(--teal-bright); border-color: rgba(27,107,58,0.3); }
-[data-theme="light"] .shahidali-photo-caption { background: var(--teal); color: #fff; }
+[data-theme="light"] .credential-item   { color: #1C3050; border-bottom-color: rgba(26,90,138,0.12); }
+[data-theme="light"] .cred-icon         { color: #B86A00; text-shadow: none; }
+[data-theme="light"] .shahidali-link    { color: #2272AA; border-color: rgba(26,90,138,0.30); }
+[data-theme="light"] .shahidali-link:hover { color: #B86A00; border-color: #B86A00; }
+[data-theme="light"] .shahidali-photo-caption { background: #1A5A8A; color: #fff; }
 
 /* ── VIDEOS ── */
-[data-theme="light"] .video-caption  { color: #3A1E00; }
 [data-theme="light"] .video-item {
-  background: rgba(255,255,255,0.85);
-  border-color: rgba(184,112,0,0.18);
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(26,90,138,0.18);
 }
-[data-theme="light"] .video-item:hover { border-color: var(--saffron); }
+[data-theme="light"] .video-item:hover { border-color: #B86A00; }
 [data-theme="light"] video {
-  border-color: rgba(27,107,58,0.22);
-  border-top-color: rgba(184,112,0,0.28);
+  border-color: rgba(26,90,138,0.22);
+  border-top-color: rgba(184,106,0,0.25);
+  box-shadow: 0 2px 12px rgba(8,24,46,0.10);
 }
-[data-theme="light"] video:hover { border-color: rgba(184,112,0,0.45); }
+[data-theme="light"] video:hover { border-color: rgba(184,106,0,0.40); }
 
 /* ── GALLERY ── */
-[data-theme="light"] .gallery-item { background: #FFF0C0; }
+[data-theme="light"] .gallery-item { background: #D8E8F5; }
 
 /* ── NEWS ── */
 [data-theme="light"] .news-card {
-  background: rgba(255,255,255,0.85);
-  border-color: rgba(184,112,0,0.18);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(26,90,138,0.16);
+  box-shadow: 0 2px 14px rgba(8,24,46,0.06);
 }
-[data-theme="light"] .news-card:hover {
-  background: #fff;
-  border-color: var(--saffron);
-}
-[data-theme="light"] .news-card h3  { color: #1C0800; }
-[data-theme="light"] .news-card p   { color: #3A1E00; }
-[data-theme="light"] .news-date     { color: var(--teal); }
+[data-theme="light"] .news-card:hover { background: #fff; border-color: #2272AA; }
+[data-theme="light"] .news-card h3  { color: #08182E; }
+[data-theme="light"] .news-card p   { color: #1C3050; }
+[data-theme="light"] .news-date     { color: #2272AA; }
 [data-theme="light"] .news-tag {
-  background: rgba(184,112,0,0.12);
-  color: var(--saffron);
-  border-color: rgba(184,112,0,0.25);
+  background: rgba(184,106,0,0.10);
+  color: #B86A00;
+  border-color: rgba(184,106,0,0.22);
 }
-[data-theme="light"] .news-link     { color: var(--teal-bright); }
-[data-theme="light"] .news-link:hover { color: var(--saffron); }
+[data-theme="light"] .news-link     { color: #2272AA; }
+[data-theme="light"] .news-link:hover { color: #B86A00; }
 
 /* ── CONNECT ── */
-[data-theme="light"] .connect-info-centered h2 { color: #1C0800; }
-[data-theme="light"] .connect-info > p         { color: #3A1E00; }
-[data-theme="light"] .contact-item-label       { color: var(--teal); }
+[data-theme="light"] .connect-info-centered h2 { color: #08182E; }
+[data-theme="light"] .connect-info > p         { color: #1C3050; }
+[data-theme="light"] .contact-item-label       { color: #2272AA; }
 [data-theme="light"] .contact-item-value,
-[data-theme="light"] .contact-item-value a     { color: #1C0800; }
-[data-theme="light"] .contact-item-value a:hover { color: var(--saffron); }
+[data-theme="light"] .contact-item-value a     { color: #08182E; }
+[data-theme="light"] .contact-item-value a:hover { color: #B86A00; }
 [data-theme="light"] .whatsapp-link            { color: #1A7A3A !important; }
 [data-theme="light"] .contact-item-icon {
-  background: rgba(27,107,58,0.10);
-  border-color: rgba(27,107,58,0.22);
-  color: var(--teal);
+  background: rgba(26,90,138,0.08);
+  border-color: rgba(26,90,138,0.20);
+  color: #2272AA;
 }
 
 /* ── FOOTER ── */
-[data-theme="light"] #footer { border-top-color: rgba(184,112,0,0.2); }
-[data-theme="light"] .footer-logo-en { color: var(--saffron); }
-[data-theme="light"] .footer-logo-fa { color: var(--teal); }
-[data-theme="light"] .footer-tagline { color: #3A1E00; }
-[data-theme="light"] .footer-nav a   { color: #3A1E00; }
-[data-theme="light"] .footer-nav a:hover { color: var(--teal-bright); }
-[data-theme="light"] .footer-copy    { color: rgba(58,30,0,0.5); }
+[data-theme="light"] .footer-logo-en { color: #B86A00; }
+[data-theme="light"] .footer-logo-fa { color: #1A5A8A; }
+[data-theme="light"] .footer-tagline { color: #1C3050; }
+[data-theme="light"] .footer-nav a   { color: #1C3050; font-weight: 700; }
+[data-theme="light"] .footer-nav a:hover { color: #2272AA; }
+[data-theme="light"] .footer-copy    { color: rgba(28,48,80,0.50); }
+[data-theme="light"] .footer-ornament svg { stroke: #1A5A8A; opacity: 0.45; }
 
 /* ── MUSIC PLAYER ── */
 [data-theme="light"] #music-player {
-  background: rgba(255,242,180,0.97);
-  border-color: rgba(184,112,0,0.35);
+  background: rgba(232,242,255,0.97);
+  border-color: rgba(26,90,138,0.35);
 }
-[data-theme="light"] .music-label  { color: #3A1E00; }
-[data-theme="light"] .music-note   { color: var(--saffron); }
-[data-theme="light"] .music-btn    { border-color: var(--teal); color: var(--teal); }
-[data-theme="light"] .music-btn:hover { background: var(--teal); color: #fff; }
+[data-theme="light"] .music-label { color: #1C3050; }
+[data-theme="light"] .music-note  { color: #B86A00; }
+[data-theme="light"] .music-btn   { border-color: #2272AA; color: #2272AA; }
+[data-theme="light"] .music-btn:hover { background: #2272AA; color: #fff; }
+[data-theme="light"] .music-btn.playing::before { border-color: #B86A00; }
 
 /* ── LIGHTBOX ── */
-[data-theme="light"] #lightbox { background: rgba(255,248,200,0.97); }
-[data-theme="light"] .lightbox-close { color: #1C0800; }
-[data-theme="light"] .lightbox-close:hover { color: var(--saffron); }
+[data-theme="light"] #lightbox { background: rgba(232,242,255,0.97); }
+[data-theme="light"] .lightbox-close      { color: #08182E; }
+[data-theme="light"] .lightbox-close:hover { color: #B86A00; }
 [data-theme="light"] .lightbox-prev,
 [data-theme="light"] .lightbox-next {
   background: rgba(255,255,255,0.92);
-  border-color: rgba(184,112,0,0.3);
-  color: #1C0800;
+  border-color: rgba(26,90,138,0.3);
+  color: #08182E;
 }
 [data-theme="light"] .lightbox-prev:hover,
-[data-theme="light"] .lightbox-next:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: #fff;
-}
-[data-theme="light"] .lightbox-counter { color: #3A1E00; }
+[data-theme="light"] .lightbox-next:hover { background: #1A5A8A; border-color: #1A5A8A; color: #fff; }
+[data-theme="light"] .lightbox-counter { color: #1C3050; }
 
 /* ── COLLAPSE BUTTON ── */
 [data-theme="light"] .section-collapse-btn {
-  border-color: rgba(0,0,0,0.15);
-  color: var(--teal);
+  border-color: rgba(8,24,46,0.15);
+  color: #2272AA;
 }
 [data-theme="light"] .section-collapse-btn:hover {
-  border-color: var(--saffron);
-  color: var(--saffron);
-  background: rgba(184,112,0,0.06);
+  border-color: #B86A00;
+  color: #B86A00;
+  background: rgba(184,106,0,0.05);
 }
+
+/* ── SUBTITLE INSTAGRAM LINK ── */
+[data-theme="light"] .subtitle-ig-link { color: #2272AA; border-bottom-color: rgba(34,114,170,0.35); }
+[data-theme="light"] .subtitle-ig-link:hover { color: #B86A00; border-color: #B86A00; }
