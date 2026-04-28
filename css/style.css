@@ -2345,12 +2345,13 @@ body::before { display: none; }
   font-size: 1.1rem;
 }
 
-/* Nav logo gold */
+/* Nav logo gold — cross-browser gradient text */
 .nav-logo-en {
   background: linear-gradient(90deg, var(--teal-bright), var(--saffron-lt), var(--teal-bright));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent; /* Firefox fallback — makes gradient visible */
 }
 
 /* Subtle gold border-top on cards */
@@ -2813,7 +2814,10 @@ html {
    ============================================================ */
 
 /* Hard prevent horizontal scrollbar on all screens */
-body { overflow-x: clip; }
+body { overflow-x: hidden; } /* fallback for older Android / Firefox <81 */
+@supports (overflow: clip) {
+  body { overflow-x: clip; } /* preferred: doesn't kill position:sticky */
+}
 
 /* Word-wrap safety — no content blows out its container */
 p, h1, h2, h3, h4, li, .badge, .section-subtitle, .hero-tagline,
