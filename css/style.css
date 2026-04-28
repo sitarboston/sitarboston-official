@@ -2653,151 +2653,76 @@ html {
 /* ============================================================
    LIGHT MODE THEME
    ============================================================ */
-[data-theme="light"] {
-  --ink:          #F2E8D2;
-  --ink-soft:     #E8DCC0;
-  --teal:         #0F6A5A;
-  --teal-bright:  #1A8A78;
-  --teal-light:   #1E9D8A;
-  --saffron:      #A05E00;
-  --saffron-lt:   #BE7200;
-  --gold:         #8A5800;
-  --cream:        #1A0A00;
-  --cream-dk:     #3D2200;
-}
 
-[data-theme="light"] body {
-  background-color: var(--ink);
-  color: var(--cream-dk);
-}
 
-[data-theme="light"] #navbar {
-  background: rgba(242, 232, 210, 0.96);
-}
 
-[data-theme="light"] #navbar.scrolled {
-  background: rgba(232, 220, 192, 0.98);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-}
 
-[data-theme="light"] .nav-links a { color: var(--cream); }
 
-[data-theme="light"] .theme-toggle {
-  border-color: rgba(0,0,0,0.2);
-  color: var(--cream);
-}
 
-[data-theme="light"] .nav-mobile {
-  background: rgba(242, 232, 210, 0.99);
-}
 
-[data-theme="light"] .nav-mobile a { color: var(--cream); }
 
-[data-theme="light"] #mission,
-[data-theme="light"] .tile-bg { background-color: #E8DCC0; }
 
-[data-theme="light"] #about { background-color: var(--ink); }
 
-[data-theme="light"] #luthierie,
-[data-theme="light"] .tile-bg-saffron { background-color: #EAE0C6; }
 
-[data-theme="light"] #lessons { background-color: var(--ink); }
 
-[data-theme="light"] #sitars { background-color: #EAE0C6; }
 
-[data-theme="light"] #videos,
-[data-theme="light"] #gallery,
-[data-theme="light"] #news { background-color: var(--ink); }
 
-[data-theme="light"] #connect { background-color: #E8DCC0; }
 
-[data-theme="light"] #footer { background-color: #DDD0B0; }
 
-[data-theme="light"] .service-card,
-[data-theme="light"] .model-card {
-  background: rgba(255,255,255,0.7);
-  border-color: rgba(15,106,90,0.2);
-  border-top-color: rgba(138,88,0,0.3);
-}
 
-[data-theme="light"] .service-card:hover,
-[data-theme="light"] .model-card:hover {
-  background: rgba(255,255,255,0.9);
-  border-color: rgba(138,88,0,0.5);
-}
 
-[data-theme="light"] .pillar {
-  background: rgba(255,255,255,0.65);
-  border-left-color: var(--teal);
-}
 
-[data-theme="light"] .news-card {
-  background: rgba(255,255,255,0.7);
-  border-color: rgba(15,106,90,0.2);
-}
 
-[data-theme="light"] .news-card:hover {
-  background: rgba(255,255,255,0.9);
-}
 
-[data-theme="light"] .build-process {
-  background: rgba(255,255,255,0.6);
-  border-color: rgba(15,106,90,0.25);
-}
 
-[data-theme="light"] .pull-quote {
-  background: rgba(15,106,90,0.06);
-}
 
-[data-theme="light"] .shahidali-photo-wrap {
-  background: rgba(255,255,255,0.5);
-  border-color: rgba(15,106,90,0.2);
-}
 
-[data-theme="light"] .contact-item-icon {
-  background: rgba(15,106,90,0.1);
-  border-color: rgba(15,106,90,0.2);
-}
 
-[data-theme="light"] .badge {
-  background: rgba(15,106,90,0.12);
-  border-color: rgba(15,106,90,0.25);
-  color: var(--teal);
-}
 
-[data-theme="light"] #lightbox {
-  background: rgba(242,232,210,0.97);
-}
 
-[data-theme="light"] .lightbox-prev,
-[data-theme="light"] .lightbox-next {
-  background: rgba(255,255,255,0.9);
-  color: var(--cream);
-}
 
-[data-theme="light"] .music-player,
-[data-theme="light"] #music-player {
-  background: rgba(232,220,192,0.96);
-  border-color: rgba(138,88,0,0.3);
-}
 
-[data-theme="light"] .hero-bg {
-  filter: sepia(0.2) brightness(0.55) contrast(1.1) !important;
-}
 
-[data-theme="light"] .about-bg-overlay  { filter: brightness(0.08) sepia(0.1) !important; }
-[data-theme="light"] .luthierie-bg      { filter: brightness(0.09) sepia(0.1) !important; }
-[data-theme="light"] .lessons-bg        { filter: brightness(0.08) sepia(0.1) !important; }
-[data-theme="light"] .sitars-bg         { filter: brightness(0.07) sepia(0.1) !important; }
 
-[data-theme="light"] .video-item {
-  background: #fff;
-  border-color: rgba(15,106,90,0.2);
-}
 
-[data-theme="light"] .gallery-item { background: #e8dcc0; }
 
-[data-theme="light"] .footer-copy { color: rgba(60,40,0,0.45); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Staggered nav link fade-in when mobile menu opens */
 .nav-mobile.open a:nth-child(1) { transition-delay: 0.04s; }
@@ -2849,10 +2774,7 @@ html {
 .section-collapse-btn.open .collapse-arrow {
   transform: rotate(180deg);
 }
-[data-theme="light"] .section-collapse-btn {
-  border-color: rgba(0,0,0,0.18);
-  color: var(--teal);
-}
+
 
 /* ============================================================
    BUG FIXES — Mobile lesson order + Light theme
@@ -2866,126 +2788,90 @@ html {
 }
 
 /* Bug 3: Light theme — comprehensive readability fix */
-[data-theme="light"] .hero-craft-line { color: #1A6B5A; }
-[data-theme="light"] .hero-services   { color: #1A6B5A; }
-[data-theme="light"] .hero-persian-sub { color: var(--teal); }
-[data-theme="light"] .hero-tagline    { color: #2A1A00; }
-[data-theme="light"] .hero-divider-ornament { color: var(--saffron); }
+
+
+
+
+
 
 /* Section backgrounds — clear alternating contrast */
-[data-theme="light"] #mission,
-[data-theme="light"] .tile-bg         { background-color: #EDE3C5; }
-[data-theme="light"] #about,
-[data-theme="light"] #lessons,
-[data-theme="light"] #videos,
-[data-theme="light"] #gallery,
-[data-theme="light"] #news            { background-color: #F6EED8; }
-[data-theme="light"] #luthierie,
-[data-theme="light"] .tile-bg-saffron,
-[data-theme="light"] #sitars          { background-color: #EDE3C5; }
-[data-theme="light"] #connect         { background-color: #E4D9B8; }
-[data-theme="light"] #footer          { background-color: #D8CCAA; }
+
+
+
+
+
 
 /* Cards — solid white with shadow so they pop off the parchment */
-[data-theme="light"] .service-card,
-[data-theme="light"] .model-card {
-  background: #FFFDF5;
-  border-color: rgba(15,106,90,0.18);
-  border-top-color: rgba(138,88,0,0.28);
-  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
-}
-[data-theme="light"] .service-card h3 { color: var(--saffron); }
-[data-theme="light"] .service-card p,
-[data-theme="light"] .model-card p    { color: #3D2200; }
 
-[data-theme="light"] .news-card {
-  background: #FFFDF5;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border-color: rgba(15,106,90,0.18);
-}
-[data-theme="light"] .news-card h3 { color: #1A0A00; }
-[data-theme="light"] .news-card p  { color: #3D2200; }
 
-[data-theme="light"] .pillar {
-  background: #FFFDF5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-[data-theme="light"] .pillar h4 { color: var(--saffron); }
-[data-theme="light"] .pillar p  { color: #3D2200; }
+
+
+
+
+
+
+
+
+
 
 /* Pull quote */
-[data-theme="light"] .pull-quote {
-  background: rgba(15,106,90,0.05);
-  border-left-color: var(--saffron);
-}
-[data-theme="light"] .pull-quote p { color: #3D2200; opacity: 1; }
+
+
 
 /* Mission body */
-[data-theme="light"] .mission-body p { color: #3D2200; }
-[data-theme="light"] .mission-body strong { color: var(--teal); }
-[data-theme="light"] .mission-cta { color: var(--saffron) !important; }
+
+
+
 
 /* About section */
-[data-theme="light"] .about-text p    { color: #3D2200; }
-[data-theme="light"] .about-text strong { color: var(--teal); }
-[data-theme="light"] .about-sub       { color: var(--teal); }
-[data-theme="light"] .taleem-name     { color: var(--saffron); }
+
+
+
+
 
 /* Luthierie */
-[data-theme="light"] .luthierie-intro,
-[data-theme="light"] .luthierie-training { color: #3D2200; }
+
 
 /* Homage */
-[data-theme="light"] .homage-text    { color: #3D2200; }
-[data-theme="light"] .homage-caption { color: #3D2200; }
+
+
 
 /* Lessons */
-[data-theme="light"] .lessons-text > p { color: #3D2200; }
-[data-theme="light"] .lessons-note     { color: var(--teal); }
-[data-theme="light"] .lesson-video-caption,
-[data-theme="light"] .repair-video-caption,
-[data-theme="light"] .sa-video-caption,
-[data-theme="light"] .video-caption    { color: #3D2200; }
+
+
+
 
 /* Sitars */
-[data-theme="light"] .sitars-intro p   { color: #3D2200; }
-[data-theme="light"] .sitars-intro strong { color: var(--teal); }
-[data-theme="light"] .build-process p  { color: #3D2200; }
-[data-theme="light"] .build-process h3 { color: #1A0A00; }
-[data-theme="light"] .tonewood-callout { color: #3D2200; background: rgba(15,106,90,0.06); border-color: rgba(15,106,90,0.2); }
-[data-theme="light"] .tonewood-callout strong { color: var(--teal); }
-[data-theme="light"] .vintage-callout  { color: #3D2200; background: rgba(138,88,0,0.05); border-color: rgba(138,88,0,0.2); }
-[data-theme="light"] .credential-item  { color: #3D2200; }
-[data-theme="light"] .shahidali-photo-caption { background: var(--teal); color: #fff; }
+
+
+
+
+
+
+
+
+
 
 /* Connect */
-[data-theme="light"] .connect-info > p { color: #3D2200; }
-[data-theme="light"] .contact-item-value,
-[data-theme="light"] .contact-item-value a { color: #1A0A00; }
-[data-theme="light"] .whatsapp-link { color: #1A7A3A !important; }
+
+
+
 
 /* Section subtitle, labels, ornaments */
-[data-theme="light"] .section-subtitle { color: var(--teal); }
-[data-theme="light"] .ornament::before,
-[data-theme="light"] .ornament::after  { background: linear-gradient(to right, transparent, var(--saffron), transparent); }
+
+
 
 /* Footer */
-[data-theme="light"] .footer-tagline { color: #3D2200; }
-[data-theme="light"] .footer-nav a   { color: #3D2200; }
-[data-theme="light"] .footer-logo-en { color: var(--saffron); }
-[data-theme="light"] .footer-logo-fa { color: var(--teal); }
+
+
+
+
 
 /* Video borders in light mode */
-[data-theme="light"] video {
-  border-color: rgba(15,106,90,0.25);
-  border-top-color: rgba(138,88,0,0.22);
-}
+
 
 /* Collapse button in light mode */
-[data-theme="light"] .section-collapse-btn {
-  border-color: rgba(0,0,0,0.15);
-  color: var(--teal);
-}
+
 
 /* ============================================================
    MOBILE FAILPROOF — iOS safety, touch targets, layout
@@ -3122,4 +3008,300 @@ p, h1, h2, h3, h4, li, .badge, .section-subtitle, .hero-tagline,
     max-height: 80vh;
     border-radius: 0;
   }
+}
+
+/* ============================================================
+   BASANT RAGA LIGHT THEME — warm spring, mustard & green
+   ============================================================ */
+
+/* Core palette — all CSS variables for light mode */
+[data-theme="light"] {
+  --ink:          #FFFBEF;
+  --ink-soft:     #FFF5D4;
+  --teal:         #1B6B3A;
+  --teal-bright:  #228B45;
+  --teal-light:   #2A9E52;
+  --saffron:      #B87000;
+  --saffron-lt:   #CC8200;
+  --gold:         #9A5E00;
+  --cream:        #1C0800;
+  --cream-dk:     #3A1E00;
+  --persian-green:#1A5C2E;
+  --green-light:  #2D8A45;
+}
+
+/* Base body */
+[data-theme="light"] body {
+  background-color: var(--ink);
+  color: var(--cream-dk);
+}
+
+/* ── NAVBAR ── */
+[data-theme="light"] #navbar { background: transparent; }
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(255,248,220,0.97);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+}
+[data-theme="light"] .nav-links a { color: #1C0800; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: var(--saffron); }
+[data-theme="light"] .nav-logo-fa { color: var(--teal); }
+[data-theme="light"] .nav-logo-en {
+  background: linear-gradient(90deg, var(--teal-bright), var(--saffron-lt), var(--teal-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+[data-theme="light"] .theme-toggle {
+  border-color: rgba(0,0,0,0.18);
+  color: #1C0800;
+}
+[data-theme="light"] .nav-mobile {
+  background: rgba(255,248,210,0.99);
+}
+[data-theme="light"] .nav-mobile a { color: #1C0800; }
+[data-theme="light"] .nav-mobile a:hover { color: var(--saffron); }
+
+/* ── HERO ── */
+[data-theme="light"] .hero-bg {
+  filter: sepia(0.25) brightness(0.42) contrast(1.1) saturate(0.8) !important;
+}
+[data-theme="light"] .hero-persian-sub { color: #c8f0d8; }
+[data-theme="light"] .hero-craft-line  { color: #b8f0d0; }
+[data-theme="light"] .hero-tagline     { color: #f0e8d0; }
+[data-theme="light"] .hero-services    { color: #c8f0d8; }
+[data-theme="light"] .hero-divider-ornament { color: var(--saffron-lt); }
+[data-theme="light"] .hero-title span  { color: #FFD466; }
+
+/* ── SECTION BACKGROUNDS ── */
+[data-theme="light"] #mission,
+[data-theme="light"] .tile-bg            { background-color: #FFF5D4; }
+[data-theme="light"] #about              { background-color: #FFFBEF; }
+[data-theme="light"] #luthierie,
+[data-theme="light"] .tile-bg-saffron    { background-color: #FFF5D4; }
+[data-theme="light"] #lessons            { background-color: #FFFBEF; }
+[data-theme="light"] #sitars             { background-color: #FFF5D4; }
+[data-theme="light"] #videos             { background-color: #FFFBEF; }
+[data-theme="light"] #gallery            { background-color: #FFF5D4; }
+[data-theme="light"] #news               { background-color: #FFFBEF; }
+[data-theme="light"] #connect            { background-color: #FFE88A; }
+[data-theme="light"] #footer             { background-color: #FFD84A; border-top-color: rgba(184,112,0,0.25); }
+
+/* Section bg overlays — keep near-dark so text over them stays readable */
+[data-theme="light"] .about-bg-overlay  { filter: brightness(0.07) sepia(0.15) !important; }
+[data-theme="light"] .luthierie-bg      { filter: brightness(0.08) sepia(0.1)  !important; }
+[data-theme="light"] .lessons-bg        { filter: brightness(0.07) sepia(0.15) !important; }
+[data-theme="light"] .sitars-bg         { filter: brightness(0.06) sepia(0.1)  !important; }
+
+/* ── TYPOGRAPHY — headings & body ── */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4 { color: #1C0800; }
+
+[data-theme="light"] .section-label { color: var(--teal-bright); }
+[data-theme="light"] .section-subtitle { color: var(--teal); }
+[data-theme="light"] .ornament-icon { color: var(--saffron); }
+[data-theme="light"] .ornament::before,
+[data-theme="light"] .ornament::after {
+  background: linear-gradient(to right, transparent, var(--saffron), transparent);
+}
+
+/* ── MISSION ── */
+[data-theme="light"] .mission-headline em { color: var(--saffron); }
+[data-theme="light"] .mission-body p { color: #3A1E00; }
+[data-theme="light"] .mission-body strong { color: var(--teal); }
+[data-theme="light"] .mission-cta { color: var(--saffron) !important; }
+[data-theme="light"] .pull-quote {
+  background: rgba(27,107,58,0.06);
+  border-left-color: var(--saffron);
+}
+[data-theme="light"] .pull-quote p { color: #3A1E00; opacity: 1; font-style: italic; }
+
+/* ── ABOUT / TRAINING ── */
+[data-theme="light"] .taleem-name  { color: var(--saffron); }
+[data-theme="light"] .about-sub    { color: var(--teal); }
+[data-theme="light"] .about-text p { color: #3A1E00; }
+[data-theme="light"] .about-text strong { color: var(--teal); }
+[data-theme="light"] .badge {
+  background: rgba(27,107,58,0.10);
+  border-color: rgba(27,107,58,0.25);
+  color: var(--teal);
+}
+[data-theme="light"] .inline-link { color: var(--teal-bright); }
+[data-theme="light"] .guru-caption   { color: #3A1E00; }
+[data-theme="light"] .homage-heading { color: var(--saffron); }
+[data-theme="light"] .homage-intro   { color: #3A1E00; }
+[data-theme="light"] .homage-caption { color: #3A1E00; }
+[data-theme="light"] .homage-text    { color: #3A1E00; }
+
+/* ── LUTHIERIE ── */
+[data-theme="light"] .luthierie-intro    { color: #3A1E00; }
+[data-theme="light"] .luthierie-training { color: #3A1E00; border-left-color: var(--saffron); }
+
+/* Service cards */
+[data-theme="light"] .service-card,
+[data-theme="light"] .model-card {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(184,112,0,0.18);
+  border-top: 2px solid rgba(184,112,0,0.35);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+[data-theme="light"] .service-card:hover,
+[data-theme="light"] .model-card:hover {
+  border-color: rgba(184,112,0,0.45);
+  border-top-color: var(--saffron);
+  background: #fff;
+}
+[data-theme="light"] .service-card h3 { color: var(--saffron); }
+[data-theme="light"] .service-card p  { color: #3A1E00; }
+[data-theme="light"] .model-card h3   { color: var(--saffron); }
+[data-theme="light"] .model-card p    { color: #3A1E00; }
+[data-theme="light"] .service-icon,
+[data-theme="light"] .model-card-icon { opacity: 0.9; }
+
+/* Repair captions */
+[data-theme="light"] .repair-video-caption,
+[data-theme="light"] .sa-video-caption   { color: #3A1E00; }
+
+/* ── LESSONS ── */
+[data-theme="light"] .lessons-text > p  { color: #3A1E00; }
+[data-theme="light"] .lessons-note      { color: var(--teal); opacity: 1; }
+[data-theme="light"] .lesson-video-caption { color: #3A1E00; }
+[data-theme="light"] .pillar {
+  background: rgba(255,255,255,0.80);
+  border-left-color: var(--teal);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+[data-theme="light"] .pillar:hover { border-left-color: var(--saffron); }
+[data-theme="light"] .pillar h4    { color: var(--saffron); }
+[data-theme="light"] .pillar p     { color: #3A1E00; }
+
+/* ── CUSTOM SITARS ── */
+[data-theme="light"] .sitars-intro p      { color: #3A1E00; }
+[data-theme="light"] .sitars-intro strong { color: var(--teal); }
+[data-theme="light"] .build-process {
+  background: rgba(255,255,255,0.70);
+  border-color: rgba(27,107,58,0.25);
+}
+[data-theme="light"] .build-process h3 { color: #1C0800; }
+[data-theme="light"] .build-process p  { color: #3A1E00; }
+[data-theme="light"] .tonewood-callout {
+  background: rgba(27,107,58,0.06);
+  border-color: rgba(27,107,58,0.22);
+  color: #3A1E00;
+}
+[data-theme="light"] .tonewood-callout strong { color: var(--teal); }
+[data-theme="light"] .vintage-callout {
+  background: rgba(184,112,0,0.06);
+  border-color: rgba(184,112,0,0.22);
+  color: #3A1E00;
+}
+[data-theme="light"] .shahidali-photo-wrap {
+  background: rgba(255,255,255,0.55);
+  border-color: rgba(27,107,58,0.2);
+}
+[data-theme="light"] .credential-item  { color: #3A1E00; }
+[data-theme="light"] .cred-icon        { color: var(--saffron); }
+[data-theme="light"] .shahidali-link   { color: var(--teal-bright); border-color: rgba(27,107,58,0.3); }
+[data-theme="light"] .shahidali-photo-caption { background: var(--teal); color: #fff; }
+
+/* ── VIDEOS ── */
+[data-theme="light"] .video-caption  { color: #3A1E00; }
+[data-theme="light"] .video-item {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(184,112,0,0.18);
+}
+[data-theme="light"] .video-item:hover { border-color: var(--saffron); }
+[data-theme="light"] video {
+  border-color: rgba(27,107,58,0.22);
+  border-top-color: rgba(184,112,0,0.28);
+}
+[data-theme="light"] video:hover { border-color: rgba(184,112,0,0.45); }
+
+/* ── GALLERY ── */
+[data-theme="light"] .gallery-item { background: #FFF0C0; }
+
+/* ── NEWS ── */
+[data-theme="light"] .news-card {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(184,112,0,0.18);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+[data-theme="light"] .news-card:hover {
+  background: #fff;
+  border-color: var(--saffron);
+}
+[data-theme="light"] .news-card h3  { color: #1C0800; }
+[data-theme="light"] .news-card p   { color: #3A1E00; }
+[data-theme="light"] .news-date     { color: var(--teal); }
+[data-theme="light"] .news-tag {
+  background: rgba(184,112,0,0.12);
+  color: var(--saffron);
+  border-color: rgba(184,112,0,0.25);
+}
+[data-theme="light"] .news-link     { color: var(--teal-bright); }
+[data-theme="light"] .news-link:hover { color: var(--saffron); }
+
+/* ── CONNECT ── */
+[data-theme="light"] .connect-info-centered h2 { color: #1C0800; }
+[data-theme="light"] .connect-info > p         { color: #3A1E00; }
+[data-theme="light"] .contact-item-label       { color: var(--teal); }
+[data-theme="light"] .contact-item-value,
+[data-theme="light"] .contact-item-value a     { color: #1C0800; }
+[data-theme="light"] .contact-item-value a:hover { color: var(--saffron); }
+[data-theme="light"] .whatsapp-link            { color: #1A7A3A !important; }
+[data-theme="light"] .contact-item-icon {
+  background: rgba(27,107,58,0.10);
+  border-color: rgba(27,107,58,0.22);
+  color: var(--teal);
+}
+
+/* ── FOOTER ── */
+[data-theme="light"] #footer { border-top-color: rgba(184,112,0,0.2); }
+[data-theme="light"] .footer-logo-en { color: var(--saffron); }
+[data-theme="light"] .footer-logo-fa { color: var(--teal); }
+[data-theme="light"] .footer-tagline { color: #3A1E00; }
+[data-theme="light"] .footer-nav a   { color: #3A1E00; }
+[data-theme="light"] .footer-nav a:hover { color: var(--teal-bright); }
+[data-theme="light"] .footer-copy    { color: rgba(58,30,0,0.5); }
+
+/* ── MUSIC PLAYER ── */
+[data-theme="light"] #music-player {
+  background: rgba(255,242,180,0.97);
+  border-color: rgba(184,112,0,0.35);
+}
+[data-theme="light"] .music-label  { color: #3A1E00; }
+[data-theme="light"] .music-note   { color: var(--saffron); }
+[data-theme="light"] .music-btn    { border-color: var(--teal); color: var(--teal); }
+[data-theme="light"] .music-btn:hover { background: var(--teal); color: #fff; }
+
+/* ── LIGHTBOX ── */
+[data-theme="light"] #lightbox { background: rgba(255,248,200,0.97); }
+[data-theme="light"] .lightbox-close { color: #1C0800; }
+[data-theme="light"] .lightbox-close:hover { color: var(--saffron); }
+[data-theme="light"] .lightbox-prev,
+[data-theme="light"] .lightbox-next {
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(184,112,0,0.3);
+  color: #1C0800;
+}
+[data-theme="light"] .lightbox-prev:hover,
+[data-theme="light"] .lightbox-next:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+[data-theme="light"] .lightbox-counter { color: #3A1E00; }
+
+/* ── COLLAPSE BUTTON ── */
+[data-theme="light"] .section-collapse-btn {
+  border-color: rgba(0,0,0,0.15);
+  color: var(--teal);
+}
+[data-theme="light"] .section-collapse-btn:hover {
+  border-color: var(--saffron);
+  color: var(--saffron);
+  background: rgba(184,112,0,0.06);
 }
