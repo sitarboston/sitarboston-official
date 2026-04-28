@@ -1,699 +1,1006 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SitarBoston — Sitar Lessons, Repair & Sales · Boston, MA</title>
-  <meta name="description" content="SitarBoston offers expert sitar lessons, professional jawari and maintenance services, and concert-grade sitars for sale. Serving the greater Boston area from Westford, MA." />
-  <meta name="keywords" content="sitar lessons Boston, sitar repair Boston, jawari Boston, sitar sales, Shahid Ali sitar, sitar luthier Massachusetts" />
-  <meta property="og:title" content="SitarBoston — Sitar Lessons, Repair & Sales" />
-  <meta property="og:description" content="Expert sitar maintenance, lessons, and sales in the Boston area." />
-  <meta property="og:image" content="images/photo_02.jpg" />
-  <meta property="og:url" content="https://sitarboston.com" />
-  <link rel="canonical" href="https://sitarboston.com/" />
+<html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SitarBoston — A community resource for sitar players in New England. Sitar luthierie, jawari, lessons, and custom sitars by Shahid Ali of Miraj.">
+  <meta name="keywords" content="sitar, Boston, luthierie, jawari, lessons, Shahid Ali, Miraj, Indian classical music, New England">
+  <title>SitarBoston — سیتار بوستون | Community Resource for Sitar Players in New England</title>
 
-  <!-- Persian-style favicon using data URI -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%234A0810'/><text y='.9em' font-size='80' x='10' fill='%23C9A84C'>♬</text></svg>" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="SitarBoston — A Community Resource for Sitar Players in New England">
+  <meta property="og:description" content="Sitar luthierie, jawari, lessons, and concert-grade custom sitars by Shahid Ali of Miraj. Serving Massachusetts, Rhode Island, Connecticut, and New Hampshire.">
+  <meta property="og:image" content="images/Top cover.jpg">
+  <meta property="og:type" content="website">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://sitarboston.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 </head>
+
 <body>
 
 <!-- ============================================================
      NAVBAR
      ============================================================ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-brand" style="text-decoration:none">
-    <span class="brand-en">SitarBoston</span>
-    <span class="brand-fa">سیتار بوستون</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#videos">Videos</a></li>
-    <li><a href="#updates">News</a></li>
-    <li><a href="#contact" class="nav-cta">Book a Lesson</a></li>
-  </ul>
-  <button class="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="SitarBoston — home">
+      <span class="nav-logo-en">SitarBoston</span>
+      <span class="nav-logo-fa">سیتار بوستون</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#about">Training</a></li>
+      <li><a href="#luthierie">Luthierie</a></li>
+      <li><a href="#lessons">Lessons</a></li>
+      <li><a href="#sitars">Custom Sitars</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light mode">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="#mission" class="nav-mobile-link">Mission</a>
+  <a href="#about" class="nav-mobile-link">Training</a>
+  <a href="#luthierie" class="nav-mobile-link">Luthierie</a>
+  <a href="#lessons" class="nav-mobile-link">Lessons</a>
+  <a href="#sitars" class="nav-mobile-link">Custom Sitars</a>
+  <a href="#videos" class="nav-mobile-link">Videos</a>
+  <a href="#news" class="nav-mobile-link">News</a>
+  <a href="#connect" class="nav-mobile-link">Connect</a>
+</div>
+
 
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-tile-overlay" aria-hidden="true"></div>
 
-  <!-- Decorative Persian arch SVG -->
-  <svg class="hero-arch" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M100,200 L100,120 Q100,60 300,20 Q500,60 500,120 L500,200 Z"
-          fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-    <path d="M130,200 L130,125 Q130,75 300,45 Q470,75 470,125 L470,200 Z"
-          fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="300" cy="20" r="6" fill="#C9A84C" opacity="0.7"/>
-    <circle cx="100" cy="120" r="4" fill="#C9A84C" opacity="0.4"/>
-    <circle cx="500" cy="120" r="4" fill="#C9A84C" opacity="0.4"/>
-  </svg>
+  <!-- Persian Arch SVG -->
+  <div class="hero-arch" aria-hidden="true">
+    <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.2">
+      <!-- Outer arch frame — turquoise -->
+      <path d="M50,580 L50,250 Q50,50 250,50 Q450,50 450,250 L450,580 Z" stroke="#2FC4AE"></path>
+      <!-- Inner arch — warm red accent -->
+      <path d="M80,580 L80,260 Q80,100 250,100 Q420,100 420,260 L420,580 Z" stroke="rgba(200,70,60,0.55)"></path>
+      <!-- Spandrel geometric fill — green -->
+      <path d="M50,250 Q50,50 250,50 Q450,50 450,250" stroke="rgba(80,180,90,0.5)" stroke-dasharray="6,4"></path>
+      <!-- Keel arch point — turquoise -->
+      <path d="M160,200 Q250,80 340,200" stroke="#2FC4AE"></path>
+      <!-- Lattice horizontals — soft gold -->
+      <line x1="80" y1="350" x2="420" y2="350" stroke="rgba(232,168,32,0.3)" stroke-dasharray="4,6"></line>
+      <line x1="80" y1="440" x2="420" y2="440" stroke="rgba(232,168,32,0.3)" stroke-dasharray="4,6"></line>
+      <line x1="80" y1="520" x2="420" y2="520" stroke="rgba(232,168,32,0.3)" stroke-dasharray="4,6"></line>
+      <!-- Corner ornaments — gold -->
+      <circle cx="250" cy="50" r="8" fill="#E8A820" opacity="0.6"></circle>
+      <circle cx="50" cy="250" r="5" fill="rgba(200,70,60,0.5)"></circle>
+      <circle cx="450" cy="250" r="5" fill="rgba(80,180,90,0.5)"></circle>
+      <!-- Diamond medallion — turquoise -->
+      <path d="M250,140 L275,165 L250,190 L225,165 Z" stroke="#2FC4AE" stroke-width="0.8"></path>
+    </svg>
+  </div>
 
   <div class="hero-content">
-    <p class="hero-persian-text">استاد سیتار — آموزش · تعمیر · فروش</p>
-
-    <h1 class="hero-title">
-      SitarBoston
-      <span>The Art of Sitar — in New England</span>
-    </h1>
-
-    <div class="hero-divider">
-      <div class="hero-divider-line"></div>
-      <span class="hero-divider-gem">✦</span>
-      <div class="hero-divider-line right"></div>
-    </div>
-
-    <p class="hero-tagline">Lessons · Jawari &amp; Maintenance · Concert-Grade Sitars · Westford, MA</p>
-
+    <span class="hero-persian-sub">استاد سیتار — آموزش · تعمیر · فروش</span>
+    <p class="hero-craft-line">Instruction · Restoration · Craftsmanship</p>
+    <h1 class="hero-title"><span>SitarBoston</span></h1>
+    <p class="hero-tagline" data-editable="hero-tagline">serving enthusiasts, beginners, and advanced students in New England</p>
+    <div class="hero-divider-ornament" aria-hidden="true">✦</div>
+    <p class="hero-services">Lessons &nbsp;·&nbsp; Jawari &amp; Maintenance &nbsp;·&nbsp; Concert-Grade Sitars &nbsp;·&nbsp; Westford, MA</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-gold">Book a Lesson</a>
-      <a href="#services" class="btn btn-outline">Our Services</a>
+      <a href="#mission" class="btn btn-primary">Our Mission</a>
+      <a href="#connect" class="btn btn-outline">Connect With Us</a>
     </div>
   </div>
 
-  <div class="hero-scroll">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M12 4v16m0 0l-4-4m4 4l4-4"/>
+  <div class="scroll-indicator" aria-hidden="true">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
     <span>Scroll</span>
   </div>
 </section>
 
+
 <!-- ============================================================
-     ABOUT
+     MISSION
      ============================================================ -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-photo-wrap reveal">
-        <div class="about-photo-frame">
-          <img src="images/photo_47.jpg" alt="SitarBoston — Sitar workshop Westford MA"
-               onerror="this.src='images/photo_02.jpg'" />
-          <div class="about-corner tl"></div>
-          <div class="about-corner tr"></div>
-          <div class="about-corner bl"></div>
-          <div class="about-corner br"></div>
+<section id="mission" class="tile-bg" aria-labelledby="mission-heading">
+  <div class="container">
+    <div class="mission-inner">
+      <span class="section-label reveal">New England · سیتار</span>
+      <h2 class="mission-headline reveal" id="mission-heading">
+        The Sitar Community in New England is Growing —<br>
+        <em>and Underserved</em>
+      </h2>
+
+      <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
+
+      <div class="mission-body">
+        <p class="reveal" data-editable="mission-lead">Sitar playing is experiencing a quiet renaissance across New England. From Boston to Providence, from Hartford to Portsmouth, more people than ever are discovering the depth and beauty of this ancient instrument. In studios and living rooms, in university music departments and community centers, the sitar is finding new voices — curious, dedicated, hungry for knowledge.</p>
+
+        <p class="reveal reveal-delay-1" data-editable="mission-need">Yet for all its growing appeal, the sitar remains one of the most complex instruments to maintain. Bridge jawari — the precise shaping of the main bridge that determines tone, sustain, and buzzing character — is a highly specialized craft. Fret tying, sympathetic string alignment, uneven sound across registers, buzzing problems, tuning peg slippage — these are challenges that can derail months of practice and break a student's motivation.</p>
+
+        <div class="pull-quote reveal reveal-delay-1">
+          <p>"When your sitar doesn't sound right, your riyaz suffers. When your riyaz suffers, your motivation fades."</p>
+        </div>
+
+        <p class="reveal reveal-delay-2">In the entire New England region, there is essentially no dedicated sitar luthierie. Players must ship their sitars to New York, Seattle, or California — waiting months — or simply play on an improperly maintained instrument that holds them back. For a student just beginning their journey, an unresponsive or buzzing sitar can feel like a wall. For an advanced player preparing for a recital, it can be a crisis.</p>
+
+        <p class="reveal reveal-delay-2"><strong class="mission-cta">SitarBoston exists to change that.</strong> We are building a community resource — a place where sitar players at every level can find guidance, maintenance, instruments, and one another. Not a business. A community.</p>
+      </div>
+
+      <!-- Mission flanking photos -->
+      <div class="mission-photos reveal">
+        <div class="mission-photo-item">
+          <img src="images/Luthiere Cover.jpg" alt="Sitar on a Persian rug" loading="lazy">
+        </div>
+        <div class="mission-photo-item">
+          <img src="images/Repaired Sitars/sitar1.jpg" alt="A classic sitar restored" loading="lazy">
         </div>
       </div>
 
-      <div class="about-text reveal reveal-delay-1">
-        <p class="about-eyebrow">Our Story · داستان ما</p>
-        <h2 class="about-heading">Boston's Dedicated<br/>Sitar Workshop</h2>
+    </div>
+  </div>
+</section>
 
-        <div class="ornament"><div class="ornament-diamond"></div></div>
 
-        <p class="about-body">
-          SitarBoston was born out of necessity and passion. As a sitar player in New England,
-          finding skilled maintenance was nearly impossible — sitars were shipped to New York
-          or Pennsylvania, or players waited months for help.
-        </p>
-        <p class="about-body">
-          Trained directly by master craftsmen in <strong style="color:var(--gold)">Kolkata</strong>
-          and the legendary sitar-making city of <strong style="color:var(--gold)">Miraj, India</strong>,
-          we brought that expertise home. Today, Boston-area sitarists no longer need to wait, ship,
-          or drive hours for world-class sitar care.
-        </p>
+<!-- ============================================================
+     TALEEM — TRAINING
+     ============================================================ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="about-bg-overlay" aria-hidden="true"></div>
+  <div class="container">
 
-        <blockquote class="about-quote">
-          "No need to wait for months or ship your sitar or drive to NY or PA —
-          professional sitar maintenance is now right here in the Boston area."
-        </blockquote>
+    <div class="section-header">
+      <span class="section-label reveal">Taleem · تعلیم</span>
+      <h2 class="reveal" id="about-heading">Training</h2>
+      <span class="section-subtitle reveal">Imdadkhani Gharana &nbsp;·&nbsp; Gayaki Ang &nbsp;·&nbsp; <a href="https://www.instagram.com/gurukulcanada/" target="_blank" rel="noopener" class="subtitle-ig-link">@gurukulcanada</a></span>
+    </div>
 
-        <p class="about-body">
-          We carry <strong style="color:var(--gold)">concert-grade Shahid Ali sitars</strong> direct
-          from Miraj, restore rare vintage instruments (Hiren Roy, Sarat Sardar, Kanailal),
-          and offer personalized lessons for beginners through intermediate players
-          — all from our workshop in Westford, MA.
-        </p>
+    <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
+
+    <div class="about-grid">
+
+      <div class="about-image-wrap reveal-left">
+        <img src="images/Bio Guru etc/sitar3.jpg" alt="Dr. Samya Bhaduri — sitar in practice" loading="lazy">
+        <div class="about-image-accent" aria-hidden="true"></div>
+      </div>
+
+      <div class="about-text reveal-right">
+        <h3 class="taleem-name">Dr. Samya Bhaduri</h3>
+        <span class="about-sub">Oncology Scientist · Sitar Student · New England</span>
+
+        <p data-editable="about-p1">An oncology scientist by profession and a lifelong student of music, Dr. Samya Bhaduri has been fortunate to receive training in the <strong>Imdadkhani Gharana</strong> of sitar playing — one of the most distinguished lineages in the classical tradition, tracing its roots to the legendary Imdad Khan and carried forward through Ustad Vilayat Khan.</p>
+
+        <p data-editable="about-p2">His guru is <strong>Shri Sharanjeet Singh Mand</strong> (<a href="https://sharanjeetmand.com/about/" target="_blank" rel="noopener" class="inline-link">sharanjeetmand.com</a>), virtuoso disciple of <strong>Pt. (Dr.) Harvinder Sharma</strong> (<a href="https://harvindersharma.com/" target="_blank" rel="noopener" class="inline-link">harvindersharma.com</a>) — recipient of the <strong>Sangeet Natak Akademi Award</strong>,himself a disciple of the legendary Ustad Vilayat Khan Sahib for 27 years</p>
 
         <div class="about-badges">
-          <span class="badge">Trained in Kolkata</span>
-          <span class="badge">Trained in Miraj</span>
+          <span class="badge">Imdadkhani Gharana</span>
+          <span class="badge">Student of Shri Sharanjeet Singh Mand</span>
           <span class="badge">Jawari Specialist</span>
-          <span class="badge">Shahid Ali Dealer</span>
           <span class="badge">Vintage Restoration</span>
           <span class="badge">Westford, MA</span>
         </div>
       </div>
+
     </div>
+
+    <!-- Guru Photos -->
+    <div class="guru-photos reveal">
+      <div class="guru-photo-item">
+        <img src="images/Bio Guru etc/Gurus-1.jpg" alt="With Guruji" loading="lazy">
+        <p class="guru-caption">With Guruji</p>
+      </div>
+      <div class="guru-photo-item">
+        <img src="images/Bio Guru etc/gurus-2.jpg" alt="With Guru" loading="lazy">
+        <p class="guru-caption">With Guru</p>
+      </div>
+      <div class="guru-photo-item">
+        <img src="images/with guruji.jpg" alt="With Guruji — sitar session" loading="lazy">
+        <p class="guru-caption">With Guruji</p>
+      </div>
+    </div>
+
+    <!-- Homage Subsection -->
+    <div class="homage-section reveal">
+      <div class="ornament"><span class="ornament-icon">✦</span></div>
+      <h3 class="homage-heading">Homage</h3>
+      <p class="homage-intro">In reverence to the souls whose light illuminates this tradition.</p>
+      <div class="homage-grid">
+
+        <div class="homage-item reveal reveal-delay-1">
+          <img src="images/Nizamuddin.jpg" alt="Hazrat Nizamuddin Aulia Dargah — Old Delhi" loading="lazy">
+          <p class="homage-caption">Hazrat Nizamuddin Aulia<br><span>Dargah · Old Delhi</span></p>
+        </div>
+
+        <div class="homage-item reveal reveal-delay-2">
+          <img src="images/Khusrao.jpg" alt="Amir Khusrao Tomb — Old Delhi" loading="lazy">
+          <p class="homage-caption">Amir Khusrao<br><span>Tomb · Old Delhi</span></p>
+        </div>
+
+        <div class="homage-item reveal reveal-delay-3">
+          <img src="images/Vilayat Khan Tomb.jpg" alt="Ustad Enayat Khan and Ustad Vilayat Khan tomb — Calcutta" loading="lazy">
+          <p class="homage-caption">Ustad Enayat Khan &amp; Ustad Vilayat Khan<br><span>Aftab-e-Sitar · Calcutta</span></p>
+        </div>
+
+      </div>
+      <p class="homage-text reveal">Sitar was invented by Hazrat Amir Khusrao, a devoted disciple of the great Sufi Saint, Hazrat Nizamuddin Aulia, Mehboob-e-ilahi. Ustad Vilayat Khan Sahib, who is buried next to his father, Ustad Enayat Khan Sahib, is credited with the creation of the gayaki ang (singing style) of sitar playing that is heard everywhere now. He was a contemporary of the great Pandit Ravi Shankar of the laraj Kharaj style of sitar playing. Together they brought sitar to the world stage.</p>
+    </div>
+
   </div>
 </section>
 
-<!-- ============================================================
-     SERVICES
-     ============================================================ -->
-<section id="services">
-  <div class="section-inner">
-    <p class="section-subtitle">What We Offer · خدمات ما</p>
-    <h2 class="section-title">Three Pillars of Excellence</h2>
-    <div class="ornament"><div class="ornament-diamond"></div></div>
 
+<!-- ============================================================
+     LUTHIERIE
+     ============================================================ -->
+<section id="luthierie" class="tile-bg-saffron" aria-labelledby="luthierie-heading">
+  <div class="luthierie-bg" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label reveal">Craft · کاردستی</span>
+      <h2 class="reveal" id="luthierie-heading">Sitar Luthierie</h2>
+      <span class="section-subtitle reveal">The Art of Keeping the Sitar Alive</span>
+    </div>
+
+    <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
+
+    <p class="luthierie-intro reveal" data-editable="luth-intro">Sitar luthierie is among the rarest craft specializations in the world. The jawari — the precise convex curvature filed into the ebony or bone bridge — is what gives the sitar its characteristic buzz, its sustain, its singing voice. Getting it wrong by a fraction of a millimeter changes everything. Too open and it buzzes unpleasantly. Too closed and the tone dies. The perfect jawari is a lifelong pursuit</p>
+
+    <p class="luthierie-training reveal">Training was received from the old sitar luthiers of Calcutta — masters of a tradition that dates to the great workshops of the nineteenth century — and deepened under the direct guidance of the sitar makers of Miraj, the undisputed capital of the craft in India today.</p>
+
+    <!-- Services Grid -->
     <div class="services-grid">
-
-      <!-- Lessons -->
-      <div class="service-card reveal">
-        <span class="service-icon">🎵</span>
-        <h3 class="service-name">Sitar Lessons</h3>
-        <span class="service-name-fa">آموزش سیتار</span>
-        <p class="service-desc">
-          One-on-one and group lessons for adults and children — beginner
-          through intermediate. Learn authentic technique, ragas, and the
-          rich tradition of Hindustani classical music.
-        </p>
-        <ul class="service-list">
-          <li>30-minute sessions (beginners)</li>
-          <li>60-minute sessions (all levels)</li>
-          <li>Adults &amp; children welcome</li>
-          <li>In-person · Westford, MA</li>
-          <li>Raga-based curriculum</li>
-          <li>Proper hand &amp; posture technique</li>
-        </ul>
-        <div class="service-price">
-          <strong>$30</strong> / 30 min &nbsp;·&nbsp; <strong>$45–$50</strong> / 60 min
-        </div>
-      </div>
-
-      <!-- Maintenance -->
       <div class="service-card reveal reveal-delay-1">
-        <span class="service-icon">🔧</span>
-        <h3 class="service-name">Jawari &amp; Repair</h3>
-        <span class="service-name-fa">جواری و تعمیر</span>
-        <p class="service-desc">
-          Expert jawari and full maintenance — the same knowledge passed
-          down by master sitar makers of Kolkata and Miraj. VK and SPK
-          style jawari, vintage restoration, and complete tune-ups.
-        </p>
-        <ul class="service-list">
-          <li>Closed &amp; Gol Jawari (VK / SPK style)</li>
-          <li>Tarab bridge jawari</li>
-          <li>New &amp; replacement main bridges</li>
-          <li>Fret tightening &amp; adjustment</li>
-          <li>Tuning peg &amp; langot repair</li>
-          <li>Tar Gahan maintenance</li>
-          <li>Full string set (main &amp; tarab)</li>
-          <li>Vintage instrument restoration</li>
-          <li>Accessories &amp; supplies</li>
-        </ul>
-        <div class="service-price">
-          Contact for pricing · in-studio or by arrangement
-        </div>
+        <span class="service-icon" aria-hidden="true">🪛</span>
+        <h3>Bridge Jawari</h3>
+        <p>Closed and gol (VK and SPK style). The most critical maintenance a sitar can receive — shaping the main and tarab bridges for proper tone, sustain, and character. Training in both the Vilayat Khan closed style and the Shahid Parvez open style means each instrument is set to its player's voice, not a formula.</p>
       </div>
 
-      <!-- Sales -->
       <div class="service-card reveal reveal-delay-2">
-        <span class="service-icon">🪕</span>
-        <h3 class="service-name">Sitar Sales</h3>
-        <span class="service-name-fa">فروش سیتار</span>
-        <p class="service-desc">
-          Handpicked concert-grade sitars sourced directly from the finest
-          workshops in India — Shahid Ali of Miraj, Kanailal of Calcutta —
-          and restored vintage instruments of exceptional quality.
-        </p>
-        <ul class="service-list">
-          <li>Shahid Ali sitars — Miraj, India</li>
-          <li>Gandhar Pancham &amp; VK styles</li>
-          <li>SPK Black ebony-bridge sitars</li>
-          <li>Kanailal workshop instruments</li>
-          <li>Restored vintage sitars (when available)</li>
-          <li>Hiren Roy, Sarat Sardar originals</li>
-          <li>Teak &amp; special wood sitars</li>
-          <li>Professional pre-sale setup included</li>
-        </ul>
-        <div class="service-price">
-          Concert-grade instruments · inquire for current inventory
-        </div>
+        <span class="service-icon" aria-hidden="true">🔧</span>
+        <h3>Fret Work</h3>
+        <p>Tying, spacing, height adjustment. Uneven frets cause uneven sound across registers, and the asymmetries compound with time. Proper fret tying ensures clean, ringing notes at every position on the neck — the foundation of clean technique and musical expression.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-icon" aria-hidden="true">🪕</span>
+        <h3>Full Restoration</h3>
+        <p>For vintage instruments — Sarat Sardar, Hiren Roy, Naskar, Kanailal — rare sitars that deserve meticulous care. New bridges carved from bone, full string sets, peg smoothening, crack repair, polish. Bringing a historic instrument back to its voice is one of the deepest satisfactions of this work.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-4">
+        <span class="service-icon" aria-hidden="true">🪢</span>
+        <h3>Ongoing Maintenance</h3>
+        <p>String changes (main and tarab), tuning peg adjustment, langot repair, Tar Gahan maintenance. A sitar that is regularly maintained plays better, sounds better, and rewards its player. Keeping your instrument at its best year-round — this is ongoing service available to students and community members.</p>
+      </div>
+    </div>
+
+    <!-- Luthierie Photo Grid — from Sitar Luthier folder -->
+    <div class="luthierie-grid" id="luth-gallery">
+
+      <div class="lg-item reveal" data-img="images/Sitar Luthier/IMG_5694.jpg" data-caption="Working on a sitar — bridge and strings in progress">
+        <img src="images/Sitar Luthier/IMG_5694.jpg" alt="Sitar luthierie work in progress" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal reveal-delay-1" data-img="images/Sitar Luthier/IMG_5698.JPG" data-caption="Fret tying — close-up of the neck and brass frets">
+        <img src="images/Sitar Luthier/IMG_5698.JPG" alt="Fret tying on sitar neck" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal reveal-delay-2" data-img="images/Sitar Luthier/IMG_5708.jpg" data-caption="Bridge work — jawari shaping in progress">
+        <img src="images/Sitar Luthier/IMG_5708.jpg" alt="Bridge jawari work" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal reveal-delay-3" data-img="images/Sitar Luthier/IMG_5712.jpg" data-caption="Detail work — patience and precision">
+        <img src="images/Sitar Luthier/IMG_5712.jpg" alt="Detailed luthierie work on sitar" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal" data-img="images/Sitar Luthier/IMG_5713.jpg" data-caption="Sitar restoration — the craft at work">
+        <img src="images/Sitar Luthier/IMG_5713.jpg" alt="Sitar restoration craft" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal reveal-delay-1" data-img="images/Sitar Luthier/IMG_5722.jpg" data-caption="Instrument care — every detail matters">
+        <img src="images/Sitar Luthier/IMG_5722.jpg" alt="Sitar instrument care and repair" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="lg-item reveal reveal-delay-2" data-img="images/Sitar Luthier/IMG_5733.jpg" data-caption="The workshop — tools of the trade">
+        <img src="images/Sitar Luthier/IMG_5733.jpg" alt="Sitar luthier workshop and tools" loading="lazy">
+        <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
     </div>
 
-    <!-- CTA Banner -->
-    <div class="reveal" style="margin-top:3rem; padding:2rem; border:1px solid rgba(201,168,76,0.25);
-         background:rgba(201,168,76,0.04); text-align:center; position:relative;">
-      <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);
-           width:80px;height:2px;background:var(--gold);"></div>
-      <p style="font-family:var(--font-head);font-size:1.3rem;color:var(--ivory);margin-bottom:0.8rem;">
-        Serving the Greater Boston Area
-      </p>
-      <p style="color:var(--cream-dk);font-size:0.95rem;max-width:600px;margin:0 auto 1.5rem;">
-        Westford, MA — convenient for players from Boston, Cambridge, Lowell,
-        Worcester, Nashua, and surrounding areas. No more shipping your sitar across state lines.
-      </p>
-      <a href="#contact" class="btn btn-gold">Get in Touch</a>
+    <!-- ── Repair & Restoration Subsection ── -->
+    <div class="repair-section">
+      <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
+      <div class="section-header">
+        <span class="section-label reveal">Restoration · بازسازی</span>
+        <h3 class="reveal">Repair &amp; Restoration</h3>
+        <span class="section-subtitle reveal">Bringing Historic Instruments Back to Voice</span>
+      </div>
+
+      <!-- Repaired Sitar Photos -->
+      <div class="luthierie-grid repair-grid">
+
+        <div class="lg-item reveal" data-img="images/Repaired Sitars/photo_11.jpg" data-caption="Restored sitar — bridge and body detail">
+          <img src="images/Repaired Sitars/photo_11.jpg" alt="Restored sitar" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-1" data-img="images/Repaired Sitars/photo_14.jpg" data-caption="Vintage sitar restoration">
+          <img src="images/Repaired Sitars/photo_14.jpg" alt="Vintage sitar restoration" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-2" data-img="images/Repaired Sitars/photo_16.jpg" data-caption="Sitar repair — neck and fret work">
+          <img src="images/Repaired Sitars/photo_16.jpg" alt="Sitar neck and fret repair" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-3" data-img="images/Repaired Sitars/photo_17.jpg" data-caption="Restored to concert condition">
+          <img src="images/Repaired Sitars/photo_17.jpg" alt="Sitar restored to concert condition" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal" data-img="images/Repaired Sitars/photo_18.webp" data-caption="Bridge carving and refit">
+          <img src="images/Repaired Sitars/photo_18.webp" alt="Bridge carving and refit" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-1" data-img="images/Repaired Sitars/photo_19.webp" data-caption="Full string replacement — main and tarab">
+          <img src="images/Repaired Sitars/photo_19.webp" alt="Full string replacement" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-2" data-img="images/Repaired Sitars/photo_27.webp" data-caption="Body polish and crack repair">
+          <img src="images/Repaired Sitars/photo_27.webp" alt="Body polish and crack repair" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-3" data-img="images/Repaired Sitars/photo_29.webp" data-caption="Peg smoothening and tuning restoration">
+          <img src="images/Repaired Sitars/photo_29.webp" alt="Peg smoothening and tuning" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal" data-img="images/Repaired Sitars/photo_38.jpg" data-caption="Completed restoration — ready to play">
+          <img src="images/Repaired Sitars/photo_38.jpg" alt="Completed sitar restoration" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-1" data-img="images/Repaired Sitars/photo_39.jpg" data-caption="Before and after — the transformation">
+          <img src="images/Repaired Sitars/photo_39.jpg" alt="Sitar before and after restoration" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-2" data-img="images/Repaired Sitars/photo_42.jpg" data-caption="Vintage sitar — fully restored">
+          <img src="images/Repaired Sitars/photo_42.jpg" alt="Vintage sitar fully restored" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+        <div class="lg-item reveal reveal-delay-3" data-img="images/Repaired Sitars/sitar1.jpg" data-caption="A classic instrument — restored to its voice">
+          <img src="images/Repaired Sitars/sitar1.jpg" alt="Classic sitar restored" loading="lazy">
+          <div class="lg-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        </div>
+
+      </div>
+
+      <!-- Repaired Sitar Videos -->
+      <div class="repair-videos">
+
+        <div class="repair-video-item reveal reveal-delay-1">
+          <video poster="images/posters/p-bm1.jpg" controls="" preload="none" loading="lazy" aria-label="BM Sitarmaker GP sitar">
+            <source src="videos/RepairedSitar /BM Sitarmaker GP.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">BM Sitarmaker GP</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-2">
+          <video poster="images/posters/p-bm2.jpg" controls="" preload="none" loading="lazy" aria-label="BM Sitarmaker GP sitar — sound check">
+            <source src="videos/RepairedSitar /BM Sitarmaker GP sitar.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">BM Sitarmaker GP Sitar</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-3">
+          <video poster="images/posters/p-kan1.jpg" controls="" preload="none" loading="lazy" aria-label="Kanailal Sons GP sitar">
+            <source src="videos/RepairedSitar /Kanailal Sons GP.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">Kanailal Sons GP</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-1">
+          <video controls="" preload="none" poster="images/posters/p-kan2.jpg" loading="lazy" aria-label="Kanailal and Sons GP sitar sound">
+            <source src="videos/RepairedSitar /Kanailal &amp; Sons GP sitar.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">Kanailal &amp; Sons GP — singing after bridge and jawari work</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-2">
+          <video poster="images/posters/p-hiren1.jpg" controls="" preload="none" loading="lazy" aria-label="Restored Hiren Roy vintage KP sitar">
+            <source src="videos/RepairedSitar /Restored Hiren Roy vintage 60s KP sitar.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">Restored Hiren Roy Vintage 60s KP Sitar</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-3">
+          <video poster="images/posters/p-hiren2.jpg" controls="" preload="none" loading="lazy" aria-label="Sound check and graduation on vintage Hiren Roy">
+            <source src="videos/RepairedSitar /Soundchcek and graduation on vintage Hiren Roy.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">Sound Check & Graduation — Vintage Hiren Roy</p>
+        </div>
+
+        <div class="repair-video-item reveal reveal-delay-1">
+          <video poster="images/posters/p-sarat.jpg" controls="" preload="none" loading="lazy" aria-label="Vintage Sarat Sardar KP sitar restored">
+            <source src="videos/RepairedSitar /Vintage sarat Sardar Sitar KP - restored.mp4" type="video/mp4">
+          </video>
+          <p class="repair-video-caption">Vintage Sarat Sardar Sitar KP — Restored</p>
+        </div>
+
+      </div>
     </div>
+
   </div>
 </section>
+
 
 <!-- ============================================================
-     GALLERY
+     LESSONS
      ============================================================ -->
-<section id="gallery">
-  <div class="section-inner">
-    <p class="section-subtitle">Our Work · گالری</p>
-    <h2 class="section-title">Gallery</h2>
-    <div class="ornament"><div class="ornament-diamond"></div></div>
+<section id="lessons" aria-labelledby="lessons-heading">
+  <div class="lessons-bg" aria-hidden="true"></div>
+  <div class="container">
 
-    <div class="gallery-grid reveal">
-      <div class="gallery-item wide">
-        <img src="images/photo_01.jpg" alt="SitarBoston — sitar workshop" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
+    <div class="lessons-grid">
+
+      <!-- Lesson video on left -->
+      <div class="lesson-video-wrap reveal">
+        <video poster="images/posters/p-lesson.jpg" controls preload="none" loading="lazy" class="lesson-video"
+               aria-label="Sitar lesson in progress">
+          <source src="videos/Sitar lesson.mp4" type="video/mp4">
+        </video>
+        <p class="lesson-video-caption" data-editable="lesson-video-caption">Sitar Lesson</p>
+        <img src="images/with guruji.jpg" alt="With Guruji Sharanjeet Singh Mand" loading="lazy" class="lesson-fill-img">
       </div>
-      <div class="gallery-item">
-        <img src="images/photo_03.jpg" alt="Sitar jawari work" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
+
+      <!-- Text on right -->
+      <div class="lessons-text reveal-right">
+        <span class="section-label">Lessons · آموزش</span>
+        <h2 id="lessons-heading">Learning the Sitar</h2>
+
+        <p>The sitar is not just an instrument — it is a lifelong practice, a meditative discipline, a connection to centuries of musical thought. Its twenty-one strings, its movable frets, its sympathetic resonance — all of this demands patience, listening, and a willingness to be surprised. Lessons at SitarBoston are designed around each student's goals, pace, and context.</p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <h4>Beginners</h4>
+            <p>Proper posture and hand position from day one. Learning the foundational strokes (da and ra), basic ragas, and understanding the instrument's construction. The sitar rewards deliberate practice — patience and encouragement over speed, always.</p>
+          </div>
+
+          <div class="pillar">
+            <h4>Intermediate Students</h4>
+            <p>Deepening raga understanding, developing speed and clarity in taans, working on gamak, meend, and advanced techniques. Learning to listen critically to your own playing — this is where the real transformation happens.</p>
+          </div>
+
+          <div class="pillar">
+            <h4>All Ages Welcome</h4>
+            <p>Children, adults, seniors. The sitar's meditative quality makes it accessible and rewarding at any stage of life. Some of the most natural students are those who come to it later — with patience already cultivated.</p>
+          </div>
+        </div>
+
+        <p class="lessons-note" data-editable="lessons-note">Reach out to discuss your goals and availability. All sessions are by arrangement, tailored to your pace and circumstances.</p>
       </div>
-      <div class="gallery-item">
-        <img src="images/photo_04.jpg" alt="Sitar bridge work" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_05.jpg" alt="Sitar detail" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_06.jpg" alt="Sitar strings" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item wide">
-        <img src="images/photo_07.jpg" alt="Concert sitar" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_08.jpg" alt="Sitar maintenance" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_09.jpg" alt="Sitar tuning pegs" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_10.jpg" alt="Sitar body" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_11.jpg" alt="Sitar neck" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_12.jpg" alt="Sitar frets" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_13.jpg" alt="Sitar restoration" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_14.jpg" alt="Vintage sitar" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_15.jpg" alt="Sitar workshop tools" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item wide">
-        <img src="images/photo_30.jpg" alt="Hiren Roy restoration" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_31.jpg" alt="Sitar bridge detail" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_32.jpg" alt="Miraj sitar" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_18.webp" alt="Sitar detail" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_19.webp" alt="Jawari work" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_20.webp" alt="Sitar workshop" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_33.jpg" alt="Sitar sale" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_34.jpg" alt="Concert grade sitar" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_35.jpg" alt="Sitar gand detail" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/photo_36.jpg" alt="Sitar tarab" loading="lazy" />
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">⊕</span></div>
-      </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- Lightbox -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <span id="lightbox-close" aria-label="Close">&times;</span>
-  <button id="lightbox-prev" aria-label="Previous">&#8592;</button>
-  <img id="lightbox-img" src="" alt="Gallery image" />
-  <button id="lightbox-next" aria-label="Next">&#8594;</button>
-</div>
+
+<!-- ============================================================
+     CUSTOM SITARS / SHAHID ALI
+     ============================================================ -->
+<section id="sitars" aria-labelledby="sitars-heading">
+  <div class="sitars-bg" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label reveal">Miraj · میراج</span>
+      <h2 class="reveal" id="sitars-heading">Concert-Grade Custom Sitars</h2>
+      <span class="section-subtitle reveal">Built by Shahid Ali — Master Sitarmaker of Miraj</span>
+    </div>
+
+    <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
+
+    <!-- Shahid Ali portrait + bio -->
+    <div class="shahidali-profile reveal">
+      <div class="shahidali-photo-wrap">
+        <div class="shahidali-photo-frame">
+          <img src="images/Shahidali presenting his creation to Pt. Arvind Parikh Ji.jpg" alt="Shahidali presenting his creation to Pt. Arvind Parikh Ji" loading="lazy">
+          <div class="shahidali-photo-caption">
+            Shahidali presenting his creation to Pt. Arvind Parikh Ji
+          </div>
+        </div>
+        <div class="shahidali-credentials">
+          <div class="credential-item">
+            <span class="cred-icon">✦</span>
+            <span>Established 1979 — over four decades of master craft</span>
+          </div>
+          <div class="credential-item">
+            <span class="cred-icon">✦</span>
+            <span>Featured by the Indian Classical Music Circle (ICMC) for expertise on Vilayat Khan's structural innovations in sitar design</span>
+          </div>
+          <div class="credential-item">
+            <span class="cred-icon">✦</span>
+            <span>Heir to Miraj's seven-generation sitarmaking tradition — the same lineage that built for Pt. Ravi Shankar and Ustad Vilayat Khan</span>
+          </div>
+          <div class="credential-item">
+            <span class="cred-icon">✦</span>
+            <span>Instruments sought by players and collectors across India, Europe, and North America</span>
+          </div>
+          <div class="credential-item">
+            <span class="cred-icon">✦</span>
+            <span>Builds Sitar, Tanpura, Rudra Veena, and Surbahar — full command of the classical instrument tradition</span>
+          </div>
+          <a href="https://www.facebook.com/shahidali.sitarmaker/" target="_blank" rel="noopener" class="shahidali-link">
+            View Shahid Ali's Workshop →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sitars-intro">
+      <p class="reveal" data-editable="sitars-intro-1">Miraj, a small city in Maharashtra's Sangli district, has been the undisputed capital of sitar making for over a century — a tradition of seven generations, the same workshops that built the instruments of Pandit Ravi Shankar and Ustad Vilayat Khan. Among its finest living craftsmen stands <strong>Shahid Ali</strong>, in practice since 1979, whose instruments are played by students and concert artists across three continents. He was featured by the <strong>Indian Classical Music Circle (ICMC)</strong> to explain the structural innovations Ustad Vilayat Khan brought to the modern sitar — a recognition that places him among Miraj's most respected voices on the instrument's design.</p>
+
+      <p class="reveal reveal-delay-1" data-editable="sitars-intro-2">Shahid Ali's instruments are not mass-produced. Each sitar is built by hand, with tonewoods selected and seasoned over years, bridges carved from ebony or bone, and decorative work — the alam, the heel, the parchment inlay — executed with a jeweler's attention. Professional Sitar Players who have owned his sitars describe them consistently: <em>"phenomenal sound and long sustain,"</em> <em>"honest, reliable, takes time to consult the details with the musician's teacher."</em> These are not instruments you outgrow. They are instruments that grow with you.</p>
+    </div>
+
+    <!-- Model Cards -->
+    <div class="model-grid">
+      <div class="model-card reveal reveal-delay-1">
+        <span class="model-card-icon" aria-hidden="true">🎵</span>
+        <h3>Gandhar Pancham VK Style</h3>
+        <p>The classic Vilayat Khan configuration. Seven main strings, thirteen tarab. Deep, resonant, with a closed jawari that emphasizes the sustained note over the buzz. The choice of the classical purist — a voice that demands and rewards meditative listening.</p>
+      </div>
+
+      <div class="model-card reveal reveal-delay-2">
+        <span class="model-card-icon" aria-hidden="true">🎶</span>
+        <h3>Kharaj Pancham RS Style</h3>
+        <p>The Ravi Shankar configuration. Optimized for a fuller bass response and broader dynamic range. Preferred by players who want both classical depth and projection for larger spaces — the instrument that carries across a concert hall.</p>
+      </div>
+
+      <div class="model-card reveal reveal-delay-3">
+        <span class="model-card-icon" aria-hidden="true">✈️</span>
+        <h3>Travel &amp; Compact Sitars</h3>
+        <p>Full-quality instruments in a reduced scale — ideal for travel, small spaces, or younger players. Uncompromising on tone despite the smaller body. Shahid Ali builds these with the same attention as concert instruments — nothing is sacrificed.</p>
+      </div>
+
+      <div class="model-card reveal reveal-delay-4">
+        <span class="model-card-icon" aria-hidden="true">🌟</span>
+        <h3>Children's &amp; Left-Handed Custom</h3>
+        <p>Shahid Ali builds instruments to specification. Smaller neck, lighter gauge strings, appropriate scale length for younger hands — also available left-handed for players who need it. Every student deserves an instrument built for their body.</p>
+      </div>
+    </div>
+
+    <!-- Build Process -->
+    <div class="build-process reveal">
+      <h3>The Custom Build Process</h3>
+      <p>Every instrument built for a SitarBoston student begins with a conversation. We discuss your playing style, your raga preferences, the tone character you are drawn to — open and buzzing, or focused and sustained. Your stage or studio context. Whether you want traditional ornamentation or a simpler aesthetic. We then work directly with Shahid Ali, who builds the instrument to these specifications. A sitar built this way is not just an instrument — it is a companion for life. It knows your hands before you have even played it.</p>
+    </div>
+
+    <!-- Tonewood Callout -->
+    <div class="tonewood-callout reveal">
+      <p data-editable="teak-text"><strong>Teak Sitars</strong> — Among Shahid Ali's most celebrated instruments are those built from Burma teak — salvaged from 100-year-old structures, never to be harvested again. These instruments carry a tonal character impossible to replicate with modern materials: a warmth, a depth, a natural resonance that deepens with age. To own one is to hold something irreplaceable.</p>
+    </div>
+
+    <!-- Shahid Ali Videos Grid -->
+    <div class="shahidali-videos">
+
+      <div class="sa-video-item reveal reveal-delay-1">
+        <video controls="" preload="none" poster="images/posters/p-teak.jpg" loading="lazy" aria-label="Shahid Ali in concert on his teak sitar">
+          <source src="videos/Sitar for sale /shahidali concert teak sitar.mp4" type="video/mp4">
+        </video>
+        <p class="sa-video-caption" data-editable="sa-video-teak">Shahidali Concert Teak Sitar</p>
+      </div>
+
+      <div class="sa-video-item reveal reveal-delay-2">
+        <video poster="images/posters/p-spk.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali SPK sitar">
+          <source src="videos/Sitar for sale /Shahidali SPK sitar.mp4" type="video/mp4">
+        </video>
+        <p class="sa-video-caption" data-editable="sa-video-spk">Shahidali SPK Sitar</p>
+      </div>
+
+      <div class="sa-video-item reveal reveal-delay-3">
+        <video poster="images/posters/p-tunwood.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali SPK Tunwood sitar">
+          <source src="videos/Sitar for sale /Shahidali SPK Tunwood sitar.mp4" type="video/mp4">
+        </video>
+        <p class="sa-video-caption" data-editable="sa-video-tunwood">Shahidali SPK Tunwood Sitar</p>
+      </div>
+
+      <div class="sa-video-item reveal reveal-delay-1">
+        <video poster="images/posters/p-travel.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali concert travel sitar">
+          <source src="videos/Sitar for sale /Shahidali Concert Travel Sitar.mov" type="video/quicktime">
+          <source src="videos/Sitar for sale /Shahidali Concert Travel Sitar.mov" type="video/mp4">
+        </video>
+        <p class="sa-video-caption" data-editable="sa-video-travel">Shahidali Concert Travel Sitar</p>
+      </div>
+
+    </div>
+
+    <!-- Vintage Callout -->
+    <div class="vintage-callout reveal">
+      <p data-editable="vintage-callout">Occasionally, rare vintage sitars — instruments from the great Kolkata makers of the mid-twentieth century — will be available after full restoration. These are singular opportunities, offered to the community first.</p>
+    </div>
+
+    <!-- Naskar Vintage Video -->
+    <div class="teak-video-wrap reveal">
+      <p class="teak-video-label">A 1970s Naskar Professional Sitar — Restored</p>
+      <video poster="images/posters/p-naskar.jpg" controls="" preload="none" loading="lazy" class="teak-video" aria-label="1970s Naskar professional sitar restored to concert condition">
+        <source src="videos/Sitar for sale /70s Naskar pro Sitar.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="teak-video-caption" data-editable="naskar-caption">70s Naskar Pro Sitar</p>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ============================================================
      VIDEOS
      ============================================================ -->
-<section id="videos">
-  <div class="section-inner">
-    <p class="section-subtitle">Watch &amp; Listen · ویدیوها</p>
-    <h2 class="section-title">Sitar in Motion</h2>
-    <div class="ornament"><div class="ornament-diamond"></div></div>
+<section id="videos" aria-labelledby="videos-heading">
+  <div class="container">
 
-    <div class="videos-grid">
+    <div class="videos-arch-header">
+      <!-- Small Persian arch SVG decoration -->
+      <svg width="120" height="80" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10,78 L10,35 Q10,5 60,5 Q110,5 110,35 L110,78 Z"></path>
+        <path d="M22,78 L22,38 Q22,18 60,18 Q98,18 98,38 L98,78 Z"></path>
+        <path d="M36,35 Q60,10 84,35"></path>
+        <circle cx="60" cy="5" r="4" fill="#2FC4AE" opacity="0.6"></circle>
+      </svg>
 
-      <div class="video-item reveal">
-        <video controls preload="none" poster="images/photo_02.jpg">
-          <source src="videos/video_01.mp4" type="video/mp4" />
-        </video>
-        <p class="video-caption">Custom gol jawari on concert-level Shahid Ali SPK Black sitar — ebony main bridge, bone tarab bridge</p>
-      </div>
+      <span class="section-label">Videos · ویدئو</span>
+      <h2 id="videos-heading">Listen. Watch. Experience.</h2>
+      <span class="section-subtitle">Sitar in Performance, Lesson, and the Workshop</span>
+    </div>
 
+    <div class="video-grid">
+
+      <!-- Featured: Concert & Lesson Videos -->
       <div class="video-item reveal reveal-delay-1">
-        <video controls preload="none" poster="images/photo_03.jpg">
-          <source src="videos/video_02.mp4" type="video/mp4" />
+        <video controls="" preload="none" poster="images/posters/p-teak.jpg" loading="lazy" aria-label="Shahid Ali concert performance on teak sitar">
+          <source src="videos/Sitar for sale /shahidali concert teak sitar.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Fresh jawari — closed maid bridge, half-open tarab bridge. "The sitar is flying now"</p>
+        <p class="video-caption">Shahidali Concert Teak Sitar</p>
       </div>
 
       <div class="video-item reveal reveal-delay-2">
-        <video controls preload="none" poster="images/photo_04.jpg">
-          <source src="videos/video_09.mp4" type="video/mp4" />
+        <video poster="images/posters/p-naskar.jpg" controls="" preload="none" loading="lazy" aria-label="1970s Naskar professional sitar restored">
+          <source src="videos/Sitar for sale /70s Naskar pro Sitar.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Gandhar Pancham Miraj sitar — after proper bridge setting and jawari</p>
+        <p class="video-caption">70s Naskar Pro Sitar</p>
       </div>
 
-      <div class="video-item reveal">
-        <video controls preload="none" poster="images/photo_05.jpg">
-          <source src="videos/video_04.mp4" type="video/mp4" />
+      <div class="video-item reveal reveal-delay-3">
+        <video poster="images/posters/p-lesson.jpg" controls="" preload="none" loading="lazy" aria-label="Sitar lesson in progress">
+          <source src="videos/Sitar lesson.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Pt. Harvinder Sharma — quick rehearsal after morning tea, effortless complex movements</p>
+        <p class="video-caption">Sitar Lesson</p>
       </div>
 
+      <!-- Shahid Ali SPK & Tunwood -->
       <div class="video-item reveal reveal-delay-1">
-        <video controls preload="none" poster="images/photo_30.jpg">
-          <source src="videos/video_10.mp4" type="video/mp4" />
+        <video poster="images/posters/p-spk.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali SPK sitar">
+          <source src="videos/Sitar for sale /Shahidali SPK sitar.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Gandhar Pancham Miraj sitar — bridge setting and jawari complete</p>
+        <p class="video-caption">Shahidali SPK Sitar</p>
       </div>
 
       <div class="video-item reveal reveal-delay-2">
-        <video controls preload="none" poster="images/photo_31.jpg">
-          <source src="videos/video_14.mp4" type="video/mp4" />
+        <video poster="images/posters/p-tunwood.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali SPK Tunwood sitar">
+          <source src="videos/Sitar for sale /Shahidali SPK Tunwood sitar.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Vintage Hiren Roy sitar restoration — full string set, new bridges, jawari work</p>
+        <p class="video-caption">Shahidali SPK Tunwood Sitar</p>
       </div>
 
-      <div class="video-item reveal">
-        <video controls preload="none" poster="images/photo_32.jpg">
-          <source src="videos/video_15.mp4" type="video/mp4" />
+      <div class="video-item reveal reveal-delay-3">
+        <video poster="images/posters/p-travel.jpg" controls="" preload="none" loading="lazy" aria-label="Shahid Ali concert travel sitar">
+          <source src="videos/Sitar for sale /Shahidali Concert Travel Sitar.mov" type="video/quicktime">
+          <source src="videos/Sitar for sale /Shahidali Concert Travel Sitar.mov" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-        <p class="video-caption">Teak sitar from 100-year-old salvaged Burma teak — rare and irreplaceable tonewoods</p>
-      </div>
-
-      <div class="video-item reveal reveal-delay-1">
-        <video controls preload="none" poster="images/photo_33.jpg">
-          <source src="videos/video_11.mp4" type="video/mp4" />
-        </video>
-        <p class="video-caption">Miraj sitar — before and after full workshop setup</p>
-      </div>
-
-      <div class="video-item reveal reveal-delay-2">
-        <video controls preload="none" poster="images/photo_34.jpg">
-          <source src="videos/video_12.mp4" type="video/mp4" />
-        </video>
-        <p class="video-caption">Concert grade sitar — sound test after complete maintenance</p>
+        <p class="video-caption">Shahidali Concert Travel Sitar</p>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- ============================================================
-     UPDATES / NEWS
+     GALLERY
      ============================================================ -->
-<section id="updates">
-  <div class="section-inner">
-    <p class="section-subtitle">From the Workshop · اخبار</p>
-    <h2 class="section-title">Latest Updates</h2>
-    <div class="ornament"><div class="ornament-diamond"></div></div>
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
 
-    <div class="posts-grid">
+    <div class="section-header">
+      <span class="section-label reveal">Gallery · گالری</span>
+      <h2 class="reveal" id="gallery-heading">Moments &amp; Instruments</h2>
+      <span class="section-subtitle reveal">Playing, Crafting, Community</span>
+    </div>
 
-      <div class="post-card reveal">
-        <p class="post-date">April 2026</p>
-        <p class="post-text">
-          Teak sitar, from 100-year-old salvaged Burma teak — never to be harvested again,
-          since all those forests have long been under conservation. A truly irreplaceable piece.
-        </p>
-        <span class="post-tag">Rare Instruments</span>
+    <div class="gallery-grid" id="gallery-grid">
+
+      <div class="gallery-item wide reveal" data-index="0">
+        <img src="images/Top cover.jpg" alt="Dr. Samya Bhaduri performing sitar in concert" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
-      <div class="post-card reveal reveal-delay-1">
-        <p class="post-date">March 2026</p>
-        <p class="post-text">
-          Vintage Hiren Roy Sitar (circa 1960) restoration complete. New main bridge, closed jawari,
-          new tarab bridge, full German Roselu string set, complete adjustments — 10+ hours of work.
-          Few such instruments remain from the golden era of Calcutta sitar making.
-        </p>
-        <span class="post-tag">Vintage Restoration</span>
+      <div class="gallery-item reveal reveal-delay-1" data-index="1">
+        <img src="images/Bio Guru etc/sitar6.jpg" alt="Playing sitar outdoors by mountains and lake" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
-      <div class="post-card reveal reveal-delay-2">
-        <p class="post-date">March 2026</p>
-        <p class="post-text">
-          Beautiful Miraj Gandhar Pancham sitar came in for jawari and proper bridge setting.
-          Synthetic bridge, beautifully done — action is right, clarity and playability improved
-          dramatically for fast taans, with tremendous sustain.
-        </p>
-        <span class="post-tag">Jawari</span>
+      <div class="gallery-item reveal reveal-delay-2" data-index="2">
+        <img src="images/Bio Guru etc/sitar4.jpg" alt="Playing sitar indoors with red curtains" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
-      <div class="post-card reveal">
-        <p class="post-date">February 2026</p>
-        <p class="post-text">
-          Concert-grade VK style Gandhar-Pancham sitar for sale. Handpicked from Kanailal workshop
-          in Calcutta, professionally maintained and played for 4 years to mature the sound.
-          Rare deer horn main bridge. Neck straight as an arrow. Comes with padded case.
-        </p>
-        <span class="post-tag">For Sale</span>
+      <div class="gallery-item reveal" data-index="3">
+        <img src="images/Bio Guru etc/sitar3.jpg" alt="Black and white photo — luthierie work" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
-      <div class="post-card reveal reveal-delay-1">
-        <p class="post-date">February 2026</p>
-        <p class="post-text">
-          1970s laraj kharaj sitar from Sarat Sardar workshop, Lalbazar Calcutta —
-          full restoration completed. Frets and polish, peg smoothening, main and tarab bridge
-          jawari Nikhil Banerjee style, full strings and adjustments.
-        </p>
-        <span class="post-tag">Restoration</span>
+      <div class="gallery-item wide reveal reveal-delay-1" data-index="4">
+        <img src="images/Bio Guru etc/sitar7.jpg" alt="Two sitar players sitting outdoors" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
-      <div class="post-card reveal reveal-delay-2">
-        <p class="post-date">November 2024</p>
-        <p class="post-text">
-          Example of gol jawari done on concert-level Shahid Ali SPK Black sitar —
-          ebony main bridge, gol jawari (half open) on baaj ki taar and two chikaris,
-          bandh jawari on jora, gandhar and pancham strings. Bone tarab bridge — bandh jawari.
-        </p>
-        <span class="post-tag">Jawari</span>
+      <div class="gallery-item reveal reveal-delay-2" data-index="5">
+        <img src="images/Luthiere Cover.jpg" alt="Sitar on a beautiful Persian rug" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="gallery-item reveal" data-index="6">
+        <img src="images/Sitar Luthier/IMG_5694.jpg" alt="Sitar luthierie work in progress" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-1" data-index="7">
+        <img src="images/Sitar Luthier/IMG_5698.JPG" alt="Fret tying — close detail" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-2" data-index="8">
+        <img src="images/Repaired Sitars/sitar1.jpg" alt="Classic sitar restored to its voice" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- ============================================================
-     CONTACT
+     LIGHTBOX
      ============================================================ -->
-<section id="contact">
-  <div class="section-inner">
-    <p class="section-subtitle">Reach Us · تماس با ما</p>
-    <h2 class="section-title">Book a Lesson or Service</h2>
-    <div class="ornament"><div class="ornament-diamond"></div></div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">×</button>
 
-    <div class="contact-grid">
+  <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
 
-      <div class="contact-info reveal">
-        <h3>Get in Touch</h3>
+  <div class="lightbox-img-wrap">
+    <img id="lightbox-img" src="" alt="">
+  </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">📍</span>
-          <div class="contact-detail">
-            <strong>Location</strong>
-            Westford, Massachusetts<br/>
-            Greater Boston Area
+  <button class="lightbox-next" id="lightbox-next" aria-label="Next image">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+
+  <p class="lightbox-counter" id="lightbox-counter" aria-live="polite"></p>
+</div>
+
+
+<!-- ============================================================
+     NEWS
+     ============================================================ -->
+<section id="news" aria-labelledby="news-heading">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label reveal">News &amp; Updates · اخبار</span>
+      <h2 class="reveal" id="news-heading">Community News</h2>
+      <span class="section-subtitle reveal">Events, Gatherings &amp; Announcements</span>
+    </div>
+
+    <div class="news-grid" id="news-grid">
+      <p class="news-loading" aria-live="polite">Loading news…</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONNECT
+     ============================================================ -->
+<section id="connect" class="tile-bg" aria-labelledby="connect-heading">
+  <div class="container">
+
+    <div class="section-header" style="margin-bottom:3rem">
+      <span class="section-label reveal">Connect · ارتباط</span>
+      <h2 class="reveal" id="connect-heading">Connect With the Community</h2>
+      <span class="section-subtitle reveal">Reach out — about lessons, luthierie, instruments, or simply to say hello</span>
+    </div>
+
+    <div class="connect-grid connect-grid-single">
+
+      <!-- Contact Info -->
+      <div class="connect-info connect-info-centered reveal">
+        <h2>Get in Touch</h2>
+        <p data-editable="connect-intro">Whether you are a beginner considering your first lesson, an advanced student with a maintenance question, or someone who simply wants to be part of the sitar community in New England — please reach out. There is no question too small and no situation too complicated.</p>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">📞</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Phone / WhatsApp</span>
+              <span class="contact-item-value">
+                <a href="tel:+17744522454">+1 (774) 452-2454</a><br>
+                <a href="https://wa.me/17744522454" class="whatsapp-link" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+                  </svg>
+                  Message on WhatsApp
+                </a>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <div class="contact-detail">
-            <strong>Email</strong>
-            <a href="mailto:sitarboston@gmail.com">sitarboston@gmail.com</a>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">✉️</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Email</span>
+              <span class="contact-item-value">
+                <a href="mailto:sitarboston@gmail.com">sitarboston@gmail.com</a>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">🌐</span>
-          <div class="contact-detail">
-            <strong>Website</strong>
-            <a href="https://sitarboston.com">sitarboston.com</a>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">📍</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Location</span>
+              <span class="contact-item-value">Greater Boston Area, Massachusetts</span>
+            </div>
           </div>
-        </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">🕐</span>
-          <div class="contact-detail">
-            <strong>Lesson Availability</strong>
-            Weekdays &amp; Weekends<br/>
-            By appointment — flexible scheduling
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">📸</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Instagram</span>
+              <span class="contact-item-value">
+                <a href="https://www.instagram.com/sitarboston/" target="_blank" rel="noopener">@sitarboston</a>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div class="social-links">
-          <a href="https://www.facebook.com/profile.php?id=61568580579215"
-             target="_blank" rel="noopener" class="social-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-            Facebook
-          </a>
-          <a href="mailto:sitarboston@gmail.com" class="social-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            Email Us
-          </a>
-        </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">🌐</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Facebook</span>
+              <span class="contact-item-value">
+                <a href="https://www.facebook.com/profile.php?id=61568580579215" target="_blank" rel="noopener">
+                  Follow us on Facebook
+                </a>
+              </span>
+            </div>
+          </div>
 
-        <!-- Service area note -->
-        <div style="margin-top:2.5rem; padding:1.2rem; border:1px solid rgba(201,168,76,0.2);
-             background:rgba(201,168,76,0.04);">
-          <p style="color:var(--gold);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;
-               margin-bottom:0.5rem;font-weight:700;">Service Area</p>
-          <p style="color:var(--cream-dk);font-size:0.88rem;line-height:1.6;">
-            Boston · Cambridge · Lowell · Nashua · Worcester · Concord · Chelmsford · Acton
-            and surrounding communities in MA &amp; Southern NH.
-          </p>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-1">
-        <form id="contact-form" class="contact-form"
-              action="mailto:sitarboston@gmail.com" method="POST">
-          <div class="form-group">
-            <label class="form-label" for="name">Your Name</label>
-            <input class="form-input" type="text" id="name" name="name" required
-                   placeholder="Full name" autocomplete="name"/>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input class="form-input" type="email" id="email" name="email" required
-                   placeholder="your@email.com" autocomplete="email"/>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="service">I'm interested in</label>
-            <select class="form-select" id="service" name="service">
-              <option value="">— Select a service —</option>
-              <option>Sitar Lessons (30 min)</option>
-              <option>Sitar Lessons (60 min)</option>
-              <option>Jawari &amp; Maintenance</option>
-              <option>Sitar for Sale / Purchase</option>
-              <option>Vintage Restoration</option>
-              <option>General Inquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="experience">Your experience level</label>
-            <select class="form-select" id="experience" name="experience">
-              <option value="">— Sitar experience —</option>
-              <option>Complete beginner</option>
-              <option>Some self-taught</option>
-              <option>Have had lessons before</option>
-              <option>Intermediate player</option>
-              <option>Not applicable (maintenance/sales)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="form-textarea" id="message" name="message"
-                      placeholder="Tell us about your sitar, what you're looking for, or any questions..."></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message · ارسال پیام</button>
-        </form>
-
-        <div id="form-success" class="form-success">
-          ✦ &nbsp; Thank you — your message has been sent.<br/>
-          We will be in touch very soon. <em>با تشکر</em>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- ============================================================
      FOOTER
      ============================================================ -->
 <footer id="footer">
-  <!-- Persian geometric border top -->
-  <div style="margin-bottom:2rem;text-align:center;">
-    <svg width="300" height="24" viewBox="0 0 300 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <line x1="0" y1="12" x2="108" y2="12" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
-      <polygon points="120,4 130,12 120,20 110,12" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-      <polygon points="150,2 162,12 150,22 138,12" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
-      <polygon points="180,4 190,12 180,20 170,12" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-      <line x1="192" y1="12" x2="300" y2="12" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
-    </svg>
+  <div class="container">
+
+    <div class="footer-ornament" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C9A84C" stroke-width="0.8">
+        <polygon points="40,5 47,28 72,28 52,43 60,67 40,52 20,67 28,43 8,28 33,28"></polygon>
+        <circle cx="40" cy="40" r="18" stroke-dasharray="3,4"></circle>
+        <polygon points="40,15 44,27 57,27 47,35 51,48 40,40 29,48 33,35 23,27 36,27"></polygon>
+      </svg>
+    </div>
+
+    <p class="footer-logo-en">SitarBoston</p>
+    <span class="footer-logo-fa">سیتار بوستون</span>
+    <p class="footer-tagline">A community resource for sitar players in New England</p>
+
+    <ul class="footer-nav">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#about">Training</a></li>
+      <li><a href="#luthierie">Luthierie</a></li>
+      <li><a href="#lessons">Lessons</a></li>
+      <li><a href="#sitars">Custom Sitars</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+
+    <p class="footer-copy">Built with love for the sitar community ♬ &nbsp;·&nbsp; sitarboston@gmail.com &nbsp;·&nbsp; Greater Boston, Massachusetts</p>
+
   </div>
-
-  <p class="footer-logo">SitarBoston</p>
-  <p class="footer-logo-fa">سیتار بوستون</p>
-
-  <ul class="footer-nav">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#videos">Videos</a></li>
-    <li><a href="#updates">News</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <p class="footer-ornament">✦ ✦ ✦</p>
-
-  <p class="footer-copy">
-    &copy; 2024–2026 SitarBoston &nbsp;·&nbsp;
-    <a href="mailto:sitarboston@gmail.com" style="color:inherit">sitarboston@gmail.com</a>
-    &nbsp;·&nbsp; Westford, MA &nbsp;·&nbsp;
-    <a href="https://www.facebook.com/profile.php?id=61568580579215" target="_blank"
-       rel="noopener" style="color:inherit">Facebook</a>
-  </p>
 </footer>
 
-<script src="js/main.js" defer></script>
-</body>
-</html>
+
+<!-- ============================================================
+     MUSIC PLAYER
+     ============================================================ -->
+<div id="music-player" role="region" aria-label="Music player">
+  <button class="music-btn" id="music-btn" aria-label="Play Apni Tasveer">
+    <!-- Play icon -->
+    <svg id="icon-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <!-- Pause icon (hidden by default) -->
+    <svg id="icon-pause" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+  </button>
+  <div class="music-label">
+    <span class="music-note">♪</span> Gayaki Ang
+  </div>
+  <audio id="bg-audio" preload="auto" loop>
+    <source src="gayaki ang.m4a" type="audio/mp4">
+  </audio>
+</div>
+
+
+<!-- JS -->
+<script src="js/main.js"></script>
+
+
+</body></html>

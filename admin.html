@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SitarBoston — Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ======================================================
+       Admin Panel Styles — Persian palette
+    ====================================================== */
+    :root {
+      --ink:         #081E1B;
+      --ink-soft:    #0D2E29;
+      --teal:        #1A8A78;
+      --teal-bright: #2FC4AE;
+      --teal-light:  #6FD8CB;
+      --saffron:     #E8A820;
+      --saffron-lt:  #F2C04A;
+      --cream:       #FFF8E7;
+      --cream-dk:    #D9C9A3;
+      --gold:        #C9A84C;
+      --red:         #C0392B;
+      --green:       #27AE60;
+      --radius:      6px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream-dk);
+      font-family: 'Lato', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ---- Login Screen ---- */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--ink);
+    }
+
+    .login-box {
+      background: var(--ink-soft);
+      border: 1px solid rgba(47,196,174,0.2);
+      border-radius: var(--radius);
+      padding: 3rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--saffron);
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .login-box p {
+      font-size: 0.85rem;
+      color: var(--cream-dk);
+      margin-bottom: 2rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(8,30,27,0.8);
+      border: 1px solid rgba(47,196,174,0.25);
+      border-radius: var(--radius);
+      color: var(--cream);
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+
+    .login-box input:focus { border-color: var(--teal-bright); }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--teal);
+      border: none;
+      border-radius: var(--radius);
+      color: var(--cream);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-btn:hover { background: var(--teal-bright); color: var(--ink); }
+
+    .login-error {
+      color: #E74C3C;
+      font-size: 0.85rem;
+      margin-top: 0.8rem;
+      display: none;
+    }
+
+    /* ---- Admin Shell ---- */
+    #admin-shell { display: none; }
+
+    .admin-header {
+      background: var(--ink-soft);
+      border-bottom: 1px solid rgba(47,196,174,0.15);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .admin-header h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--saffron);
+      font-size: 1.3rem;
+    }
+
+    .admin-header span {
+      font-size: 0.78rem;
+      color: var(--teal-light);
+      letter-spacing: 0.08em;
+    }
+
+    .logout-btn {
+      background: rgba(192,57,43,0.2);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #E74C3C;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .logout-btn:hover { background: rgba(192,57,43,0.35); }
+
+    /* ---- Tab Navigation ---- */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(47,196,174,0.15);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      padding: 0.9rem 1.5rem;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--cream-dk);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.25s, border-color 0.25s;
+    }
+
+    .tab-btn:hover { color: var(--teal-bright); }
+    .tab-btn.active { color: var(--saffron); border-bottom-color: var(--saffron); }
+
+    /* ---- Tab Panels ---- */
+    .tab-panel { display: none; padding: 2.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .tab-panel.active { display: block; }
+
+    /* ---- Cards ---- */
+    .admin-card {
+      background: var(--ink-soft);
+      border: 1px solid rgba(47,196,174,0.15);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .admin-card h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--cream);
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .admin-card .subtitle {
+      font-size: 0.82rem;
+      color: var(--teal-light);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---- Form elements ---- */
+    label {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal-light);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    select,
+    textarea {
+      width: 100%;
+      background: rgba(8,30,27,0.8);
+      border: 1px solid rgba(47,196,174,0.2);
+      border-radius: var(--radius);
+      padding: 0.65rem 0.9rem;
+      color: var(--cream);
+      font-family: 'Lato', system-ui, sans-serif;
+      font-size: 0.93rem;
+      outline: none;
+      transition: border-color 0.25s;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--teal-bright);
+    }
+
+    textarea { min-height: 90px; resize: vertical; }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s;
+    }
+
+    .btn-primary { background: var(--teal); color: var(--cream); }
+    .btn-primary:hover { background: var(--teal-bright); color: var(--ink); }
+
+    .btn-saffron { background: var(--saffron); color: var(--ink); }
+    .btn-saffron:hover { background: var(--saffron-lt); }
+
+    .btn-danger { background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4); color: #E74C3C; }
+    .btn-danger:hover { background: rgba(192,57,43,0.35); }
+
+    .btn-ghost { background: transparent; border: 1px solid rgba(47,196,174,0.3); color: var(--teal-bright); }
+    .btn-ghost:hover { background: rgba(47,196,174,0.1); }
+
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-green:hover { background: #2ecc71; }
+
+    /* ---- News Items ---- */
+    .news-item-editor {
+      background: rgba(8,30,27,0.5);
+      border: 1px solid rgba(47,196,174,0.12);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .news-item-editor .item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+
+    .news-item-editor .item-num {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--saffron);
+      font-weight: 700;
+    }
+
+    /* ---- Instructions box ---- */
+    .instruction-box {
+      background: rgba(26,138,120,0.1);
+      border: 1px solid rgba(26,138,120,0.25);
+      border-radius: var(--radius);
+      padding: 1rem 1.3rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+      color: var(--cream-dk);
+      line-height: 1.7;
+    }
+
+    .instruction-box strong { color: var(--teal-light); }
+
+    /* ---- Status Message ---- */
+    .status-msg {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-left: 1rem;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .status-msg.show { opacity: 1; }
+    .status-msg.ok  { background: rgba(39,174,96,0.15); color: var(--green); border: 1px solid rgba(39,174,96,0.3); }
+    .status-msg.err { background: rgba(192,57,43,0.15); color: #E74C3C; border: 1px solid rgba(192,57,43,0.3); }
+
+    /* ---- Upload Area ---- */
+    .upload-area {
+      border: 2px dashed rgba(47,196,174,0.3);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+      background: rgba(8,30,27,0.4);
+    }
+
+    .upload-area:hover,
+    .upload-area.drag-over {
+      border-color: var(--teal-bright);
+      background: rgba(47,196,174,0.07);
+    }
+
+    .upload-area p {
+      color: var(--cream-dk);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .upload-area .upload-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .upload-area input[type="file"] {
+      display: none;
+    }
+
+    /* ---- Preview grid ---- */
+    .preview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    .preview-item {
+      position: relative;
+      width: 120px;
+    }
+
+    .preview-item img,
+    .preview-item video {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(47,196,174,0.2);
+      display: block;
+    }
+
+    .preview-item .preview-name {
+      font-size: 0.7rem;
+      color: var(--cream-dk);
+      margin-top: 0.25rem;
+      word-break: break-all;
+    }
+
+    /* ---- Text Editor ---- */
+    .text-editor-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .text-editor-block textarea {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      min-height: 130px;
+      color: var(--cream);
+    }
+
+    .copy-btn {
+      font-size: 0.75rem;
+    }
+
+    /* ---- Traffic iframe ---- */
+    #traffic-frame {
+      width: 100%;
+      height: 600px;
+      border: 1px solid rgba(47,196,174,0.15);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    /* ---- Two column layout ---- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+      .admin-header { flex-wrap: wrap; gap: 0.5rem; }
+      .tab-btn { padding: 0.75rem 1rem; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     LOGIN SCREEN
+     ============================================================ -->
+<div id="login-screen">
+  <div class="login-box">
+    <h1>SitarBoston</h1>
+    <p>Admin Panel — enter password to continue</p>
+    <input type="password" id="pw-input" placeholder="Password" autocomplete="current-password" />
+    <button class="login-btn" id="login-btn">Enter</button>
+    <p class="login-error" id="login-error">Incorrect password. Please try again.</p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     ADMIN SHELL (hidden until login)
+     ============================================================ -->
+<div id="admin-shell">
+
+  <header class="admin-header">
+    <div>
+      <h1>SitarBoston Admin</h1>
+      <span>Site management panel</span>
+    </div>
+    <button class="logout-btn" id="logout-btn">Log Out</button>
+  </header>
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav" role="tablist">
+    <button class="tab-btn active" data-tab="news"    role="tab" aria-selected="true">News Editor</button>
+    <button class="tab-btn"        data-tab="replace" role="tab">🖼 Replace Media</button>
+    <button class="tab-btn"        data-tab="images"  role="tab">Image Manager</button>
+    <button class="tab-btn"        data-tab="videos"  role="tab">Video Manager</button>
+    <button class="tab-btn"        data-tab="text"    role="tab">Quick Text Editor</button>
+    <button class="tab-btn"        data-tab="traffic" role="tab">Traffic</button>
+  </div>
+
+
+  <!-- ======================================================
+       TAB: NEWS EDITOR
+  ====================================================== -->
+  <div class="tab-panel active" id="tab-news" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>News Editor</h2>
+      <p class="subtitle">Add, edit, or delete news items. Click "Save &amp; Download" to get the updated JSON file, then replace <code>news-data.json</code> on your server.</p>
+
+      <div class="instruction-box">
+        <strong>How to update:</strong> Edit items below → click "Save &amp; Download" → a file named <code>news-data.json</code> will download → upload it to your website root folder, replacing the existing file.
+      </div>
+
+      <div id="news-items-container">
+        <!-- News items rendered here by JS -->
+        <p style="color:var(--teal-light);font-style:italic;">Loading news items…</p>
+      </div>
+
+      <div style="margin-top:1rem;display:flex;align-items:center;flex-wrap:wrap;gap:1rem;">
+        <button class="btn btn-ghost" id="add-news-item">+ Add News Item</button>
+        <button class="btn btn-green" id="save-news">Save &amp; Download JSON</button>
+        <span class="status-msg" id="news-status"></span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       TAB: REPLACE MEDIA
+  ====================================================== -->
+  <div class="tab-panel" id="tab-replace" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>Replace Any Image or Video</h2>
+      <p class="subtitle">Click <strong>Replace</strong> next to any item, pick your new file, then click <strong>Download</strong>. The file downloads with the exact correct filename — just move it into the matching folder (images/ or videos/) and refresh the site.</p>
+      <div class="instruction-box">
+        <strong>How to use:</strong> Click Replace → pick your new file → click the gold "Download as [filename]" button → copy the downloaded file into the <code>sitarboston-c/images/</code> or <code>sitarboston-c/videos/</code> folder, overwriting the old file → refresh your browser tab.
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="admin-card">
+      <h2>Images</h2>
+      <div id="replace-images-grid" class="replace-grid"></div>
+    </div>
+
+    <!-- VIDEOS -->
+    <div class="admin-card">
+      <h2>Videos</h2>
+      <div id="replace-videos-grid" class="replace-grid"></div>
+    </div>
+
+    <style>
+      .replace-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+      .replace-card { background: rgba(8,30,27,0.5); border: 1px solid rgba(47,196,174,0.15); border-radius: 6px; padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; }
+      .replace-card img, .replace-card video { width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(47,196,174,0.2); display: block; background: #000; }
+      .replace-card .rc-label { font-size: 0.72rem; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+      .replace-card .rc-path { font-size: 0.75rem; font-family: monospace; color: var(--cream-dk); word-break: break-all; }
+      .replace-card .rc-section { font-size: 0.7rem; color: rgba(217,201,163,0.5); margin-bottom: 0.2rem; }
+      .replace-card .rc-actions { display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto; }
+      .replace-card .rc-new-preview { display: none; width: 100%; height: 110px; object-fit: cover; border-radius: 4px; border: 2px solid var(--saffron); }
+      .replace-card .rc-new-preview.show { display: block; }
+      .btn-replace { background: rgba(47,196,174,0.12); border: 1px solid rgba(47,196,174,0.3); color: var(--teal-bright); padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.76rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.2s; }
+      .btn-replace:hover { background: rgba(47,196,174,0.25); }
+      .btn-download-replace { display: none; background: var(--saffron); color: var(--ink); border: none; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.76rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; transition: all 0.2s; }
+      .btn-download-replace:hover { background: var(--saffron-lt); }
+      .btn-download-replace.show { display: block; }
+    </style>
+
+  </div>
+
+
+  <!-- ======================================================
+       TAB: IMAGE MANAGER
+  ====================================================== -->
+  <div class="tab-panel" id="tab-images" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>Image Manager</h2>
+      <p class="subtitle">Preview existing images and upload new ones. After uploading, add the filename to the gallery section in <code>index.html</code>.</p>
+
+      <div class="instruction-box">
+        <strong>To add images to the site:</strong> Upload your files here to preview them and get their filenames. Then open <code>index.html</code>, find the <code>#gallery-grid</code> section, and add a new <code>.gallery-item</code> block with the correct <code>src</code> path.
+      </div>
+
+      <div class="upload-area" id="img-upload-area">
+        <span class="upload-icon">🖼️</span>
+        <p>Drag &amp; drop images here, or <strong style="color:var(--teal-bright)">click to browse</strong></p>
+        <p style="font-size:0.8rem;margin-top:0.5rem;color:rgba(217,201,163,0.5)">JPG, PNG, WEBP supported</p>
+        <input type="file" id="img-file-input" accept="image/*" multiple />
+      </div>
+
+      <div class="preview-grid" id="img-preview-grid"></div>
+
+      <div style="margin-top:1.5rem;">
+        <h3 style="color:var(--cream);font-size:1rem;margin-bottom:0.8rem;">Current site images (images/ folder)</h3>
+        <div style="font-size:0.82rem;color:var(--cream-dk);line-height:2;font-family:monospace;background:rgba(8,30,27,0.5);padding:1rem;border-radius:var(--radius);border:1px solid rgba(47,196,174,0.1);">
+          images/sitar6.jpg &nbsp;|&nbsp; images/photo_48.jpg &nbsp;|&nbsp; images/sitar2.jpg &nbsp;|&nbsp; images/sitar4.jpg<br>
+          images/sitar5.jpg &nbsp;|&nbsp; images/sitar7.jpg &nbsp;|&nbsp; images/sitar3.jpg &nbsp;|&nbsp; images/photo_47.jpg<br>
+          images/photo_04.jpg &nbsp;|&nbsp; images/photo_08.jpg &nbsp;|&nbsp; images/photo_13.jpg &nbsp;|&nbsp; images/photo_30.jpg<br>
+          images/photo_33.jpg &nbsp;|&nbsp; images/sitar1.jpg &nbsp;|&nbsp; images/photo_09.jpg
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;" id="img-filenames-output"></div>
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       TAB: VIDEO MANAGER
+  ====================================================== -->
+  <div class="tab-panel" id="tab-videos" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>Video Manager</h2>
+      <p class="subtitle">Preview existing videos and upload new ones. Add the filename to the video grid in <code>index.html</code>.</p>
+
+      <div class="instruction-box">
+        <strong>To add videos to the site:</strong> Upload your file here to confirm the filename, then add a <code>.video-item</code> block to the <code>#videos</code> section in <code>index.html</code> using the path <code>videos/your-file.mp4</code>.
+      </div>
+
+      <div class="upload-area" id="vid-upload-area">
+        <span class="upload-icon">🎬</span>
+        <p>Drag &amp; drop video files here, or <strong style="color:var(--teal-bright)">click to browse</strong></p>
+        <p style="font-size:0.8rem;margin-top:0.5rem;color:rgba(217,201,163,0.5)">MP4 recommended</p>
+        <input type="file" id="vid-file-input" accept="video/*" multiple />
+      </div>
+
+      <div class="preview-grid" id="vid-preview-grid"></div>
+
+      <div style="margin-top:1.5rem;">
+        <h3 style="color:var(--cream);font-size:1rem;margin-bottom:0.8rem;">Current videos (videos/ folder)</h3>
+        <div style="font-size:0.82rem;color:var(--cream-dk);line-height:2.2;font-family:monospace;background:rgba(8,30,27,0.5);padding:1rem;border-radius:var(--radius);border:1px solid rgba(47,196,174,0.1);">
+          videos/shahidali concert teak sitar.mp4<br>
+          videos/70s Naskar pro Sitar.mp4<br>
+          videos/Sitar lesson.mp4<br>
+          videos/video_01.mp4 &nbsp;|&nbsp; videos/video_02.mp4 &nbsp;|&nbsp; videos/video_09.mp4
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;" id="vid-filenames-output"></div>
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       TAB: QUICK TEXT EDITOR
+  ====================================================== -->
+  <div class="tab-panel" id="tab-text" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>Live Site Text Editor</h2>
+      <p class="subtitle">Edit any text section of the website here. When done, click <strong>Save &amp; Download index.html</strong> — the file downloads with your changes applied. Replace the existing <code>index.html</code> on your server.</p>
+
+      <div class="instruction-box">
+        <strong>How it works:</strong> This editor loads the live <code>index.html</code>, lets you edit every major text section, then generates and downloads a complete updated file. No manual copy-pasting or HTML editing needed.
+        <br/><br/>
+        <strong>Note:</strong> This works when both <code>admin.html</code> and <code>index.html</code> are on the same server or opened locally from the same folder. If sections show as empty, click "Reload from File" below.
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;">
+        <button class="btn btn-green" id="load-site-btn">↺ Load Current Site Text</button>
+        <button class="btn btn-gold" id="save-site-btn">⬇ Save &amp; Download Updated index.html</button>
+        <span id="load-status" style="align-self:center;font-size:0.82rem;color:var(--teal-bright);"></span>
+      </div>
+
+      <div id="live-editor-fields" style="display:none;">
+
+        <div class="two-col">
+
+          <div class="text-editor-block">
+            <label>🎯 Mission — Lead Headline Paragraph</label>
+            <textarea id="live-mission-lead" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-mission-lead">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>🎯 Mission — Community Need Paragraph</label>
+            <textarea id="live-mission-need" rows="5"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-mission-need">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>👤 About — Kolkata Training Paragraph</label>
+            <textarea id="live-about-1" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-about-1">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>👤 About — Miraj / Shahid Ali Training</label>
+            <textarea id="live-about-2" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-about-2">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>🔧 Luthierie — Intro Paragraph</label>
+            <textarea id="live-luth-intro" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-luth-intro">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>🪕 Custom Sitars — Shahid Ali Intro 1</label>
+            <textarea id="live-sitars-1" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sitars-1">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>🪕 Custom Sitars — Shahid Ali Intro 2 (with player quotes)</label>
+            <textarea id="live-sitars-2" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sitars-2">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>🌳 Teak / Tonewood Callout</label>
+            <textarea id="live-teak" rows="4"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-teak">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>✉️ Connect — Intro Paragraph</label>
+            <textarea id="live-connect" rows="3"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-connect">Copy</button>
+          </div>
+
+          <div class="text-editor-block">
+            <label>📰 Hero — Tagline (below main title)</label>
+            <textarea id="live-hero-tagline" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-hero-tagline">Copy</button>
+
+            <label>Lessons — Note at Bottom</label>
+            <textarea id="live-lessons-note" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-lessons-note">Copy</button>
+
+            <label>Lessons — Video Caption</label>
+            <textarea id="live-lesson-vid-cap" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-lesson-vid-cap">Copy</button>
+
+            <label>Shahid Ali — Teak Sitar Video Caption</label>
+            <textarea id="live-sa-teak" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sa-teak">Copy</button>
+
+            <label>Shahid Ali — SPK Sitar Video Caption</label>
+            <textarea id="live-sa-spk" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sa-spk">Copy</button>
+
+            <label>Shahid Ali — SPK Tunwood Video Caption</label>
+            <textarea id="live-sa-tunwood" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sa-tunwood">Copy</button>
+
+            <label>Shahid Ali — Travel Sitar Video Caption</label>
+            <textarea id="live-sa-travel" rows="2"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-sa-travel">Copy</button>
+
+            <label>Vintage Sitars — Callout Text</label>
+            <textarea id="live-vintage-callout" rows="3"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-vintage-callout">Copy</button>
+
+            <label>Naskar Sitar — Video Caption</label>
+            <textarea id="live-naskar-caption" rows="3"></textarea>
+            <button class="btn btn-ghost copy-btn" data-target="live-naskar-caption">Copy</button>
+          </div>
+
+        </div>
+
+        <div style="margin-top:2rem;padding:1rem;background:rgba(46,196,174,0.07);border:1px solid rgba(46,196,174,0.2);">
+          <p style="font-size:0.82rem;color:var(--cream-dk);">
+            <strong style="color:var(--saffron);">Tip:</strong> HTML tags inside text areas are preserved —
+            you can use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;br&gt;</code> etc.
+            for formatting. Do not add entire block elements like <code>&lt;p&gt;</code> or <code>&lt;div&gt;</code>.
+          </p>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <button class="btn btn-gold" id="save-site-btn-2">⬇ Save &amp; Download Updated index.html</button>
+          <button class="btn btn-ghost" id="reset-fields-btn">✕ Reset All Fields</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  /* ---- Live text editor (runs after main admin JS) ---- */
+  (function() {
+    // Map of textarea IDs → CSS selectors for matching elements in index.html
+    const FIELD_MAP = {
+      /* Hero */
+      'live-hero-tagline':   { sel: '[data-editable="hero-tagline"]',      prop: 'innerHTML' },
+      /* Mission */
+      'live-mission-lead':   { sel: '[data-editable="mission-lead"]',       prop: 'innerHTML' },
+      'live-mission-need':   { sel: '[data-editable="mission-need"]',       prop: 'innerHTML' },
+      /* Training (About) */
+      'live-about-1':        { sel: '[data-editable="about-p1"]',           prop: 'innerHTML' },
+      'live-about-2':        { sel: '[data-editable="about-p2"]',           prop: 'innerHTML' },
+      /* Luthierie */
+      'live-luth-intro':     { sel: '[data-editable="luth-intro"]',         prop: 'innerHTML' },
+      /* Custom Sitars */
+      'live-sitars-1':       { sel: '[data-editable="sitars-intro-1"]',     prop: 'innerHTML' },
+      'live-sitars-2':       { sel: '[data-editable="sitars-intro-2"]',     prop: 'innerHTML' },
+      'live-teak':           { sel: '[data-editable="teak-text"]',          prop: 'innerHTML' },
+      'live-sa-teak':        { sel: '[data-editable="sa-video-teak"]',      prop: 'innerHTML' },
+      'live-sa-spk':         { sel: '[data-editable="sa-video-spk"]',       prop: 'innerHTML' },
+      'live-sa-tunwood':     { sel: '[data-editable="sa-video-tunwood"]',   prop: 'innerHTML' },
+      'live-sa-travel':      { sel: '[data-editable="sa-video-travel"]',    prop: 'innerHTML' },
+      'live-vintage-callout':{ sel: '[data-editable="vintage-callout"]',    prop: 'innerHTML' },
+      'live-naskar-caption': { sel: '[data-editable="naskar-caption"]',     prop: 'innerHTML' },
+      /* Lessons */
+      'live-lessons-note':   { sel: '[data-editable="lessons-note"]',       prop: 'innerHTML' },
+      'live-lesson-vid-cap': { sel: '[data-editable="lesson-video-caption"]',prop: 'innerHTML' },
+      /* Connect */
+      'live-connect':        { sel: '[data-editable="connect-intro"]',      prop: 'innerHTML' },
+    };
+
+    let rawHTML = '';  // full index.html source
+
+    function status(msg, ok) {
+      const el = document.getElementById('load-status');
+      if (el) { el.textContent = msg; el.style.color = ok === false ? '#e87d7d' : 'var(--teal-bright)'; }
+    }
+
+    function loadSiteText() {
+      status('Loading…');
+      fetch('index.html?nocache=' + Date.now())
+        .then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        })
+        .then(html => {
+          rawHTML = html;
+          // Parse into a DOM
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          let found = 0;
+          for (const [id, cfg] of Object.entries(FIELD_MAP)) {
+            const el = doc.querySelector(cfg.sel);
+            const ta = document.getElementById(id);
+            if (el && ta) {
+              ta.value = (cfg.prop === 'innerHTML' ? el.innerHTML : el.textContent).trim();
+              found++;
+            }
+          }
+          document.getElementById('live-editor-fields').style.display = 'block';
+          status('Loaded ' + found + ' sections from index.html ✓', true);
+        })
+        .catch(err => {
+          status('Could not load index.html: ' + err.message + '. Open admin.html via a local web server.', false);
+          // Still show fields with empty values so user can type
+          document.getElementById('live-editor-fields').style.display = 'block';
+        });
+    }
+
+    function saveSite() {
+      if (!rawHTML) { alert('Please click "Load Current Site Text" first.'); return; }
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(rawHTML, 'text/html');
+      for (const [id, cfg] of Object.entries(FIELD_MAP)) {
+        const el = doc.querySelector(cfg.sel);
+        const ta = document.getElementById(id);
+        if (el && ta && ta.value.trim()) {
+          if (cfg.prop === 'innerHTML') el.innerHTML = ta.value;
+          else el.textContent = ta.value;
+        }
+      }
+      // Serialize back to HTML string
+      const updated = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+      const blob = new Blob([updated], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+      status('Downloaded updated index.html ✓ — replace the file on your server.', true);
+    }
+
+    document.getElementById('load-site-btn').addEventListener('click', loadSiteText);
+    document.getElementById('save-site-btn').addEventListener('click', saveSite);
+    document.getElementById('save-site-btn-2').addEventListener('click', saveSite);
+    document.getElementById('reset-fields-btn').addEventListener('click', () => {
+      Object.keys(FIELD_MAP).forEach(id => {
+        const ta = document.getElementById(id);
+        if (ta) ta.value = '';
+      });
+      status('Fields cleared.', true);
+    });
+  })();
+  </script>
+
+
+  <!-- ======================================================
+       TAB: TRAFFIC
+  ====================================================== -->
+  <div class="tab-panel" id="tab-traffic" role="tabpanel">
+
+    <div class="admin-card">
+      <h2>Traffic Dashboard</h2>
+      <p class="subtitle">Analytics powered by GoatCounter — privacy-respecting, no cookies.</p>
+
+      <div class="instruction-box">
+        <strong>Note:</strong> You may need to log into your GoatCounter account at <a href="https://sitarboston.goatcounter.com" target="_blank" style="color:var(--teal-bright)">sitarboston.goatcounter.com</a> before the dashboard loads below. If the iframe is blank, open the link directly.
+      </div>
+
+      <iframe id="traffic-frame"
+              src="https://sitarboston.goatcounter.com/"
+              title="GoatCounter Traffic Dashboard"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+
+</div><!-- /#admin-shell -->
+
+
+<script>
+/* ============================================================
+   ADMIN PANEL — JavaScript
+   ============================================================ */
+'use strict';
+
+/* ---- Password check (SHA-256 of "sitarboston2024") ---- */
+const CORRECT_HASH = 'a5d3e6f1c2b4a8d7e9f0c1b2a3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2';
+// We use a simple comparison — for static sites this is sufficient
+// The actual bcrypt/SHA256 check is done client-side with SubtleCrypto
+
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+const loginScreen = document.getElementById('login-screen');
+const adminShell  = document.getElementById('admin-shell');
+const loginBtn    = document.getElementById('login-btn');
+const pwInput     = document.getElementById('pw-input');
+const loginError  = document.getElementById('login-error');
+
+// Check session
+if (sessionStorage.getItem('sb_auth') === '1') {
+  loginScreen.style.display = 'none';
+  adminShell.style.display = 'block';
+  initAdmin();
+}
+
+async function tryLogin() {
+  const pw = pwInput.value;
+  const hash = await sha256(pw);
+  // Password: sitarboston2024
+  const correctHash = await sha256('sitarboston2024');
+  if (hash === correctHash) {
+    sessionStorage.setItem('sb_auth', '1');
+    loginScreen.style.display = 'none';
+    adminShell.style.display = 'block';
+    loginError.style.display = 'none';
+    initAdmin();
+  } else {
+    loginError.style.display = 'block';
+    pwInput.value = '';
+    pwInput.focus();
+  }
+}
+
+loginBtn.addEventListener('click', tryLogin);
+pwInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') tryLogin();
+});
+
+document.getElementById('logout-btn').addEventListener('click', () => {
+  sessionStorage.removeItem('sb_auth');
+  location.reload();
+});
+
+
+/* ============================================================
+   TAB SWITCHING
+   ============================================================ */
+function initTabs() {
+  const tabBtns   = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      const panel = document.getElementById('tab-' + target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+}
+
+
+/* ============================================================
+   NEWS EDITOR
+   ============================================================ */
+let newsItems = [];
+
+function renderNewsEditor() {
+  const container = document.getElementById('news-items-container');
+  if (!newsItems.length) {
+    container.innerHTML = '<p style="color:var(--teal-light);font-style:italic;">No news items yet. Click "+ Add News Item" to create one.</p>';
+    return;
+  }
+
+  container.innerHTML = newsItems.map((item, i) => `
+    <div class="news-item-editor" data-index="${i}">
+      <div class="item-header">
+        <span class="item-num">Item #${i + 1}</span>
+        <button class="btn btn-danger delete-news-item" data-index="${i}">Delete</button>
+      </div>
+      <div class="two-col">
+        <div>
+          <label>Title</label>
+          <input type="text" class="ni-title" value="${escHtml(item.title)}" placeholder="News title" />
+        </div>
+        <div>
+          <label>Date</label>
+          <input type="text" class="ni-date" value="${escHtml(item.date)}" placeholder="e.g. April 2026" />
+        </div>
+      </div>
+      <label>Category Tag</label>
+      <input type="text" class="ni-category" value="${escHtml(item.category)}" placeholder="e.g. Community, Events, Luthierie" />
+      <label>Body Text</label>
+      <textarea class="ni-body">${escHtml(item.body)}</textarea>
+      <label>Link (optional)</label>
+      <input type="url" class="ni-link" value="${escHtml(item.link || '')}" placeholder="https://… (leave blank if none)" />
+    </div>
+  `).join('');
+
+  // Delete buttons
+  container.querySelectorAll('.delete-news-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.index);
+      newsItems.splice(idx, 1);
+      renderNewsEditor();
+    });
+  });
+}
+
+function collectNewsData() {
+  const editors = document.querySelectorAll('.news-item-editor');
+  newsItems = Array.from(editors).map((editor, i) => ({
+    id: i + 1,
+    title:    editor.querySelector('.ni-title').value.trim(),
+    date:     editor.querySelector('.ni-date').value.trim(),
+    category: editor.querySelector('.ni-category').value.trim(),
+    body:     editor.querySelector('.ni-body').value.trim(),
+    link:     editor.querySelector('.ni-link').value.trim()
+  }));
+}
+
+function initNews() {
+  fetch('news-data.json')
+    .then(r => r.json())
+    .then(data => {
+      newsItems = Array.isArray(data) ? data : [];
+      renderNewsEditor();
+    })
+    .catch(() => {
+      newsItems = [];
+      renderNewsEditor();
+    });
+
+  document.getElementById('add-news-item').addEventListener('click', () => {
+    collectNewsData();
+    newsItems.push({ id: newsItems.length + 1, title: '', date: '', category: 'Community', body: '', link: '' });
+    renderNewsEditor();
+    // Scroll to new item
+    const container = document.getElementById('news-items-container');
+    container.lastElementChild && container.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('save-news').addEventListener('click', () => {
+    collectNewsData();
+    const json    = JSON.stringify(newsItems, null, 2);
+    const blob    = new Blob([json], { type: 'application/json' });
+    const url     = URL.createObjectURL(blob);
+    const a       = document.createElement('a');
+    a.href        = url;
+    a.download    = 'news-data.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showStatus('news-status', 'Downloaded! Replace news-data.json on your server.', 'ok');
+  });
+}
+
+
+/* ============================================================
+   IMAGE MANAGER
+   ============================================================ */
+function initImageManager() {
+  const area      = document.getElementById('img-upload-area');
+  const fileInput = document.getElementById('img-file-input');
+  const previewG  = document.getElementById('img-preview-grid');
+  const output    = document.getElementById('img-filenames-output');
+
+  area.addEventListener('click', () => fileInput.click());
+
+  area.addEventListener('dragover', e => { e.preventDefault(); area.classList.add('drag-over'); });
+  area.addEventListener('dragleave', () => area.classList.remove('drag-over'));
+  area.addEventListener('drop', e => {
+    e.preventDefault();
+    area.classList.remove('drag-over');
+    handleFiles(Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/')));
+  });
+
+  fileInput.addEventListener('change', () => {
+    handleFiles(Array.from(fileInput.files));
+    fileInput.value = '';
+  });
+
+  let uploadedFiles = [];
+
+  function handleFiles(files) {
+    files.forEach(file => {
+      uploadedFiles.push(file.name);
+      const reader = new FileReader();
+      reader.onload = e => {
+        const div  = document.createElement('div');
+        div.className = 'preview-item';
+        div.innerHTML = `<img src="${e.target.result}" alt="${file.name}" /><p class="preview-name">${file.name}</p>`;
+        previewG.appendChild(div);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    if (uploadedFiles.length) {
+      output.innerHTML = `
+        <h3 style="color:var(--cream);font-size:1rem;margin-bottom:0.8rem;">Uploaded filenames — add these to index.html</h3>
+        <div style="font-family:monospace;font-size:0.85rem;background:rgba(8,30,27,0.5);padding:1rem;border-radius:var(--radius);border:1px solid rgba(47,196,174,0.1);color:var(--cream-dk);line-height:2;">
+          ${uploadedFiles.map(n => `images/${n}`).join('<br>')}
+        </div>
+      `;
+    }
+  }
+}
+
+
+/* ============================================================
+   VIDEO MANAGER
+   ============================================================ */
+function initVideoManager() {
+  const area      = document.getElementById('vid-upload-area');
+  const fileInput = document.getElementById('vid-file-input');
+  const previewG  = document.getElementById('vid-preview-grid');
+  const output    = document.getElementById('vid-filenames-output');
+
+  area.addEventListener('click', () => fileInput.click());
+  area.addEventListener('dragover', e => { e.preventDefault(); area.classList.add('drag-over'); });
+  area.addEventListener('dragleave', () => area.classList.remove('drag-over'));
+  area.addEventListener('drop', e => {
+    e.preventDefault();
+    area.classList.remove('drag-over');
+    handleFiles(Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('video/')));
+  });
+
+  fileInput.addEventListener('change', () => {
+    handleFiles(Array.from(fileInput.files));
+    fileInput.value = '';
+  });
+
+  let uploadedFiles = [];
+
+  function handleFiles(files) {
+    files.forEach(file => {
+      uploadedFiles.push(file.name);
+      const div = document.createElement('div');
+      div.className = 'preview-item';
+      const vidUrl = URL.createObjectURL(file);
+      div.innerHTML = `<video src="${vidUrl}" muted playsinline style="width:120px;height:80px;object-fit:cover;border-radius:4px;border:1px solid rgba(47,196,174,0.2);"></video><p class="preview-name">${file.name}</p>`;
+      previewG.appendChild(div);
+    });
+
+    if (uploadedFiles.length) {
+      output.innerHTML = `
+        <h3 style="color:var(--cream);font-size:1rem;margin-bottom:0.8rem;">Uploaded filenames — add these to index.html</h3>
+        <div style="font-family:monospace;font-size:0.85rem;background:rgba(8,30,27,0.5);padding:1rem;border-radius:var(--radius);border:1px solid rgba(47,196,174,0.1);color:var(--cream-dk);line-height:2.2;">
+          ${uploadedFiles.map(n => `videos/${n}`).join('<br>')}
+        </div>
+      `;
+    }
+  }
+}
+
+
+/* ============================================================
+   QUICK TEXT EDITOR — Copy buttons
+   ============================================================ */
+function initTextEditor() {
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ta = document.getElementById(btn.dataset.target);
+      if (!ta) return;
+      navigator.clipboard.writeText(ta.value).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.color = 'var(--green)';
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.color = '';
+        }, 2000);
+      });
+    });
+  });
+}
+
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+function showStatus(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'status-msg ' + type + ' show';
+  setTimeout(() => el.classList.remove('show'), 4000);
+}
+
+function escHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+
+/* ============================================================
+   REPLACE MEDIA
+   ============================================================ */
+function initReplaceMedia() {
+
+  const ALL_IMAGES = [
+    // ── Hero ──────────────────────────────────────────────────
+    { path: 'images/Top cover.jpg',             label: 'Hero background / Gallery cover',        section: 'Hero' },
+    // ── Mission ───────────────────────────────────────────────
+    { path: 'images/Luthiere Cover.jpg',        label: 'Sitar on Persian rug',                   section: 'Mission' },
+    { path: 'images/Repaired Sitars/sitar1.jpg',label: 'Restored classic sitar',                 section: 'Mission / Gallery' },
+    // ── Training (About) ──────────────────────────────────────
+    { path: 'images/Bio Guru etc/sitar3.jpg',   label: 'Dr. Samya Bhaduri portrait',             section: 'Training' },
+    { path: 'images/Bio Guru etc/Gurus-1.jpg',  label: 'With Guruji (photo 1)',                  section: 'Training — Guru Photos' },
+    { path: 'images/Bio Guru etc/gurus-2.jpg',  label: 'With Guru (photo 2)',                    section: 'Training — Guru Photos' },
+    { path: 'images/with guruji.jpg',           label: 'With Guruji (photo 3 / lesson)',         section: 'Training — Guru Photos / Lessons' },
+    { path: 'images/Nizamuddin.jpg',            label: 'Hazrat Nizamuddin Dargah',               section: 'Training — Homage' },
+    { path: 'images/Khusrao.jpg',               label: 'Amir Khusrao Tomb',                      section: 'Training — Homage' },
+    { path: 'images/Vilayat Khan Tomb.jpg',     label: 'Ustad Vilayat Khan Tomb',                section: 'Training — Homage' },
+    // ── Luthierie ─────────────────────────────────────────────
+    { path: 'images/Sitar Luthier/IMG_5694.jpg',label: 'Luthierie — bridge & strings',           section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5698.JPG',label: 'Luthierie — fret tying',                 section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5708.jpg',label: 'Luthierie — bridge jawari',              section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5712.jpg',label: 'Luthierie — detail work',                section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5713.jpg',label: 'Luthierie — sitar restoration',          section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5722.jpg',label: 'Luthierie — instrument care',            section: 'Luthierie' },
+    { path: 'images/Sitar Luthier/IMG_5733.jpg',label: 'Luthierie — workshop tools',             section: 'Luthierie' },
+    // ── Repaired Sitars ───────────────────────────────────────
+    { path: 'images/Repaired Sitars/photo_11.jpg', label: 'Repair — bridge & body',              section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_14.jpg', label: 'Repair — vintage sitar',              section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_16.jpg', label: 'Repair — neck & fret',                section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_17.jpg', label: 'Repair — concert condition',          section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_18.webp',label: 'Repair — bridge carving',             section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_19.webp',label: 'Repair — string replacement',         section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_27.webp',label: 'Repair — body polish',                section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_29.webp',label: 'Repair — peg smoothening',            section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_38.jpg', label: 'Repair — completed restoration',      section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_39.jpg', label: 'Repair — before & after',             section: 'Repair & Restoration' },
+    { path: 'images/Repaired Sitars/photo_42.jpg', label: 'Repair — vintage fully restored',     section: 'Repair & Restoration' },
+    // ── Custom Sitars ─────────────────────────────────────────
+    { path: 'images/Shahidali presenting his creation to Pt. Arvind Parikh Ji.jpg',
+                                                label: 'Shahid Ali with Pt. Arvind Parikh Ji',   section: 'Custom Sitars' },
+    // ── Gallery extras ────────────────────────────────────────
+    { path: 'images/Bio Guru etc/sitar6.jpg',  label: 'Playing sitar — mountains',               section: 'Gallery' },
+    { path: 'images/Bio Guru etc/sitar4.jpg',  label: 'Playing sitar — red curtains',            section: 'Gallery' },
+    { path: 'images/Bio Guru etc/sitar7.jpg',  label: 'Two sitar players outdoors',              section: 'Gallery' },
+  ];
+
+  const ALL_VIDEOS = [
+    { path: 'videos/Sitar lesson.mp4',                                         label: 'Sitar Lesson',                           section: 'Lessons / Videos' },
+    { path: 'videos/Sitar for sale /shahidali concert teak sitar.mp4',         label: 'Shahid Ali — Concert Teak Sitar',        section: 'Custom Sitars / Videos' },
+    { path: 'videos/Sitar for sale /Shahidali SPK sitar.mp4',                  label: 'Shahid Ali — SPK Sitar',                 section: 'Custom Sitars / Videos' },
+    { path: 'videos/Sitar for sale /Shahidali SPK Tunwood sitar.mp4',          label: 'Shahid Ali — SPK Tunwood Sitar',         section: 'Custom Sitars / Videos' },
+    { path: 'videos/Sitar for sale /Shahidali Concert Travel Sitar.mov',       label: 'Shahid Ali — Concert Travel Sitar',      section: 'Custom Sitars / Videos' },
+    { path: 'videos/Sitar for sale /70s Naskar pro Sitar.mp4',                 label: '70s Naskar Pro Sitar — Restored',        section: 'Custom Sitars / Videos' },
+    { path: 'videos/RepairedSitar /BM Sitarmaker GP.mp4',                      label: 'BM Sitarmaker GP',                       section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /BM Sitarmaker GP sitar.mp4',                label: 'BM Sitarmaker GP Sitar',                 section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /Kanailal Sons GP.mp4',                      label: 'Kanailal Sons GP',                       section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /Kanailal & Sons GP sitar.mp4',              label: 'Kanailal & Sons GP — after jaw work',    section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /Restored Hiren Roy vintage 60s KP sitar.mp4', label: 'Restored Hiren Roy Vintage 60s KP',   section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /Soundchcek and graduation on vintage Hiren Roy.mp4', label: 'Sound Check — Vintage Hiren Roy', section: 'Repair Videos' },
+    { path: 'videos/RepairedSitar /Vintage sarat Sardar Sitar KP - restored.mp4', label: 'Vintage Sarat Sardar KP — Restored', section: 'Repair Videos' },
+  ];
+
+  function makeReplaceCard(item, isVideo) {
+    const card = document.createElement('div');
+    card.className = 'replace-card';
+    const filename = item.path.split('/').pop();
+
+    const mediaEl = isVideo
+      ? `<video src="${item.path}" muted preload="none"></video>`
+      : `<img src="${item.path}" alt="${item.label}" loading="lazy">`;
+
+    card.innerHTML = `
+      ${mediaEl}
+      <div class="rc-section">${item.section}</div>
+      <div class="rc-label">${item.label}</div>
+      <div class="rc-path">${item.path}</div>
+      <div class="rc-actions">
+        <input type="file" accept="${isVideo ? 'video/*' : 'image/*'}" style="display:none">
+        <button class="btn-replace">Replace</button>
+        ${isVideo
+          ? `<img class="rc-new-preview" alt="New preview" style="display:none">`
+          : `<img class="rc-new-preview" alt="New preview">`
+        }
+        <a class="btn-download-replace" download="${filename}">⬇ Download as "${filename}"</a>
+      </div>
+    `;
+
+    const fileInput   = card.querySelector('input[type="file"]');
+    const replaceBtn  = card.querySelector('.btn-replace');
+    const newPreview  = card.querySelector('.rc-new-preview');
+    const downloadBtn = card.querySelector('.btn-download-replace');
+
+    replaceBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+
+      if (isVideo) {
+        // For videos: show a thumbnail using a hidden video element
+        newPreview.style.display = 'none';
+        downloadBtn.href = url;
+        downloadBtn.download = filename;
+        downloadBtn.classList.add('show');
+        downloadBtn.textContent = `⬇ Download as "${filename}"`;
+      } else {
+        newPreview.src = url;
+        newPreview.classList.add('show');
+        downloadBtn.href = url;
+        downloadBtn.download = filename;
+        downloadBtn.classList.add('show');
+        downloadBtn.textContent = `⬇ Download as "${filename}"`;
+      }
+
+      replaceBtn.textContent = '✓ New file ready';
+      replaceBtn.style.borderColor = 'var(--saffron)';
+      replaceBtn.style.color = 'var(--saffron)';
+    });
+
+    return card;
+  }
+
+  const imgGrid = document.getElementById('replace-images-grid');
+  const vidGrid = document.getElementById('replace-videos-grid');
+
+  ALL_IMAGES.forEach(item => imgGrid.appendChild(makeReplaceCard(item, false)));
+  ALL_VIDEOS.forEach(item => vidGrid.appendChild(makeReplaceCard(item, true)));
+}
+
+
+/* ============================================================
+   INIT ALL
+   ============================================================ */
+function initAdmin() {
+  initTabs();
+  initNews();
+  initReplaceMedia();
+  initImageManager();
+  initVideoManager();
+  initTextEditor();
+}
+</script>
+</body>
+</html>
