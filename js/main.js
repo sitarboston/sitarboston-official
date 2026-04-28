@@ -472,6 +472,32 @@
 
 
 /* ============================================================
+   COLLAPSIBLE SECTIONS
+   ============================================================ */
+(function initCollapsible() {
+  document.querySelectorAll('.section-collapse-btn').forEach(btn => {
+    const contentId = btn.dataset.collapse;
+    const content   = document.getElementById(contentId);
+    if (!content) return;
+
+    btn.addEventListener('click', () => {
+      const opening = !content.classList.contains('open');
+      content.classList.toggle('open', opening);
+      btn.classList.toggle('open', opening);
+      btn.setAttribute('aria-expanded', opening);
+
+      if (opening) {
+        // Trigger reveal animations for newly visible items
+        content.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+          el.classList.add('visible');
+        });
+      }
+    });
+  });
+})();
+
+
+/* ============================================================
    GOLD DUST — subtle floating particles
    ============================================================ */
 (function initGoldDust() {
