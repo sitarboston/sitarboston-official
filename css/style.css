@@ -2028,6 +2028,7 @@ section { position: relative; overflow: hidden; }
 @media (max-width: 768px) {
   .guru-photos { grid-template-columns: 1fr; }
   .homage-grid { grid-template-columns: 1fr; }
+  .homage-text { margin-top: 2.5rem; }
 }
 
 /* ============================================================
@@ -2471,9 +2472,10 @@ video:hover { border-color: rgba(201,164,76,0.5); transition: border-color 0.3s;
   border-top: 2px solid rgba(201,164,76,0.25);
 }
 
-/* Homage grid: equal square items */
+/* Homage grid: equal height items (desktop) */
 .homage-grid { grid-auto-rows: 280px; }
-.homage-item img { height: 100%; width: 100%; object-fit: cover; }
+.homage-item { display: flex; flex-direction: column; }
+.homage-item img { height: 260px; width: 100%; object-fit: cover; flex-shrink: 0; }
 
 /* Guru photos 3-col equal height */
 .guru-photos {
@@ -2486,7 +2488,8 @@ video:hover { border-color: rgba(201,164,76,0.5); transition: border-color 0.3s;
   .lessons-grid { grid-template-columns: 1fr; }
   .repair-videos { grid-template-columns: 1fr 1fr; }
   .guru-photos { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
-  .homage-grid { grid-auto-rows: 200px; }
+  .homage-grid { grid-auto-rows: auto; }
+  .homage-item img { height: 200px; }
 }
 @media(max-width:500px){
   .repair-videos { grid-template-columns: 1fr; }
@@ -2857,8 +2860,9 @@ p, h1, h2, h3, h4, li, .badge, .section-subtitle, .hero-tagline,
     grid-auto-rows: 220px;
   }
 
-  /* Homage photos — taller single-col cells */
-  .homage-grid { grid-auto-rows: 260px; }
+  /* Homage photos — auto rows so captions are never clipped */
+  .homage-grid { grid-auto-rows: auto; }
+  .homage-item img { height: 240px; }
 
   /* Music player — icon only so it doesn't crowd the viewport */
   .music-label  { display: none; }
@@ -3112,20 +3116,6 @@ p, h1, h2, h3, h4, li, .badge, .section-subtitle, .hero-tagline,
    ============================================================ */
 #shahidali-gallery {
   padding-top: 8rem;
-}
-.sa-gallery-logo {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 90px;
-  height: auto;
-  border-radius: 4px;
-  opacity: 0.82;
-  pointer-events: none;
-  z-index: 3;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.50);
-  border: 1px solid rgba(201,168,76,0.45);
-  display: block;
 }
 
 /* ============================================================

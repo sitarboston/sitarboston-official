@@ -443,22 +443,6 @@
 })();
 
 
-/* ============================================================
-   SHAHIDALI GALLERY — inject logo badge on each photo
-   ============================================================ */
-(function initShahidaliLogos() {
-  const grid = document.getElementById('shahidali-gallery-grid');
-  if (!grid) return;
-  const logoSrc = 'images/Shahidali sitars/505819887_10238189468340461_8602253317240696074_n.jpg';
-  grid.querySelectorAll('.lg-item').forEach(function(item) {
-    const logo = document.createElement('img');
-    logo.src = logoSrc;
-    logo.className = 'sa-gallery-logo';
-    logo.alt = 'Shahidali';
-    logo.loading = 'lazy';
-    item.appendChild(logo);
-  });
-})();
 
 
 /* ============================================================
