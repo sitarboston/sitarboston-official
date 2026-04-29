@@ -1033,7 +1033,7 @@ section { position: relative; overflow: hidden; }
   margin-bottom: 4rem;
 }
 
-.videos-arch-header svg {
+.videos-arch-header > svg {
   display: block;
   margin: 0 auto 1.5rem;
   opacity: 0.45;
