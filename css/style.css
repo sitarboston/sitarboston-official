@@ -2679,6 +2679,15 @@ html {
   max-height: 6000px;
 }
 
+.collapse-hint {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream-dk);
+  opacity: 0.55;
+  margin: 1.2rem auto 0.3rem;
+  text-align: center;
+}
 .section-collapse-btn {
   background: none;
   border: 1px solid rgba(255,255,255,0.15);
