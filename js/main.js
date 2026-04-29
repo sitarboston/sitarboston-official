@@ -444,29 +444,19 @@
 
 
 /* ============================================================
-   DARK / LIGHT THEME TOGGLE
+   SHAHIDALI GALLERY — inject logo badge on each photo
    ============================================================ */
-(function initThemeToggle() {
-  const btn      = document.getElementById('theme-toggle');
-  const iconSun  = document.getElementById('icon-sun');
-  const iconMoon = document.getElementById('icon-moon');
-  if (!btn) return;
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    const isLight = theme === 'light';
-    iconSun.style.display  = isLight ? '' : 'none';
-    iconMoon.style.display = isLight ? 'none' : '';
-    btn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-  }
-
-  const saved = localStorage.getItem('sb-theme') || 'dark';
-  applyTheme(saved);
-
-  btn.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem('sb-theme', next);
+(function initShahidaliLogos() {
+  const grid = document.getElementById('shahidali-gallery-grid');
+  if (!grid) return;
+  const logoSrc = 'images/Shahidali sitars/505819887_10238189468340461_8602253317240696074_n.jpg';
+  grid.querySelectorAll('.lg-item').forEach(function(item) {
+    const logo = document.createElement('img');
+    logo.src = logoSrc;
+    logo.className = 'sa-gallery-logo';
+    logo.alt = 'Shahidali';
+    logo.loading = 'lazy';
+    item.appendChild(logo);
   });
 })();
 
