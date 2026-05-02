@@ -3,6 +3,16 @@
    Persian Isfahan Tilework Palette
    ============================================================ */
 
+.script-bi {
+  font-family: 'Tiro Devanagari Sanskrit', 'Amiri', Georgia, serif;
+  font-size: 0.75em;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  vertical-align: middle;
+}
+.hero-script { font-size: 0.6em; }
+.homage-heading .script-bi { font-size: 0.7em; }
+
 /* ---------- CSS Custom Properties ---------- */
 :root {
   --ink:           #081E1B;
