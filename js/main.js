@@ -530,3 +530,43 @@
   }
   animate();
 })();
+
+
+/* ============================================================
+   THEME TOGGLE — Basant Light / Persian Dark
+   ============================================================ */
+(function initThemeToggle() {
+  const html    = document.documentElement;
+  const btn     = document.getElementById('theme-toggle');
+  const iconSun  = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+
+  if (!btn) return;
+
+  const STORAGE_KEY = 'sitarboston-theme';
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
+      iconSun.style.display  = 'none';
+      iconMoon.style.display = '';
+      btn.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+      html.removeAttribute('data-theme');
+      iconSun.style.display  = '';
+      iconMoon.style.display = 'none';
+      btn.setAttribute('aria-label', 'Switch to light mode');
+    }
+  }
+
+  // Restore saved preference, default to dark
+  const saved = localStorage.getItem(STORAGE_KEY) || 'dark';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem(STORAGE_KEY, next);
+  });
+})();
