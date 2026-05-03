@@ -3363,11 +3363,11 @@ html[data-theme="light"] #news::before {
   opacity: 0.38;
 }
 
-/* #connect — bajra boats and temples, a spiritual journey */
+/* #connect — Ganga Aarti, evening flames on the Ganges */
 html[data-theme="light"] #connect::before {
   content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
-  background: url('https://images.pexels.com/photos/16747080/pexels-photo-16747080.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
-  opacity: 0.40;
+  background: url('https://images.pexels.com/photos/30210504/pexels-photo-30210504.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.35;
 }
 
 /* Ivory halo on all headings — lifts text off the background imagery */
@@ -3579,10 +3579,10 @@ html[data-theme="light"] #news .section-label  { color: #6B3800; }
 html[data-theme="light"] #news .section-subtitle { color: #3D0A10; }
 html[data-theme="light"] #news h2 { color: #1A0010; }
 
-/* CONNECT — morning ghat */
-html[data-theme="light"] #connect .section-label  { color: #7A0E1A; }
-html[data-theme="light"] #connect .section-subtitle { color: #0A3D1C; }
-html[data-theme="light"] #connect h2 { color: #1A0305; }
+/* CONNECT — Ganga Aarti evening; all text must be dark + carry warm halo */
+html[data-theme="light"] #connect .section-label  { color: #7A0E1A; font-weight: 700; text-shadow: 0 0 12px rgba(255,249,230,1), 0 1px 3px rgba(255,249,230,1); }
+html[data-theme="light"] #connect .section-subtitle { color: #0A3D1C; font-weight: 600; text-shadow: 0 0 10px rgba(255,249,230,1), 0 1px 3px rgba(255,249,230,1); }
+html[data-theme="light"] #connect h2 { color: #1A0305; text-shadow: 0 0 18px rgba(255,249,230,1), 0 0 30px rgba(255,249,230,0.9), 0 1px 4px rgba(255,249,230,1); }
 html[data-theme="light"] .ornament::before,
 html[data-theme="light"] .ornament::after {
   background: linear-gradient(to right, transparent, var(--saffron), transparent);
@@ -3824,8 +3824,8 @@ html[data-theme="light"] .news-link:hover { color: var(--saffron); }
 html[data-theme="light"] .news-loading { color: var(--teal-light); }
 
 /* ── CONNECT ── */
-html[data-theme="light"] .connect-info > p { color: var(--cream-dk); }
-html[data-theme="light"] .connect-info-centered h2 { color: var(--cream); }
+html[data-theme="light"] .connect-info > p { color: #2D0609; text-shadow: 0 0 10px rgba(255,249,230,0.95), 0 1px 3px rgba(255,249,230,1); }
+html[data-theme="light"] .connect-info-centered h2 { color: #1A0305; text-shadow: 0 0 18px rgba(255,249,230,1), 0 0 30px rgba(255,249,230,0.9), 0 1px 4px rgba(255,249,230,1); }
 html[data-theme="light"] .contact-item-icon {
   background: rgba(27, 94, 56, 0.10);
   border-color: rgba(27, 94, 56, 0.25);
