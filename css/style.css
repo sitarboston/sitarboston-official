@@ -2088,6 +2088,53 @@ section { position: relative; overflow: hidden; }
   .repair-videos { grid-template-columns: 1fr; }
 }
 
+/* ── "Click here for more examples" collapsible ── */
+.repair-more {
+  margin-top: 2.5rem;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.repair-more-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  background: rgba(201, 168, 76, 0.06);
+  border: none;
+  list-style: none;
+  user-select: none;
+  transition: background 0.2s, color 0.2s;
+}
+.repair-more-toggle::-webkit-details-marker { display: none; }
+.repair-more-toggle::before {
+  content: '▸';
+  font-size: 0.8rem;
+  transition: transform 0.25s;
+  display: inline-block;
+}
+.repair-more[open] .repair-more-toggle::before {
+  transform: rotate(90deg);
+}
+.repair-more-toggle:hover {
+  background: rgba(201, 168, 76, 0.14);
+  color: var(--saffron);
+}
+.repair-more .repair-grid-extra,
+.repair-more .repair-videos-extra {
+  padding: 1.4rem 1rem;
+}
+.repair-more .repair-grid-extra {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
 /* ============================================================
    LESSONS — PEOPLE CROP
    ============================================================ */
@@ -3555,16 +3602,16 @@ html[data-theme="light"] .guru-photo-item img { border-color: rgba(92, 14, 26, 0
 html[data-theme="light"] .guru-caption { color: var(--cream-dk); }
 
 /* Homage */
-html[data-theme="light"] .homage-heading { color: var(--saffron); }
-html[data-theme="light"] .homage-intro { color: var(--cream-dk); }
+html[data-theme="light"] .homage-heading { color: #6B3800; }
+html[data-theme="light"] .homage-intro { color: #1A0305; }
 html[data-theme="light"] .homage-item img {
   border-color: rgba(92, 14, 26, 0.15);
   filter: none;
 }
-html[data-theme="light"] .homage-caption { color: var(--cream-dk); }
-html[data-theme="light"] .homage-text { color: var(--cream-dk); }
-html[data-theme="light"] .homage-credit { color: var(--cream-dk); opacity: 0.8; }
-html[data-theme="light"] .homage-credit-link { color: var(--saffron-lt); border-color: rgba(193,123,0,0.4); }
+html[data-theme="light"] .homage-caption { color: #1A0305; }
+html[data-theme="light"] .homage-text { color: #1A0305; }
+html[data-theme="light"] .homage-credit { color: #2D2020; opacity: 1; }
+html[data-theme="light"] .homage-credit-link { color: #7A3800; border-color: rgba(122,56,0,0.4); }
 
 /* ── LUTHIERIE ── */
 html[data-theme="light"] .luthierie-intro { color: var(--cream-dk); }
@@ -3607,9 +3654,9 @@ html[data-theme="light"] .pillar {
   backdrop-filter: none;
 }
 html[data-theme="light"] .pillar:hover { border-color: var(--saffron); }
-html[data-theme="light"] .pillar h4 { color: var(--saffron-lt); }
-html[data-theme="light"] .pillar p { color: var(--cream-dk); }
-html[data-theme="light"] .lessons-note { color: var(--teal-light); }
+html[data-theme="light"] .pillar h4 { color: #7A1020; }
+html[data-theme="light"] .pillar p { color: #1A0305; }
+html[data-theme="light"] .lessons-note { color: #0F4220; }
 html[data-theme="light"] .lesson-video-caption { color: var(--cream-dk); }
 html[data-theme="light"] .lesson-fill-img {
   border-color: rgba(92, 14, 26, 0.15);
@@ -3658,8 +3705,8 @@ html[data-theme="light"] .model-card:hover {
   border-top-color: var(--saffron);
   box-shadow: 0 12px 32px rgba(92, 14, 26, 0.10);
 }
-html[data-theme="light"] .model-card h3 { color: var(--saffron-lt); }
-html[data-theme="light"] .model-card p { color: var(--cream-dk); }
+html[data-theme="light"] .model-card h3 { color: #7A1020; }
+html[data-theme="light"] .model-card p { color: #1A0305; }
 
 /* Build process */
 html[data-theme="light"] .build-process {
@@ -3741,15 +3788,15 @@ html[data-theme="light"] .news-card:hover {
   border-color: rgba(27, 94, 56, 0.4);
   box-shadow: 0 8px 28px rgba(92, 14, 26, 0.09);
 }
-html[data-theme="light"] .news-card h3 { color: var(--cream); }
-html[data-theme="light"] .news-card p { color: var(--cream-dk); }
-html[data-theme="light"] .news-date { color: var(--teal-light); }
+html[data-theme="light"] .news-card h3 { color: #1A0305; }
+html[data-theme="light"] .news-card p { color: #1A0305; }
+html[data-theme="light"] .news-date { color: #0F4220; }
 html[data-theme="light"] .news-tag {
-  background: rgba(193, 123, 0, 0.10);
-  color: var(--saffron-lt);
-  border-color: rgba(193, 123, 0, 0.28);
+  background: rgba(122, 56, 0, 0.10);
+  color: #7A3800;
+  border-color: rgba(122, 56, 0, 0.35);
 }
-html[data-theme="light"] .news-link { color: var(--teal-bright); }
+html[data-theme="light"] .news-link { color: #0F4220; }
 html[data-theme="light"] .news-link:hover { color: var(--saffron); }
 html[data-theme="light"] .news-loading { color: var(--teal-light); }
 
@@ -3761,32 +3808,32 @@ html[data-theme="light"] .contact-item-icon {
   border-color: rgba(27, 94, 56, 0.25);
   color: var(--teal-bright);
 }
-html[data-theme="light"] .contact-item-label { color: var(--teal-light); }
-html[data-theme="light"] .contact-item-value { color: var(--cream); }
-html[data-theme="light"] .contact-item-value a { color: var(--cream); }
-html[data-theme="light"] .contact-item-value a:hover { color: var(--saffron); }
+html[data-theme="light"] .contact-item-label { color: #145228; font-weight: 600; }
+html[data-theme="light"] .contact-item-value { color: #1A0305; }
+html[data-theme="light"] .contact-item-value a { color: #1A0305; }
+html[data-theme="light"] .contact-item-value a:hover { color: #8B4E00; }
 html[data-theme="light"] .contact-form-wrap {
-  background: #FFFEF7;
-  border-color: rgba(92, 14, 26, 0.12);
+  background: rgba(255, 254, 247, 0.97);
+  border-color: rgba(45, 6, 9, 0.15);
   backdrop-filter: none;
 }
-html[data-theme="light"] .form-group label { color: var(--teal-light); }
+html[data-theme="light"] .form-group label { color: #145228; font-weight: 600; }
 html[data-theme="light"] .form-group input,
 html[data-theme="light"] .form-group select,
 html[data-theme="light"] .form-group textarea {
-  background: #FFF9ED;
-  border-color: rgba(92, 14, 26, 0.18);
-  color: var(--cream);
+  background: #FFFDF5;
+  border-color: rgba(45, 6, 9, 0.22);
+  color: #1A0305;
 }
 html[data-theme="light"] .form-group input:focus,
 html[data-theme="light"] .form-group select:focus,
 html[data-theme="light"] .form-group textarea:focus {
-  border-color: var(--teal-bright);
-  box-shadow: 0 0 0 3px rgba(27, 94, 56, 0.1);
+  border-color: #145228;
+  box-shadow: 0 0 0 3px rgba(20, 82, 40, 0.12);
 }
 html[data-theme="light"] .form-group input::placeholder,
 html[data-theme="light"] .form-group textarea::placeholder {
-  color: rgba(74, 21, 32, 0.3);
+  color: rgba(45, 6, 9, 0.38);
 }
 html[data-theme="light"] .form-group select option {
   background: #FFF9ED;
@@ -3813,7 +3860,21 @@ html[data-theme="light"] .footer-logo-fa { color: var(--teal-light); }
 html[data-theme="light"] .footer-tagline { color: var(--cream-dk); }
 html[data-theme="light"] .footer-nav a { color: var(--cream-dk); }
 html[data-theme="light"] .footer-nav a:hover { color: var(--teal-bright); }
-html[data-theme="light"] .footer-copy { color: rgba(74, 21, 32, 0.45); border-top-color: rgba(193,123,0,0.15); }
+html[data-theme="light"] .footer-copy { color: rgba(26, 3, 5, 0.6); border-top-color: rgba(139,78,0,0.22); }
+
+/* ── REPAIR COLLAPSIBLE ── */
+html[data-theme="light"] .repair-more {
+  border-color: rgba(139, 78, 0, 0.35);
+  background: rgba(255, 254, 247, 0.6);
+}
+html[data-theme="light"] .repair-more-toggle {
+  color: #145228;
+  background: rgba(139, 78, 0, 0.07);
+}
+html[data-theme="light"] .repair-more-toggle:hover {
+  background: rgba(139, 78, 0, 0.15);
+  color: #8B4E00;
+}
 
 /* ── MUSIC PLAYER ── */
 html[data-theme="light"] #music-player {
