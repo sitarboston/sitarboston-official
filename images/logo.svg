@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 280 420" width="280" height="420">
+  <defs>
+
+    <!-- Persian arch clip path -->
+    <clipPath id="arch-clip">
+      <path d="M24,395 L24,158 Q24,18 140,18 Q256,18 256,158 L256,395 Z"/>
+    </clipPath>
+
+    <!-- Bottom fade so text sits cleanly over photo -->
+    <linearGradient id="fade-bottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#050F0D" stop-opacity="0"/>
+      <stop offset="55%"  stop-color="#050F0D" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#050F0D" stop-opacity="0.97"/>
+    </linearGradient>
+
+    <!-- Gold gradient for SITAR text -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#D4A017"/>
+      <stop offset="50%"  stop-color="#F2C04A"/>
+      <stop offset="100%" stop-color="#C9A84C"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ── Dark background ── -->
+  <rect width="280" height="420" fill="#050F0D"/>
+
+  <!-- ── Outer arch frame (gold) ── -->
+  <path d="M12,408 L12,152 Q12,4 140,4 Q268,4 268,152 L268,408 Z"
+        stroke="#C9A84C" stroke-width="1.4" fill="none"/>
+
+  <!-- ── Inner arch frame (teal) ── -->
+  <path d="M24,408 L24,158 Q24,18 140,18 Q256,18 256,158 L256,408 Z"
+        stroke="rgba(47,196,174,0.45)" stroke-width="0.7" fill="none"/>
+
+  <!-- ── Sitar photo inside arch ── -->
+  <image href="Bio Guru etc/sitar3.jpg"
+         x="24" y="18" width="232" height="390"
+         clip-path="url(#arch-clip)"
+         preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- ── Gradient fade over bottom of photo ── -->
+  <rect x="24" y="18" width="232" height="390"
+        fill="url(#fade-bottom)"
+        clip-path="url(#arch-clip)"/>
+
+  <!-- ── Top arch crown ornament ── -->
+  <circle cx="140" cy="4"  r="5"   fill="#E8A820" opacity="0.9"/>
+  <circle cx="12"  cy="152" r="3.5" fill="rgba(200,70,60,0.6)"/>
+  <circle cx="268" cy="152" r="3.5" fill="rgba(80,180,90,0.6)"/>
+  <path d="M90,52 Q140,14 190,52" stroke="#2FC4AE" stroke-width="0.9" fill="none"/>
+  <!-- keel point -->
+  <path d="M100,75 Q140,38 180,75" stroke="rgba(232,168,32,0.4)" stroke-width="0.7" fill="none"/>
+  <!-- diamond -->
+  <path d="M140,32 L152,46 L140,60 L128,46 Z" stroke="#2FC4AE" stroke-width="0.7" fill="none"/>
+
+  <!-- ── Horizontal lattice lines ── -->
+  <line x1="28"  y1="240" x2="252" y2="240" stroke="rgba(232,168,32,0.18)" stroke-dasharray="4,5"/>
+  <line x1="28"  y1="300" x2="252" y2="300" stroke="rgba(232,168,32,0.12)" stroke-dasharray="4,5"/>
+
+  <!-- ── SITAR text ── -->
+  <text x="140" y="340"
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="38" font-weight="700" font-style="normal"
+        fill="url(#gold)"
+        text-anchor="middle"
+        letter-spacing="7">SITAR</text>
+
+  <!-- ── thin rule ── -->
+  <line x1="50" y1="354" x2="230" y2="354"
+        stroke="#C9A84C" stroke-width="0.7" opacity="0.55"/>
+
+  <!-- ── BOSTON text ── -->
+  <text x="140" y="378"
+        font-family="'Lato', 'Helvetica Neue', Arial, sans-serif"
+        font-size="13" font-weight="300"
+        fill="#9FD8CC"
+        text-anchor="middle"
+        letter-spacing="9">BOSTON</text>
+
+  <!-- ── bottom ornament ── -->
+  <text x="140" y="402"
+        font-size="9" fill="#C9A84C" opacity="0.65"
+        text-anchor="middle">✦ &nbsp; · &nbsp; ✦</text>
+
+</svg>
