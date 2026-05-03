@@ -3385,41 +3385,64 @@ html[data-theme="light"] h4 {
 html[data-theme="light"] a { color: var(--teal-bright); }
 html[data-theme="light"] a:hover { color: var(--saffron); }
 
-/* ── NAVBAR ── */
-html[data-theme="light"] #navbar.scrolled {
-  background: rgba(255, 249, 237, 0.97);
-  box-shadow: 0 2px 20px rgba(92, 14, 26, 0.12);
-}
-html[data-theme="light"] .nav-links a { color: var(--cream); }
+/* ── NAVBAR — un-scrolled: floats over hero image, keep text LIGHT ── */
+html[data-theme="light"] .nav-links a { color: #FFF8E7; }
 html[data-theme="light"] .nav-links a:hover,
-html[data-theme="light"] .nav-links a.active { color: var(--saffron); }
-html[data-theme="light"] .hamburger span { background: var(--cream); }
+html[data-theme="light"] .nav-links a.active { color: #F2C04A; }
+html[data-theme="light"] .hamburger span { background: #FFF8E7; }
 html[data-theme="light"] .nav-logo-en {
-  background: linear-gradient(90deg, var(--cream), var(--saffron-lt), var(--teal-bright));
+  background: linear-gradient(90deg, #FFF8E7, #F2C04A, #9FD8CC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
-html[data-theme="light"] .nav-logo-fa { color: var(--teal-light); }
+html[data-theme="light"] .nav-logo-fa { color: #A8DDD6; }
 
-/* ── MOBILE NAV OVERLAY ── */
+/* ── THEME TOGGLE — un-scrolled: light border/icon over hero ── */
+html[data-theme="light"] .theme-toggle {
+  border-color: rgba(255, 248, 231, 0.5);
+  color: #FFF8E7;
+}
+html[data-theme="light"] .theme-toggle:hover {
+  background: rgba(255, 248, 231, 0.15);
+  border-color: #F2C04A;
+  color: #F2C04A;
+}
+
+/* ── NAVBAR — scrolled: ivory background, switch to DARK text ── */
+html[data-theme="light"] #navbar.scrolled {
+  background: rgba(255, 249, 237, 0.97);
+  box-shadow: 0 2px 20px rgba(92, 14, 26, 0.12);
+}
+html[data-theme="light"] #navbar.scrolled .nav-links a { color: #2D0609; }
+html[data-theme="light"] #navbar.scrolled .nav-links a:hover,
+html[data-theme="light"] #navbar.scrolled .nav-links a.active { color: #8B4E00; }
+html[data-theme="light"] #navbar.scrolled .hamburger span { background: #2D0609; }
+html[data-theme="light"] #navbar.scrolled .nav-logo-en {
+  background: linear-gradient(90deg, #2D0609, #A85E00, #0F4220);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+html[data-theme="light"] #navbar.scrolled .nav-logo-fa { color: #1A5E30; }
+html[data-theme="light"] #navbar.scrolled .theme-toggle {
+  border-color: rgba(45, 6, 9, 0.3);
+  color: #2D0609;
+}
+html[data-theme="light"] #navbar.scrolled .theme-toggle:hover {
+  background: rgba(45, 6, 9, 0.07);
+  border-color: #8B4E00;
+  color: #8B4E00;
+}
+
+/* ── MOBILE NAV OVERLAY — always ivory + dark (full-screen panel) ── */
 html[data-theme="light"] .nav-mobile {
   background: rgba(255, 249, 237, 0.99);
 }
-html[data-theme="light"] .nav-mobile a { color: var(--cream); }
-html[data-theme="light"] .nav-mobile a:hover { color: var(--saffron); }
-
-/* ── THEME TOGGLE ── */
-html[data-theme="light"] .theme-toggle {
-  border-color: rgba(92, 14, 26, 0.3);
-  color: var(--cream);
-}
-html[data-theme="light"] .theme-toggle:hover {
-  background: rgba(92, 14, 26, 0.08);
-  border-color: var(--saffron);
-  color: var(--saffron);
-}
+html[data-theme="light"] .nav-mobile a { color: #2D0609; }
+html[data-theme="light"] .nav-mobile a:hover { color: #8B4E00; }
 
 /* ── HERO ── */
 /* Hero text stays cream since it's still over the background photo */
