@@ -562,9 +562,19 @@
     }
   }
 
-  // Restore saved preference, default to dark
-  const saved = localStorage.getItem(STORAGE_KEY) || 'dark';
-  applyTheme(saved);
+  // Priority: 1) user's manual choice  2) OS preference  3) time of day
+  function getDefaultTheme() {
+    const mq = window.matchMedia('(prefers-color-scheme: light)');
+    const mqDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.matches)     return 'light';   // OS says light
+    if (mqDark.matches) return 'dark';    // OS says dark
+    // OS has no preference → use time: 06:00–18:00 = light, else dark
+    const hour = new Date().getHours();
+    return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+  }
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  applyTheme(saved || getDefaultTheme());
 
   btn.addEventListener('click', () => {
     const current = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
