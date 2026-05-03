@@ -546,16 +546,19 @@
   const STORAGE_KEY = 'sitarboston-theme';
 
   function applyTheme(theme) {
+    const canvas = document.getElementById('gold-dust-canvas');
     if (theme === 'light') {
       html.setAttribute('data-theme', 'light');
       iconSun.style.display  = 'none';
       iconMoon.style.display = '';
       btn.setAttribute('aria-label', 'Switch to dark mode');
+      if (canvas) canvas.style.display = 'none';
     } else {
       html.removeAttribute('data-theme');
       iconSun.style.display  = '';
       iconMoon.style.display = 'none';
       btn.setAttribute('aria-label', 'Switch to light mode');
+      if (canvas) canvas.style.display = '';
     }
   }
 
