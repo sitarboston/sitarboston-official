@@ -3363,11 +3363,11 @@ html[data-theme="light"] #news::before {
   opacity: 0.38;
 }
 
-/* #connect — Ganga Aarti, evening flames on the Ganges */
+/* #connect — night view of illuminated Varanasi ghats on the Ganges */
 html[data-theme="light"] #connect::before {
   content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
-  background: url('https://images.pexels.com/photos/30210504/pexels-photo-30210504.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
-  opacity: 0.35;
+  background: url('https://images.pexels.com/photos/35729427/pexels-photo-35729427.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.55;
 }
 
 /* Ivory halo on all headings — lifts text off the background imagery */
@@ -3501,7 +3501,7 @@ html[data-theme="light"] #sitars   { background-color: rgba(254, 243, 213, 0.72)
 html[data-theme="light"] #videos   { background-color: rgba(255, 249, 237, 0.72); }
 html[data-theme="light"] #gallery  { background-color: rgba(254, 243, 213, 0.72); }
 html[data-theme="light"] #news     { background-color: rgba(255, 249, 237, 0.72); }
-html[data-theme="light"] #connect  { background-color: rgba(254, 243, 213, 0.72); }
+html[data-theme="light"] #connect  { background-color: rgba(5, 15, 13, 0.90); }
 
 /* Ivory halo — lifts headings clearly off ghat backgrounds */
 html[data-theme="light"] h1,
@@ -3579,10 +3579,10 @@ html[data-theme="light"] #news .section-label  { color: #6B3800; }
 html[data-theme="light"] #news .section-subtitle { color: #3D0A10; }
 html[data-theme="light"] #news h2 { color: #1A0010; }
 
-/* CONNECT — Ganga Aarti evening; all text must be dark + carry warm halo */
-html[data-theme="light"] #connect .section-label  { color: #7A0E1A; font-weight: 700; text-shadow: 0 0 12px rgba(255,249,230,1), 0 1px 3px rgba(255,249,230,1); }
-html[data-theme="light"] #connect .section-subtitle { color: #0A3D1C; font-weight: 600; text-shadow: 0 0 10px rgba(255,249,230,1), 0 1px 3px rgba(255,249,230,1); }
-html[data-theme="light"] #connect h2 { color: #1A0305; text-shadow: 0 0 18px rgba(255,249,230,1), 0 0 30px rgba(255,249,230,0.9), 0 1px 4px rgba(255,249,230,1); }
+/* CONNECT — dark section on light theme; cream/gold text on night ghat */
+html[data-theme="light"] #connect .section-label  { color: #F2C04A; font-weight: 700; text-shadow: none; }
+html[data-theme="light"] #connect .section-subtitle { color: #9FD8CC; font-weight: 500; text-shadow: none; }
+html[data-theme="light"] #connect h2 { color: #FFF8E7; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
 html[data-theme="light"] .ornament::before,
 html[data-theme="light"] .ornament::after {
   background: linear-gradient(to right, transparent, var(--saffron), transparent);
@@ -3824,43 +3824,43 @@ html[data-theme="light"] .news-link:hover { color: var(--saffron); }
 html[data-theme="light"] .news-loading { color: var(--teal-light); }
 
 /* ── CONNECT ── */
-html[data-theme="light"] .connect-info > p { color: #2D0609; text-shadow: 0 0 10px rgba(255,249,230,0.95), 0 1px 3px rgba(255,249,230,1); }
-html[data-theme="light"] .connect-info-centered h2 { color: #1A0305; text-shadow: 0 0 18px rgba(255,249,230,1), 0 0 30px rgba(255,249,230,0.9), 0 1px 4px rgba(255,249,230,1); }
+html[data-theme="light"] .connect-info > p { color: #D9C9A3; text-shadow: none; }
+html[data-theme="light"] .connect-info-centered h2 { color: #FFF8E7; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
 html[data-theme="light"] .contact-item-icon {
-  background: rgba(27, 94, 56, 0.10);
-  border-color: rgba(27, 94, 56, 0.25);
-  color: var(--teal-bright);
+  background: rgba(47, 196, 174, 0.15);
+  border-color: rgba(47, 196, 174, 0.35);
+  color: #2FC4AE;
 }
-html[data-theme="light"] .contact-item-label { color: #145228; font-weight: 600; }
-html[data-theme="light"] .contact-item-value { color: #1A0305; }
-html[data-theme="light"] .contact-item-value a { color: #1A0305; }
-html[data-theme="light"] .contact-item-value a:hover { color: #8B4E00; }
+html[data-theme="light"] .contact-item-label { color: #F2C04A; font-weight: 700; }
+html[data-theme="light"] .contact-item-value { color: #FFF8E7; }
+html[data-theme="light"] .contact-item-value a { color: #9FD8CC; }
+html[data-theme="light"] .contact-item-value a:hover { color: #F2C04A; }
 html[data-theme="light"] .contact-form-wrap {
-  background: rgba(255, 254, 247, 0.97);
-  border-color: rgba(45, 6, 9, 0.15);
-  backdrop-filter: none;
+  background: rgba(8, 30, 27, 0.75);
+  border-color: rgba(47, 196, 174, 0.25);
+  backdrop-filter: blur(6px);
 }
-html[data-theme="light"] .form-group label { color: #145228; font-weight: 600; }
+html[data-theme="light"] .form-group label { color: #F2C04A; font-weight: 600; }
 html[data-theme="light"] .form-group input,
 html[data-theme="light"] .form-group select,
 html[data-theme="light"] .form-group textarea {
-  background: #FFFDF5;
-  border-color: rgba(45, 6, 9, 0.22);
-  color: #1A0305;
+  background: rgba(5, 15, 13, 0.6);
+  border-color: rgba(47, 196, 174, 0.30);
+  color: #FFF8E7;
 }
 html[data-theme="light"] .form-group input:focus,
 html[data-theme="light"] .form-group select:focus,
 html[data-theme="light"] .form-group textarea:focus {
-  border-color: #145228;
-  box-shadow: 0 0 0 3px rgba(20, 82, 40, 0.12);
+  border-color: #2FC4AE;
+  box-shadow: 0 0 0 3px rgba(47, 196, 174, 0.18);
 }
 html[data-theme="light"] .form-group input::placeholder,
 html[data-theme="light"] .form-group textarea::placeholder {
-  color: rgba(45, 6, 9, 0.38);
+  color: rgba(255, 248, 231, 0.45);
 }
 html[data-theme="light"] .form-group select option {
-  background: #FFF9ED;
-  color: var(--cream);
+  background: #081E1B;
+  color: #FFF8E7;
 }
 html[data-theme="light"] .form-submit {
   background: var(--teal);
@@ -3868,9 +3868,9 @@ html[data-theme="light"] .form-submit {
 }
 html[data-theme="light"] .form-submit:hover {
   background: var(--teal-bright);
-  color: #FFF9ED;
+  color: #081E1B;
 }
-html[data-theme="light"] .form-success { color: var(--teal-light); }
+html[data-theme="light"] .form-success { color: #2FC4AE; }
 
 /* ── FOOTER ── */
 html[data-theme="light"] #footer {
