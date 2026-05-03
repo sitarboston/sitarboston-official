@@ -443,6 +443,21 @@
   </div>
 </div>
 
+<!-- ============================================================
+     CHANGE PASSWORD MODAL
+     ============================================================ -->
+<div id="change-pw-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:999;display:none;align-items:center;justify-content:center;">
+  <div class="login-box" style="max-width:420px;">
+    <h1 id="change-pw-title" style="font-size:1.3rem;">Set Your Password</h1>
+    <p id="change-pw-subtitle" style="margin-bottom:1.5rem;">Choose a new password for the admin panel.</p>
+    <input type="password" id="new-pw-input" placeholder="New password" autocomplete="new-password" style="margin-bottom:0.75rem;" />
+    <input type="password" id="new-pw-confirm" placeholder="Confirm new password" autocomplete="new-password" />
+    <button class="login-btn" id="save-pw-btn" style="margin-top:0.5rem;">Save Password</button>
+    <button id="skip-pw-btn" style="display:none;background:none;border:none;color:var(--cream-dk);font-size:0.82rem;margin-top:0.8rem;cursor:pointer;text-decoration:underline;">Skip for now</button>
+    <p class="login-error" id="change-pw-error" style="display:none;"></p>
+  </div>
+</div>
+
 
 <!-- ============================================================
      ADMIN SHELL (hidden until login)
@@ -454,7 +469,10 @@
       <h1>SitarBoston Admin</h1>
       <span>Site management panel</span>
     </div>
-    <button class="logout-btn" id="logout-btn">Log Out</button>
+    <div style="display:flex;gap:0.75rem;align-items:center;">
+      <button class="logout-btn" id="change-pw-header-btn" style="background:rgba(47,196,174,0.1);border-color:rgba(47,196,174,0.3);color:var(--teal-bright);">Change Password</button>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
   </header>
 
   <!-- Tab Navigation -->
@@ -891,11 +909,6 @@
    ============================================================ */
 'use strict';
 
-/* ---- Password check (SHA-256 of "sitarboston2024") ---- */
-const CORRECT_HASH = 'a5d3e6f1c2b4a8d7e9f0c1b2a3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2';
-// We use a simple comparison — for static sites this is sufficient
-// The actual bcrypt/SHA256 check is done client-side with SubtleCrypto
-
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -903,30 +916,43 @@ async function sha256(message) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-const loginScreen = document.getElementById('login-screen');
-const adminShell  = document.getElementById('admin-shell');
-const loginBtn    = document.getElementById('login-btn');
-const pwInput     = document.getElementById('pw-input');
-const loginError  = document.getElementById('login-error');
+const DEFAULT_PW    = 'sitarboston2024';
+const STORAGE_KEY   = 'sb_custom_hash';
 
-// Check session
+const loginScreen   = document.getElementById('login-screen');
+const adminShell    = document.getElementById('admin-shell');
+const loginBtn      = document.getElementById('login-btn');
+const pwInput       = document.getElementById('pw-input');
+const loginError    = document.getElementById('login-error');
+const modal         = document.getElementById('change-pw-modal');
+
+// Resume session
 if (sessionStorage.getItem('sb_auth') === '1') {
   loginScreen.style.display = 'none';
   adminShell.style.display = 'block';
+  window._adminInited = true;
   initAdmin();
 }
 
 async function tryLogin() {
-  const pw = pwInput.value;
+  const pw   = pwInput.value;
   const hash = await sha256(pw);
-  // Password: sitarboston2024
-  const correctHash = await sha256('sitarboston2024');
-  if (hash === correctHash) {
+  const customHash  = localStorage.getItem(STORAGE_KEY);
+  const defaultHash = await sha256(DEFAULT_PW);
+  const correct     = customHash || defaultHash;
+
+  if (hash === correct) {
     sessionStorage.setItem('sb_auth', '1');
     loginScreen.style.display = 'none';
-    adminShell.style.display = 'block';
-    loginError.style.display = 'none';
-    initAdmin();
+    loginError.style.display  = 'none';
+
+    if (!customHash) {
+      // First login with default password — force password change
+      showChangePwModal(true);
+    } else {
+      adminShell.style.display = 'block';
+      if (!window._adminInited) { window._adminInited = true; initAdmin(); }
+    }
   } else {
     loginError.style.display = 'block';
     pwInput.value = '';
@@ -935,13 +961,52 @@ async function tryLogin() {
 }
 
 loginBtn.addEventListener('click', tryLogin);
-pwInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') tryLogin();
-});
+pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
 
 document.getElementById('logout-btn').addEventListener('click', () => {
   sessionStorage.removeItem('sb_auth');
   location.reload();
+});
+
+document.getElementById('change-pw-header-btn').addEventListener('click', () => showChangePwModal(false));
+
+// ---- Change Password Modal ----
+function showChangePwModal(isFirstLogin) {
+  document.getElementById('change-pw-title').textContent    = isFirstLogin ? 'Set Your Password' : 'Change Password';
+  document.getElementById('change-pw-subtitle').textContent = isFirstLogin
+    ? 'You are using the default password. Please set a personal password now.'
+    : 'Enter a new password for the admin panel.';
+  document.getElementById('skip-pw-btn').style.display = isFirstLogin ? 'none' : 'inline-block';
+  document.getElementById('new-pw-input').value   = '';
+  document.getElementById('new-pw-confirm').value = '';
+  document.getElementById('change-pw-error').style.display = 'none';
+  modal.style.display = 'flex';
+}
+
+document.getElementById('save-pw-btn').addEventListener('click', async () => {
+  const np  = document.getElementById('new-pw-input').value;
+  const cnf = document.getElementById('new-pw-confirm').value;
+  const err = document.getElementById('change-pw-error');
+
+  if (np.length < 8) {
+    err.textContent = 'Password must be at least 8 characters.';
+    err.style.display = 'block'; return;
+  }
+  if (np !== cnf) {
+    err.textContent = 'Passwords do not match.';
+    err.style.display = 'block'; return;
+  }
+
+  const hash = await sha256(np);
+  localStorage.setItem(STORAGE_KEY, hash);
+  modal.style.display = 'none';
+  adminShell.style.display = 'block';
+  sessionStorage.setItem('sb_auth', '1');
+  if (!window._adminInited) { window._adminInited = true; initAdmin(); }
+});
+
+document.getElementById('skip-pw-btn').addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
 
