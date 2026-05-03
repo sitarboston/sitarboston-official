@@ -3964,14 +3964,14 @@ html[data-theme="light"] .btn-primary:hover {
   box-shadow: 0 6px 24px rgba(27, 94, 56, 0.3);
 }
 html[data-theme="light"] .btn-outline {
-  background: #7A3B00;
-  border-color: #7A3B00;
-  color: #FFF9ED;
+  background: #7A3B00 !important;
+  border-color: #7A3B00 !important;
+  color: #FFF9ED !important;
 }
 html[data-theme="light"] .btn-outline:hover {
-  background: #5C2C00;
-  border-color: #5C2C00;
-  color: #FFF9ED;
+  background: #5C2C00 !important;
+  border-color: #5C2C00 !important;
+  color: #FFF9ED !important;
   box-shadow: 0 6px 24px rgba(122, 59, 0, 0.4);
 }
 
