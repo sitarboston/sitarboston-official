@@ -3236,19 +3236,19 @@ html[data-theme="light"] {
      gets the right colour without needing individual overrides */
   --ink:           #FFF9ED;   /* body bg — warm ivory (like undyed khadi) */
   --ink-soft:      #FEF3D5;   /* alt section bg — marigold parchment */
-  --teal:          #1B5E38;   /* bottle green */
-  --teal-bright:   #226B42;   /* slightly darker bottle green (links) */
-  --teal-light:    #2D7A4A;   /* medium bottle green */
-  --saffron:       #C17B00;   /* deep amber / turmeric */
-  --saffron-lt:    #D4900A;   /* brighter amber */
-  --gold:          #A67C00;   /* dark gold */
-  --cream:         #5C0E1A;   /* HEADINGS — deep maroon (was light cream) */
-  --cream-dk:      #4A1520;   /* BODY TEXT — slightly lighter maroon */
-  --persian-green: #1B5E38;
-  --green-light:   #2D7A4A;
-  --cobalt:        #3D0C11;
-  --shadow-soft:   0 4px 20px rgba(92, 14, 26, 0.10);
-  --shadow-card:   0 8px 28px rgba(92, 14, 26, 0.12);
+  --teal:          #145228;   /* bottle green — deeper for contrast */
+  --teal-bright:   #0F4220;   /* deep forest green (links) */
+  --teal-light:    #1A5E30;   /* medium bottle green */
+  --saffron:       #8B4E00;   /* deep turmeric amber — rich, high contrast */
+  --saffron-lt:    #A85E00;   /* strong saffron for card headings */
+  --gold:          #7A4500;   /* very deep gold */
+  --cream:         #2D0609;   /* HEADINGS — near-black maroon */
+  --cream-dk:      #1A0305;   /* BODY TEXT — almost black, maximum readability */
+  --persian-green: #145228;
+  --green-light:   #1A5E30;
+  --cobalt:        #20040A;
+  --shadow-soft:   0 4px 20px rgba(45, 6, 9, 0.12);
+  --shadow-card:   0 8px 28px rgba(45, 6, 9, 0.15);
 }
 
 /* ── BODY ── */
@@ -3257,6 +3257,82 @@ html[data-theme="light"] body {
   color: var(--cream-dk);
 }
 html[data-theme="light"] body::before { display: none; }
+
+/* ── VARANASI GHAT BACKGROUNDS — unique image per section ── */
+
+/* #mission — morning puja ritual on the ghats, golden light */
+html[data-theme="light"] #mission::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/31072582/pexels-photo-31072582.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.40;
+}
+
+/* #about — bajra boats on Ganges with ancient temple backdrop */
+html[data-theme="light"] #about::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/16747080/pexels-photo-16747080.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.38;
+}
+
+/* #luthierie — Darbhanga Ghat, grand ochre architecture */
+html[data-theme="light"] #luthierie::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/10461752/pexels-photo-10461752.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.40;
+}
+
+/* #lessons — twilight ghat, oil lamps reflecting on the Ganges */
+html[data-theme="light"] #lessons::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/8112552/pexels-photo-8112552.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.38;
+}
+
+/* #sitars — colorful riverfront buildings, vibrant ochres and reds */
+html[data-theme="light"] #sitars::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/17869831/pexels-photo-17869831.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.40;
+}
+
+/* #videos — Aghori sadhu meditating at the ghat, earthy devotional */
+html[data-theme="light"] #videos::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/29291312/pexels-photo-29291312.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.38;
+}
+
+/* #gallery — Manikarnika Ghat, terracotta, vibrant river life */
+html[data-theme="light"] #gallery::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/19272041/pexels-photo-19272041.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.40;
+}
+
+/* #news — twilight ghat, contemplative evening on the Ganges */
+html[data-theme="light"] #news::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/8112552/pexels-photo-8112552.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.38;
+}
+
+/* #connect — bajra boats and temples, a spiritual journey */
+html[data-theme="light"] #connect::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url('https://images.pexels.com/photos/16747080/pexels-photo-16747080.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  opacity: 0.40;
+}
+
+/* Ivory halo on all headings — lifts text off the background imagery */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4 {
+  text-shadow:
+    0 0 15px rgba(255, 249, 237, 1),
+    0 0 35px rgba(255, 249, 237, 0.9),
+    0 1px 4px rgba(255, 249, 237, 1);
+}
 
 /* ── LINKS ── */
 html[data-theme="light"] a { color: var(--teal-bright); }
@@ -3340,27 +3416,103 @@ html[data-theme="light"] .luthierie-bg,
 html[data-theme="light"] .lessons-bg,
 html[data-theme="light"] .sitars-bg { display: none; }
 
-/* ── SECTION BACKGROUNDS (individual sections) ── */
-html[data-theme="light"] #mission  { background-color: #FEF3D5; }
-html[data-theme="light"] #about    { background-color: #FFF9ED; }
-html[data-theme="light"] #luthierie{ background-color: #FFF6E0; }
-html[data-theme="light"] #lessons  { background-color: #FFF9ED; }
-html[data-theme="light"] #sitars   { background-color: #FEF3D5; }
-html[data-theme="light"] #videos   { background-color: #FFF9ED; }
-html[data-theme="light"] #gallery  { background-color: #FEF3D5; }
-html[data-theme="light"] #news     { background-color: #FFF9ED; }
-html[data-theme="light"] #connect  { background-color: #FEF3D5; }
+/* Ensure section content sits above the image layer */
+html[data-theme="light"] section .container {
+  position: relative;
+  z-index: 1;
+}
 
-/* ── SECTION LABELS & SUBTITLES ── */
+/* ── SECTION BACKGROUNDS — semi-transparent so ghat images show through ── */
+html[data-theme="light"] #mission  { background-color: rgba(254, 243, 213, 0.72); }
+html[data-theme="light"] #about    { background-color: rgba(255, 249, 237, 0.72); }
+html[data-theme="light"] #luthierie{ background-color: rgba(255, 246, 224, 0.72); }
+html[data-theme="light"] #lessons  { background-color: rgba(255, 249, 237, 0.72); }
+html[data-theme="light"] #sitars   { background-color: rgba(254, 243, 213, 0.72); }
+html[data-theme="light"] #videos   { background-color: rgba(255, 249, 237, 0.72); }
+html[data-theme="light"] #gallery  { background-color: rgba(254, 243, 213, 0.72); }
+html[data-theme="light"] #news     { background-color: rgba(255, 249, 237, 0.72); }
+html[data-theme="light"] #connect  { background-color: rgba(254, 243, 213, 0.72); }
+
+/* Ivory halo — lifts headings clearly off ghat backgrounds */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4 {
+  text-shadow:
+    0 0 12px rgba(255, 249, 237, 1),
+    0 0 28px rgba(255, 249, 237, 0.85),
+    0 1px 4px rgba(255, 249, 237, 0.95);
+}
+
+/* ── SECTION LABELS & SUBTITLES — global defaults ── */
 html[data-theme="light"] .section-label {
   color: var(--saffron);
-  text-shadow: none;
+  text-shadow:
+    0 0 10px rgba(255, 249, 237, 1),
+    0 0 22px rgba(255, 249, 237, 0.9);
 }
-html[data-theme="light"] .section-subtitle { color: var(--teal-bright); }
+html[data-theme="light"] .section-subtitle {
+  color: var(--teal-bright);
+  text-shadow:
+    0 0 10px rgba(255, 249, 237, 1),
+    0 0 22px rgba(255, 249, 237, 0.9);
+}
 html[data-theme="light"] .ornament-icon {
   color: var(--saffron);
-  text-shadow: none;
+  text-shadow:
+    0 0 10px rgba(255, 249, 237, 1),
+    0 0 22px rgba(255, 249, 237, 0.9);
 }
+
+/* ── PER-SECTION LABEL / HEADING COLOURS ──────────────────────────────────
+   Morning-ghat sections (warm oranges/ochres): use deep crimson & forest green
+   Twilight-ghat sections (deep blue/gold): use rich amber & deep maroon
+   ── */
+
+/* MISSION — morning ghat */
+html[data-theme="light"] #mission .section-label  { color: #7A0E1A; }
+html[data-theme="light"] #mission .section-subtitle { color: #0A3D1C; }
+html[data-theme="light"] #mission h2 { color: #1A0305; }
+
+/* ABOUT — twilight ghat */
+html[data-theme="light"] #about .section-label  { color: #6B3800; }
+html[data-theme="light"] #about .section-subtitle { color: #3D0A10; }
+html[data-theme="light"] #about h2 { color: #1A0010; }
+
+/* LUTHIERIE — morning ghat */
+html[data-theme="light"] #luthierie .section-label  { color: #7A0E1A; }
+html[data-theme="light"] #luthierie .section-subtitle { color: #0A3D1C; }
+html[data-theme="light"] #luthierie h2 { color: #1A0305; }
+
+/* LESSONS — twilight ghat */
+html[data-theme="light"] #lessons .section-label  { color: #6B3800; }
+html[data-theme="light"] #lessons .section-subtitle { color: #3D0A10; }
+html[data-theme="light"] #lessons h2 { color: #1A0010; }
+
+/* SITARS — morning ghat */
+html[data-theme="light"] #sitars .section-label  { color: #7A0E1A; }
+html[data-theme="light"] #sitars .section-subtitle { color: #0A3D1C; }
+html[data-theme="light"] #sitars h2 { color: #1A0305; }
+
+/* VIDEOS — twilight ghat */
+html[data-theme="light"] #videos .section-label  { color: #6B3800; }
+html[data-theme="light"] #videos .section-subtitle { color: #3D0A10; }
+html[data-theme="light"] #videos h2 { color: #1A0010; }
+
+/* GALLERY — morning ghat */
+html[data-theme="light"] #gallery .section-label  { color: #7A0E1A; }
+html[data-theme="light"] #gallery .section-subtitle { color: #0A3D1C; }
+html[data-theme="light"] #gallery h2 { color: #1A0305; }
+
+/* NEWS — twilight ghat */
+html[data-theme="light"] #news .section-label  { color: #6B3800; }
+html[data-theme="light"] #news .section-subtitle { color: #3D0A10; }
+html[data-theme="light"] #news h2 { color: #1A0010; }
+
+/* CONNECT — morning ghat */
+html[data-theme="light"] #connect .section-label  { color: #7A0E1A; }
+html[data-theme="light"] #connect .section-subtitle { color: #0A3D1C; }
+html[data-theme="light"] #connect h2 { color: #1A0305; }
 html[data-theme="light"] .ornament::before,
 html[data-theme="light"] .ornament::after {
   background: linear-gradient(to right, transparent, var(--saffron), transparent);
@@ -3423,9 +3575,9 @@ html[data-theme="light"] .luthierie-training {
 
 /* Service cards */
 html[data-theme="light"] .service-card {
-  background: #FFFEF7;
-  border: 1px solid rgba(92, 14, 26, 0.1);
-  border-top: 2px solid rgba(27, 94, 56, 0.3);
+  background: rgba(255, 254, 247, 0.96);
+  border: 1px solid rgba(45, 6, 9, 0.14);
+  border-top: 2px solid rgba(20, 82, 40, 0.45);
   backdrop-filter: none;
 }
 html[data-theme="light"] .service-card:hover {
@@ -3433,8 +3585,8 @@ html[data-theme="light"] .service-card:hover {
   border-top-color: var(--teal);
   box-shadow: 0 10px 32px rgba(92, 14, 26, 0.10);
 }
-html[data-theme="light"] .service-card h3 { color: var(--saffron-lt); }
-html[data-theme="light"] .service-card p { color: var(--cream-dk); }
+html[data-theme="light"] .service-card h3 { color: #7A1020; }
+html[data-theme="light"] .service-card p { color: #1A0305; }
 
 /* Luthierie / repair photo grid overlays */
 html[data-theme="light"] .lg-overlay {
@@ -3743,14 +3895,6 @@ html[data-theme="light"] .btn-outline:hover {
 
 /* ── SCROLL REVEAL — no change needed, just opacity/transform ── */
 
-/* ── SECTION HEADING TEXT SHADOWS — remove in light mode ── */
-html[data-theme="light"] #mission h2,
-html[data-theme="light"] #luthierie h2,
-html[data-theme="light"] #sitars h2,
-html[data-theme="light"] #about h2,
-html[data-theme="light"] #lessons h2 {
-  text-shadow: none;
-}
 
 /* Teak video wrap */
 html[data-theme="light"] .teak-video-label {
