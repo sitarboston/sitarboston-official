@@ -15,46 +15,216 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sitarboston.com">
 
-  <!-- Local Business Structured Data -->
+  <!-- Structured Data — @graph with Business, Practitioner, Services, FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SitarBoston",
-    "description": "Sitar lessons, repair, jawari, string replacement, fret tightening, and custom sitars in Boston and New England. Master luthier Shahid Ali of Miraj.",
-    "url": "https://sitarboston.com",
-    "image": "https://sitarboston.com/images/Top cover.jpg",
-    "areaServed": [
-      "Boston, Massachusetts",
-      "Massachusetts",
-      "Rhode Island",
-      "Connecticut",
-      "New Hampshire",
-      "New England"
-    ],
-    "serviceType": [
-      "Sitar Lessons",
-      "Sitar Repair",
-      "Sitar Jawari",
-      "Sitar String Replacement",
-      "Sitar Fret Tightening",
-      "Custom Sitar Building",
-      "Sitar Full Restoration",
-      "Concert Grade Sitar for Sale",
-      "VK Style Sitar",
-      "Vilayat Khan Style Sitar",
-      "Ravi Shankar Style Sitar",
-      "SPK Style Sitar",
-      "Tanpura Repair",
-      "Surbahar Repair"
-    ],
-    "knowsAbout": [
-      "Sitar",
-      "Indian Classical Music",
-      "Hindustani Music",
-      "Luthierie",
-      "Jawari",
-      "Raga"
+    "@graph": [
+
+      {
+        "@type": ["LocalBusiness", "MusicalInstrumentStore", "EducationalOrganization"],
+        "@id": "https://sitarboston.com/#business",
+        "name": "SitarBoston",
+        "alternateName": ["Sitar Boston", "SitarBoston New England"],
+        "description": "SitarBoston offers sitar lessons, sitar repair and restoration (jawari, string replacement, fret tightening, full vintage restoration), and concert-grade custom sitars in the VK, Ravi Shankar, and SPK styles. Serving Greater Boston and all of New England. Master luthier Shahid Ali of Miraj.",
+        "url": "https://sitarboston.com",
+        "telephone": "+17744522454",
+        "email": "sitarboston@gmail.com",
+        "image": [
+          "https://sitarboston.com/images/Top cover.jpg",
+          "https://sitarboston.com/images/Sitar Luthier/IMG_5694.jpg"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Greater Boston",
+          "addressRegion": "MA",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.6110626,
+          "longitude": -71.4121744
+        },
+        "areaServed": [
+          { "@type": "State", "name": "Massachusetts" },
+          { "@type": "State", "name": "Rhode Island" },
+          { "@type": "State", "name": "Connecticut" },
+          { "@type": "State", "name": "New Hampshire" },
+          { "@type": "State", "name": "Vermont" },
+          { "@type": "State", "name": "Maine" },
+          { "@type": "City",  "name": "Boston" },
+          { "@type": "City",  "name": "Cambridge" },
+          { "@type": "City",  "name": "Providence" },
+          { "@type": "City",  "name": "Hartford" },
+          { "@type": "City",  "name": "Worcester" },
+          { "@type": "City",  "name": "Lowell" },
+          { "@type": "City",  "name": "Portsmouth" }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/sitarboston/",
+          "https://www.facebook.com/profile.php?id=61568580579215",
+          "https://www.google.com/maps/place/SitarBoston/@42.6110626,-71.4121744,17z"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+17744522454",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Hindi", "Urdu"],
+          "contactOption": "TollFree"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "SitarBoston Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitar Lessons",
+                "description": "Private sitar lessons in the Imdadkhani Gayaki Ang tradition for beginners through advanced students. In-person in Greater Boston or online via Zoom. Designed around the student's pace, goals, and musical context.",
+                "provider": { "@id": "https://sitarboston.com/#business" },
+                "areaServed": "New England",
+                "serviceType": "Music Lessons"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitar Jawari and Bridge Work",
+                "description": "Professional jawari — the precise convex curvature filed into the sitar bridge — for optimal tone, sustain, and characteristic buzz. The most specialized sitar maintenance service available in New England.",
+                "provider": { "@id": "https://sitarboston.com/#business" },
+                "areaServed": "New England",
+                "serviceType": "Musical Instrument Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitar Repair and Restoration",
+                "description": "Full sitar repair: string replacement (main and tarab), fret tightening and graduation, peg smoothening, langot repair, crack repair, body polish. Specialist in vintage instruments — Hiren Roy, Sarat Sardar, Kanailal, Naskar.",
+                "provider": { "@id": "https://sitarboston.com/#business" },
+                "areaServed": "New England",
+                "serviceType": "Musical Instrument Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Concert-Grade Custom Sitars",
+                "description": "Concert-grade sitars built to order by master craftsmen of Miraj. Available in VK (Vilayat Khan) style, Ravi Shankar style, and SPK style. Teak, tun, and gourd body options.",
+                "provider": { "@id": "https://sitarboston.com/#business" },
+                "areaServed": "United States",
+                "serviceType": "Musical Instrument Sales"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tanpura and Surbahar Repair",
+                "description": "Repair, jawari, and maintenance for tanpura and surbahar. Rare instruments handled with care.",
+                "provider": { "@id": "https://sitarboston.com/#business" },
+                "areaServed": "New England",
+                "serviceType": "Musical Instrument Repair"
+              }
+            }
+          ]
+        },
+        "knowsAbout": [
+          "Sitar", "Indian Classical Music", "Hindustani Music",
+          "Luthierie", "Jawari", "Raga", "Imdadkhani Gharana",
+          "Gayaki Ang", "Sitar Repair", "Sitar Making"
+        ],
+        "employee": { "@id": "https://sitarboston.com/#shahid-ali" }
+      },
+
+      {
+        "@type": ["Person", "MusicTeacher"],
+        "@id": "https://sitarboston.com/#shahid-ali",
+        "name": "Shahid Ali",
+        "jobTitle": "Master Sitar Luthier and Teacher",
+        "description": "Master sitar luthier trained by the old sitar makers of Calcutta and the workshops of Miraj, India. Teacher in the Imdadkhani Gayaki Ang tradition.",
+        "worksFor": { "@id": "https://sitarboston.com/#business" },
+        "knowsAbout": [
+          "Sitar Luthierie", "Jawari", "Sitar Making",
+          "Hindustani Classical Music", "Imdadkhani Gharana"
+        ]
+      },
+
+      {
+        "@type": "FAQPage",
+        "@id": "https://sitarboston.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where can I find a sitar teacher in Boston or New England?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SitarBoston offers private sitar lessons in the Greater Boston area and online via Zoom, serving students across Massachusetts, Rhode Island, Connecticut, and New Hampshire. Lessons follow the Imdadkhani Gayaki Ang tradition and are tailored to each student — beginner through advanced."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I get my sitar repaired in New England?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SitarBoston is the only dedicated sitar luthierie in New England. Services include jawari (bridge shaping), full string replacement, fret tightening, peg smoothening, crack repair, and complete vintage restoration. Contact us at sitarboston@gmail.com or +1 (774) 452-2454."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is jawari on a sitar, and why does it matter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jawari is the precise convex curvature filed into the sitar's ebony or bone bridge. It produces the characteristic sustained buzz and singing tone that defines the sitar's sound. Getting it wrong by a fraction of a millimeter changes everything — too open and it buzzes unpleasantly, too closed and the tone dies. It is a specialized skill that requires years of training and is extremely rare to find in the United States."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer online sitar lessons?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. SitarBoston offers online sitar lessons via Zoom for students anywhere in the US and internationally. Lessons are designed around your goals, pace, and musical background."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I buy a concert-grade sitar in Massachusetts or the US?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SitarBoston offers concert-grade sitars built to order by the master craftsmen of Miraj, India — the undisputed capital of sitar making. Available styles: VK (Vilayat Khan) style, Ravi Shankar style, and SPK style, in teak, tun, and gourd. Contact us to discuss your requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you repair vintage sitars like Hiren Roy, Sarat Sardar, or Kanailal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. SitarBoston specializes in the restoration of vintage instruments — Hiren Roy, Sarat Sardar, Kanailal, Naskar, and other historic makers. Services include new bridges carved from bone, full string sets, peg smoothening, fret graduation, and full polish to bring a historic instrument back to its voice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which states and cities in New England do you serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SitarBoston serves the entire New England region — Massachusetts (Boston, Cambridge, Worcester, Lowell, Springfield), Rhode Island (Providence), Connecticut (Hartford, New Haven), New Hampshire (Portsmouth, Manchester), Vermont, and Maine. Sitar repair can be handled by mail; lessons are available in-person in Greater Boston or online for all locations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I contact SitarBoston?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can reach SitarBoston by phone or WhatsApp at +1 (774) 452-2454, by email at sitarboston@gmail.com, or via the contact form at https://sitarboston.com/#connect. We are also on Instagram @sitarboston."
+            }
+          }
+        ]
+      }
+
     ]
   }
   </script>
