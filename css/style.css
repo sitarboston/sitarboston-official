@@ -3964,13 +3964,15 @@ html[data-theme="light"] .btn-primary:hover {
   box-shadow: 0 6px 24px rgba(27, 94, 56, 0.3);
 }
 html[data-theme="light"] .btn-outline {
-  color: var(--saffron);
-  border-color: var(--saffron);
+  background: #7A3B00;
+  border-color: #7A3B00;
+  color: #FFF9ED;
 }
 html[data-theme="light"] .btn-outline:hover {
-  background: var(--saffron);
+  background: #5C2C00;
+  border-color: #5C2C00;
   color: #FFF9ED;
-  box-shadow: 0 6px 24px rgba(193, 123, 0, 0.3);
+  box-shadow: 0 6px 24px rgba(122, 59, 0, 0.4);
 }
 
 /* ── GOLD DUST PARTICLES — shift to Holi colours on light theme ── */
